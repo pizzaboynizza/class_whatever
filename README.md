@@ -22,8 +22,8 @@ Memorial Day -- May 25th, 2020
 
 ## Capstone Dates:
 
-Capstone proposal due: ???
-Presentation Day: ???
+Capstone proposal due: ???  
+Presentation Day: ???  
 
 ## JavaScript Labs Assigned:
 
@@ -37,7 +37,7 @@ Lab 09 FavQs
 Lab 11 Vue Todos  
 Lab 12 Calculator  
 Lab 13 Vue FavQs  
-Lab 14 Any API in Vue -- mini-presentations first thing ???
+Lab 14 Any API in Vue -- mini-presentations first thing ???  
 (Django Lab 06 DRF/Vue)  
 
 #### Optional JavaScript Labs
@@ -94,7 +94,7 @@ CSS Diner
  Lab 21 -- Count Words  
  Lab 25 -- ATM  
  Lab 26 -- Tic Tac Toe  
- Python Project: Mini presentations first thing ???
+ Python Project: Mini presentations first thing ???  
 
 #### Optional Python Labs
 
