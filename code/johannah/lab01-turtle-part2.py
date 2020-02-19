@@ -1,0 +1,36 @@
+from turtle import *
+
+goto(-4, -4)
+fillcolor('green')
+begin_fill()
+
+forward(70)
+left(90)
+forward(70)
+left(90)
+forward(70)
+left(90)
+forward(70)
+left(90)
+
+end_fill()
+
+penup()
+left(45)
+forward(100)
+left(45)
+pendown()
+fillcolor('yellow')
+begin_fill()
+forward(100)
+right(144)
+forward(100)
+right(144)
+forward(100)
+right(144)
+forward(100)
+right(144)
+forward(100)
+end_fill()
+
+done()
