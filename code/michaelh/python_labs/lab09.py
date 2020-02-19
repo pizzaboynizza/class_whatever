@@ -91,14 +91,11 @@ while units_final not in valid_units and units_final != units_org:#make sure the
 distance_units_org = input(f'What is the distance in {units_org}? ')
 valid_distance = False
 num_dot = 0
-while not valid_distance:#make sure they enter a digit
+while not valid_distance:#make sure they enter digits with only 1 '.'.
     for i in distance_units_org:
-        if i == '.':
-            num_dot += 1
-        if i not in string.digits + '.' or num_dot > 1:
+        if i not in string.digits + '.' or distance_units_org.count('.') > 1:
             print('Enter a valid distance.')
             distance_units_org = input(f'What is the distance in {units_org}? ')
-            num_dot = 0
             break
     else:
         valid_distance = True
@@ -128,6 +125,6 @@ elif units_final == 'in':
     distance_final /= 0.0254
 
 if round(distance_final, 4) % 1 == 0: #this checks if distance_final is close to a whole number
-    print(f'{distance_units_org} {units_org} is {int(round(distance_final, 4))} {units_final}')
+    print(f'{distance_units_org} {units_org} is {int(round(distance_final, 4))} {units_final}.')
 else:
-    print(f'{distance_units_org} {units_org} is {distance_final} {units_final}' )
+    print(f'{distance_units_org} {units_org} is {distance_final} {units_final}.' )
