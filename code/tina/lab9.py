@@ -11,12 +11,16 @@ Unit = {
 for x in Unit:
     print(x)
 
-user = input("What is the Distance: ")
-unit1 = input("What Units: ")
-convert = input("Output Units: ")
+while True:
+    user = int(input("What is the Distance: "))
+    unit1 = input("What Units: ")
+    convert = input("Output Units: ")
+    con = Unit[unit1] * (user) / Unit[convert]
+    print(f"{user} {unit1} is ", con , f"{convert}")
 
-con = Unit[unit1] * int(user) / Unit[convert]
-print(con)
+    user1 = input("Again? ")
+    if user1 not in ['yes','YES','y']:
+        break
 
 
     
