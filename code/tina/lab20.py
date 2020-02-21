@@ -1,34 +1,31 @@
 
+while True:
 
+    card = input("Enter a card number: ")
+    # spilt a input list, make it so pop will pop out a number
+    # list() put it in to list, map() put inside of list and card is the variabel to use. 
+    card = list(map(int, card))
 
-card = input("Enter a card number: ")
-# spilt a input list, make it so pop will pop out a number
-# list put it in to list, map put inside of list and card is the variabel to use. 
-card = list(map(int, card))
-print(card)
+    # store number else where for use later
+    g = card.pop(-1)
 
-g = card.pop(-1)
-print(g)
+    # changing order of numbers in list
+    card.reverse()
 
+    # i is index for enumerate %(moudles is every 2 number) else do nothing with index. enmuetare is giving index to card
+    double = [x * 2 if i%2==0 else x for i, x in enumerate(card)]
 
-card.reverse()
+    # If number is great then 9 subtrack it - else leave it alone 
+    nine = [n - 9 if n > 9 else n for n in double]
 
-# i is index %(moudles is every 2 number) else do nothing with index. enmuetare is giving index to card
-double = [x * 2 if i%2==0 else x for i, x in enumerate(card)]
-print(double) 
+    a = sum(nine)
+    print(a)
 
-# If number is great then 9 subtrack it - else leave it alone 
-nine = [n - 9 if n > 9 else n for n in double]
-print(nine)
+    print(g)
 
-a = sum(nine)
-print(a)
-
-h = nine.pop(1)
-
-print(h)
-
-
+    user = input("Check another credit card number? ")
+    if user not in ["yes","y","Yes"]:
+        break
 
 
 
@@ -40,10 +37,5 @@ print(h)
 
 
 
-# cut = slice(15,16)
-# print(card[cut])
 
 
-
-# change = (list(reversed(card)))
-# print(change) 

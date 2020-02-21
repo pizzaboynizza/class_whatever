@@ -40,6 +40,10 @@
 # numList = list(int(num) for num in input("Enter the list numbers separated by space: ").strip().split())[:n]
 # print("New List: ", numList)
 
-numbers = [1, 2, 3, 4, 5]
-doubled_odds = [n * 2 for n in numbers if n % 2 == 1]
-print(doubled_odds)
+# numbers = [1, 2, 3, 4, 5]
+# doubled_odds = [n * 2 for n in numbers if n % 2 == 1]
+# print(doubled_odds)
+
+# cat = [dog + 2 for dog in numbers else dog for dog]
+
+
