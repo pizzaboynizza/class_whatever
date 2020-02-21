@@ -45,13 +45,7 @@ for num in sub_nine:
     count += num
 print(count)
 
-count1 = [str(count)]
-print(count1)
-str(count)
-count_split = list(map(int, count1))
-print(count_split)
-card_check = count_split[-1]
-print(card_check)
+card_check = count % 10
 
 if card_check == check_digit:
     print("Valid!")
