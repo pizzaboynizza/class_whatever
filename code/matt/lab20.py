@@ -22,7 +22,7 @@ For example, the worked out steps would be:
 7. 5
 8. Valid!
 """
-import string
+
 card_in = input("Enter your card number: ")
 if card_in.isdigit() == False:
     print("Must be a number.")
@@ -34,13 +34,12 @@ else:
 check_digit = card_in.pop(-1)
 
 
-print(card_in)
 card_in.reverse()
-print(card_in)
+
 double_even = [num * 2 if i%2==0 else num for i, num in enumerate(card_in)]
-print(double_even)
+
 sub_nine = [num - 9 if num > 9 else num for num in double_even]
-print(sub_nine)
+
 count = 0
 for num in sub_nine:
     count += num
@@ -48,11 +47,11 @@ print(count)
 
 count1 = [str(count)]
 print(count1)
-# str(count)
-# count_split = list(map(int, count))
-# print(count_split)
-# card_check = count_split[-1]
-# print(card_check)
+str(count)
+count_split = list(map(int, count1))
+print(count_split)
+card_check = count_split[-1]
+print(card_check)
 
 if card_check == check_digit:
     print("Valid!")
