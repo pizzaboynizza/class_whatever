@@ -1,15 +1,18 @@
 while True:
 
     print("Welcome to Mr. Measurement Converter!")
-    user_units = input("Which units would you like to convert from?\n1.feet 2.miles 3.kilometers 4.yards 5.inches\n> ")
 
-    if user_units == "1":
+    user_units = input("Which units would you like to convert from?\n1.feet 2.miles 3.kilometers 4.yards 5.inches\n> ")
+    user_units = user_units.lower()
+    user_units = user_units.strip(".")
+
+    if user_units == "1" or "feet":
         unit_fill = "ft"
         user_distance = input("What is the distance in feet?")
         distance_meters = float(user_distance) * .3048
         
     
-    elif user_units == "2":
+    elif user_units == "2" or "mi" or "miles" or "Miles":
         unit_fill = "mi"
         user_distance = input("What is the distance in miles?")
         distance_meters = float(user_distance) * 1609.34

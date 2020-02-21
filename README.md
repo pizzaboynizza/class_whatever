@@ -27,7 +27,11 @@ Presentation Day: ???
 
 ## Python Labs Assigned:
 
- Lab 01 -- Turtle
+ Lab 01 -- Turtle  
+ Lab 09 -- Unit Converter  
+ Lab 10 -- Average Numbers  
+ Lab 11 -- Simple Calculator  
+ Lab 20 -- Credit Card Validation  
 
 #### Optional Python Labs
 
