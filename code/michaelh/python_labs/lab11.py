@@ -80,7 +80,7 @@ while True:
     valid_expression = False
     while not valid_expression: #make sure they enter digits and whitespace and only 1 '+-*/'.
         for char in expression:
-            if char not in (string.digits + string.whitespace + valid_operation) or expression.count('+') > 1 or expression.count('-') > 1 or expression.count('*') > 1 or expression.count('/') > 1:
+            if char not in (string.digits + string.whitespace + valid_operation + '.') or expression.count('+') > 1 or expression.count('-') > 1 or expression.count('*') > 1 or expression.count('/') > 1:
                 print('Enter a valid arithmatic expression.')
                 expression = input('Enter the arithmatic expression you\'d like to perform: ')
                 break
