@@ -1,22 +1,38 @@
-# print("Simple Calculator")
+print("Simple Calculator")
 
-# calc = {
-# 'add': '+',
-# 'subtraction': '-',
-# 'multiplication': '*',
-# 'division': '/',
-# }
-
-
+calc = {
+'add': '+',
+'subtraction': '-',
+'multiplication': '*',
+'division': '/',
+}
 
 
-# operation = input("What operation: ")
-# num1 = input(int("First Number: "))
-# num2 = input(int("Second Number: "))
+operation = input("What operation: ")
+num1 = input("First Number: ")
+num2 = input("Second Number: ")
+
+a = int(num1)
+b = int(num2)
+
+if calc[operation] == 'add':
+    print(f"{a} + {b} =")
+    print(a+b)
+elif calc[operation] == 'subtraction':
+    print(f"{a} - {b} =")
+    print(a-b)
+
+elif calc[operation] == 'multiplication' :
+    print(f"{a} * {b} =")
+    print(a*b)
+
+elif calc[operation] == 'division':
+    print(f"{a} / {b} =")
+    print(a/b)
+
 
 # if operation in calc:
      
-
 
 # def calc(math):
 #     {'add': '+',
@@ -48,25 +64,23 @@
 #   num1 = input(int("First Number: "))
 #     num2 = input(int("Second Number: "))
      
+ 
+# operation = input("What operation: ")
+# num1 = ("First Number: ")
+# num2 = ("Second Number: ")
 
-olist = ('+','-','*','/',)   
-operation = input("What operation: ")
-num1 = ("First Number: ")
-num2 = ("Second Number: ")
 
+# a = int(num1)
+# b = int(num2) 
 
-a = int(num1)
-b = int(num2) 
-
-if operation in olist:
-    if operation == '+':   
-        a + b
-    elif operation == '-':   
-        a - b
-    elif operation == '*':   
-        a * b
-    elif operation == '/':   
-        a / b
+#     if operation == '+':   
+#         a + b
+#     elif operation == '-':   
+#         a - b
+#     elif operation == '*':   
+#         a * b
+#     elif operation == '/':   
+#         a / b
 
 
 
