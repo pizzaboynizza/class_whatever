@@ -1,8 +1,25 @@
 # Lab 10: Average Numbers
 # We're going to average a list of numbers. 
+
+# through it, keeping a 'running sum', then 
+# divide that sum by the number of elements
+#  in that list. Remember len will give you the length of a list.
+
+# The code below hows how to loop through an array, 
+# and prints the elements one at a time.
+
+# nums = [5, 0, 8, 3, 4, 1, 6]
+
+# # loop over the elements
+# for num in nums:
+#print(num)
+
+# # loop over the indices
+# for i in range(len(nums)):
+#     print(nums[i])
 nums = []
 i = 0
-# Start with the following list, iterate 
+
 while i < 5:
     user_input = input("enter a number 1-10 or done if you would like to exit: ")
     if user_input != "done":
@@ -20,22 +37,8 @@ else:
         print(average)
     
 
-# through it, keeping a 'running sum', then 
-# divide that sum by the number of elements
-#  in that list. Remember len will give you the length of a list.
 
-# The code below hows how to loop through an array, 
-# and prints the elements one at a time.
 
-# nums = [5, 0, 8, 3, 4, 1, 6]
-
-# # loop over the elements
-# for num in nums:
-#     print(num)
-
-# # loop over the indices
-# for i in range(len(nums)):
-#     print(nums[i])
 # Version 2
 # Ask the user to enter the numbers one at a time, 
 # putting them into a list. If the user enters 'done',

@@ -8,19 +8,19 @@
 #  you got from input. Below is some sample input/output.
 
         # ANSWER
-# operation = input("What is the operation you\'d like to perform? ")
-# first_number = int(input("What is the first number? ") )
-# second_number = int(input("What is the second number? "))
+operation = input("What is the operation you\'d like to perform? ")
+first_number = int(input("What is the first number? ") )
+second_number = int(input("What is the second number? "))
 
 
-# if operation == ("*"):
-#     print(first_number * second_number)
-# elif operation == ("+"):
-#     print(first_number + second_number)
-# elif operation == ("-"):
-#     print(first_number - second_number)
-# elif operation == ("/"):
-#     print(first_number / second_number)
+if operation == ("*"):
+    print(first_number * second_number)
+elif operation == ("+"):
+    print(first_number + second_number)
+elif operation == ("-"):
+    print(first_number - second_number)
+elif operation == ("/"):
+    print(first_number / second_number)
 
 
 

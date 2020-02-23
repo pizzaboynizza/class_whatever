@@ -6,11 +6,6 @@
 # > what is the distance in feet? 12
 # > 12 ft is 3.6576 m
 
-# ANSWER
-# 
-
-
-
 # Version 2
 # Allow the user to also enter the units. Then depending on the units, 
 # convert the distance into meters. The units we'll allow are feet, 
@@ -76,7 +71,8 @@
 # km			1000	1
 # But instead of filling out that matrix, and checking for 
 # each pair of units (if from_units == 'mi' and to_units == 'km'),
-#  we can just convert any unit to meters, then convert the distance in meters to any other unit.
+# we can just convert any unit to meters, then convert the 
+# distance in meters to any other unit.
 
 # Furthermore you can convert them from meters by dividing a 
 # distance (in meters) by those same values used above. 
