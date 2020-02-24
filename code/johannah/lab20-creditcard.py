@@ -10,25 +10,24 @@
 '''
 
 
-'''
 nums = []
 while True:
-  user_input = input("Enter your credit card number one number at a time and then enter \'done\' when complete: ")
-  if user_input == a number:
-    continue
-  elif user_input == "done":
+  user_input = input("Enter your credit card number one number at a time and then press a blank enter when complete: ")
+  if user_input:
+    nums.append(int(user_input))
+  else:
     break
-    print(nums.append(float(user_input)))
-'''
-
-nums = []
-while True:
-    user_input = input("Enter your credit card number one number at a time and then press a blank enter when complete: ")
-    if user_input:
-        nums.append(user_input)
-    else:
-        break
+#print(nums.append(float(user_input)))
 print(nums)
+nums_sliced = nums[0:-1]
+print(nums_sliced)
+nums_reversed = nums_sliced[::-1]
+print(nums_reversed)
+# 4. Double every other element in the reversed list
+double_second = (nums_reversed[0::2])*2
+#[0:-1:2]
+#[x*2 for x in range(10)]
+print(double_second)
 
 '''
 items=[]
@@ -40,15 +39,4 @@ while 1:
         break
     items.append(item)
 print(items)
-'''
-
-
-'''
-user_input = input('Type here: ')
-nums = [user_input]
-
-
-magicInput = input('Type here: ')
-magicList = list(magicInput)
-print(magicList)
 '''
