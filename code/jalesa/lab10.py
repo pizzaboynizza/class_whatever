@@ -1,22 +1,24 @@
-# Lab 10: Average Numbers
-# We're going to average a list of numbers. 
+'''Lab 10: Average Numbers
+We're going to average a list of numbers. 
 
-# through it, keeping a 'running sum', then 
-# divide that sum by the number of elements
-#  in that list. Remember len will give you the length of a list.
+through it, keeping a 'running sum', then 
+divide that sum by the number of elements
+ in that list. Remember len will give you the length of a list.
 
-# The code below hows how to loop through an array, 
-# and prints the elements one at a time.
+The code below hows how to loop through an array, 
+and prints the elements one at a time.
 
-# nums = [5, 0, 8, 3, 4, 1, 6]
+nums = [5, 0, 8, 3, 4, 1, 6]
 
-# # loop over the elements
-# for num in nums:
-#print(num)
+# loop over the elements
+for num in nums:
+print(num)
 
-# # loop over the indices
-# for i in range(len(nums)):
-#     print(nums[i])
+# loop over the indices
+for i in range(len(nums)):
+    print(nums[i])
+'''
+# ANSWER
 nums = []
 i = 0
 
@@ -42,9 +44,9 @@ else:
 # Version 2
 # Ask the user to enter the numbers one at a time, 
 # putting them into a list. If the user enters 'done',
-#  then calculate and display the average. 
+# then calculate and display the average. 
 # The following code demonstrates how to add an
-#  element to the end of a list.
+# element to the end of a list.
 
 # nums = []
 # nums.append(5)
@@ -56,3 +58,22 @@ else:
 # > enter a number, or 'done': 4
 # > enter a number, or 'done': done
 # average: 4
+
+
+
+numbers = []
+
+while True:
+    user_input = input("Enter your numbers then type done: ")
+    if user_input == "done": 
+        numbers.pop(-1)      
+        average_num = sum(numbers)/ len(numbers)
+        print(f"Your average numer is {average_num}") 
+    else:
+        numbers.append(int(user_input))
+        print(numbers)
+      
+
+
+
+
