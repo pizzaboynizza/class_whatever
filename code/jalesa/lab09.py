@@ -6,12 +6,6 @@
 # > what is the distance in feet? 12
 # > 12 ft is 3.6576 m
 
-# ANSWER
-user_answer = int(input("what is the distance from where youre sitting to the door in feet?"))
-print(f"{user_answer  * 0.3048} meters")
-
-
-
 # Version 2
 # Allow the user to also enter the units. Then depending on the units, 
 # convert the distance into meters. The units we'll allow are feet, 
@@ -77,7 +71,8 @@ else:
 # km			1000	1
 # But instead of filling out that matrix, and checking for 
 # each pair of units (if from_units == 'mi' and to_units == 'km'),
-#  we can just convert any unit to meters, then convert the distance in meters to any other unit.
+# we can just convert any unit to meters, then convert the 
+# distance in meters to any other unit.
 
 # Furthermore you can convert them from meters by dividing a 
 # distance (in meters) by those same values used above. 
@@ -88,13 +83,24 @@ else:
 # > what are the output units? mi
 # 100 ft is 0.0189394 mi
 
-user_distance = int(input("what is the distance? "))
+
 user_units = input("what are the starting units? ")
-output_units =input("what units do you want to convert to")
-1 ft is 0.3048 m
-1 mi is 1609.34 m
-1 m is 1 m
-1 km is 1000 m
+output_units =input("what units do you want to convert to? ")
+user_distance = int(input("what is the distance? ")) 
+converted_meters = {
+    "ft": 0.3048,
+    "mi": 1609.34,
+    "m": 1,
+    "km": 1000,
+    "yd": 0.9144,
+    "in": 0.0254,
+}
+
+if user_units == 'mi' and output_units == 'km':
+    meters = print(f'{user_distance * 1609.34}')
+    print(f"{user_distance / 1000} kilometers")
+    
 
 
-convert_to_meters = f"{user_units *  } meters "
+
+# convert_to_meters = f"{user_units *  } meters "

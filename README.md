@@ -32,9 +32,15 @@ Presentation Day: ???
  Lab 10 -- Average Numbers  
  Lab 11 -- Simple Calculator  
  Lab 20 -- Credit Card Validation  
+ Lab 15 -- Number to Phrase  
+ Lab 19 -- Blackjack  
+ Lab 17 -- Palindrome/Anagram  
+ Lab 13 -- ROT13  
+ Lab 14 -- Pick 6  
 
 #### Optional Python Labs
 
+ Practice 1-5  
  Labs 02-08, 12 (You did these during the intro course)   
 
 ## Student Presentations
