@@ -14,4 +14,3 @@
 # if i%2==0 else num for x, y in enumerate(reversed_digit) #tests even, else
 
 # x*2 if i%2==0 else num for x, y in enumerate(reversed_digit)
-
