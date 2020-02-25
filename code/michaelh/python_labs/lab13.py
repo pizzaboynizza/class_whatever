@@ -1,3 +1,4 @@
+'''
 # Lab 13: ROT Cipher
 
 Write a program that prompts the user for a string, and encodes it with ROT13. For each character, find the corresponding character, add it to an output string. Notice that there are 26 letters in the English language, so encryption is the same as decryption.
@@ -12,3 +13,22 @@ Write a program that prompts the user for a string, and encodes it with ROT13. F
 ## Version 2 (optional)
 
 Allow the user to input the amount of rotation used in the encryption / decryption.
+'''
+import string
+rot_amount = int(input('How much rotation should be used for the encryption: '))
+alphabet = string.ascii_lowercase
+rot_dict = {}
+for char in alphabet:
+    if ord(char) + rot_amount <= ord('z'):
+        rot_dict[char] = chr(ord(char) + rot_amount)
+    else:
+        rot_dict[char] = chr(ord(char) - rot_amount)
+
+# print(rot_dict)
+org_str = input('Enter a word to encrypt: ')
+# org_str = 'whatever'
+
+new_str = ''
+for char in org_str:
+    new_str += rot_dict[char]
+print(new_str)
