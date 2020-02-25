@@ -50,35 +50,35 @@ def matching_num():
             count += 1
     # print(count)
 
-    # if count == 0:
-    #     print(f"Losing ticket. Try again. Your current balance is ${balance}.")
-    # elif count == 1:
-    #     balance += 4
-    #     print(f"{count} matches. You win $4. Your current balance is ${balance}.")
-    # elif count == 2:
-    #     balance += 7
-    #     print(f"{count} matches. You win $7. Your current balance is ${balance}.")
-    # elif count == 3:
-    #     balance += 100
-    #     print(f"{count} matches. You win $100. Your current balance is ${balance}.")
-    # elif count == 4:
-    #     balance += 50000
-    #     print(f"{count} matches. You win $50,000. Your current balance is ${balance}.")
-    # elif count == 5:
-    #     balance += 1000000
-    #     print(f"{count} matches. You win $1,000,000. Your current balance is ${balance}.")
-    # elif count == 6:
-    #     balance += 25000000
-    #     print(f"{count} matches. You win $25,000,000. Your current balance is ${balance}.")
+    if count == 0:
+        # print(f"Losing ticket. Try again. Your current balance is ${balance}.")
+        pass
+    elif count == 1:
+        balance += 4
+        # print(f"{count} matches. You win $4. Your current balance is ${balance}.")
+    elif count == 2:
+        balance += 7
+        # print(f"{count} matches. You win $7. Your current balance is ${balance}.")
+    elif count == 3:
+        balance += 100
+        # print(f"{count} matches. You win $100. Your current balance is ${balance}.")
+    elif count == 4:
+        balance += 50000
+        # print(f"{count} matches. You win $50,000. Your current balance is ${balance}.")
+    elif count == 5:
+        balance += 1000000
+        # print(f"{count} matches. You win $1,000,000. Your current balance is ${balance}.")
+    elif count == 6:
+        balance += 25000000
+        # print(f"{count} matches. You win $25,000,000. Your current balance is ${balance}.")
+    return balance
     
-    times_run = 0
-    while times_run < 100000:
-        matching_num()
-        if count%250==0:
-            print("test")
+times_run = 0
+while times_run <= 100000:
+    matching_num()
+    if times_run%250==0:
+        print("test")
     times_run += 1
-    if times_run == 100000:
-        print(f"Done. Balance is {balance}.")
-
-
-matching_num()
+if times_run == 100000:
+    print("Done.")
+    print(f"Done. Balance is {balance}.")
