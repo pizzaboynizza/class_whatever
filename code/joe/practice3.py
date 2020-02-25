@@ -69,8 +69,79 @@ def common_elements(a, b):
             a.remove(el_a)
     return ret
 
-# Problem 8 (Incomplete)
+# Problem 8
+def combine(a, b):
+    ret = []
+    for i in range(len(a)):
+        ret.append(a[i])
+        ret.append(b[i])
+    return ret
 
+# Problem 9
+def find_pair(nums, target):
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [nums[i], nums[j]]
+    return [None, None]
+
+# Problem 10
+def merge(a, b):
+    ret = []
+    for i in range(len(a)):
+        ret.append([a[i], b[i]])
+    return ret
+
+# Problem 11
+def combine_all(a):
+    ret = []
+    for x in a:
+        for y in x:
+            ret.append(y)
+    return ret
+
+# Problem 12
+def fibonacci(n):
+    x = 1
+    y = 1
+    ret = []
+    for i in range(n):
+        if i == 0 or i == 1:
+            ret.append(1)
+        else:
+            ret.append(x + y)
+        y = x
+        x = ret[i]
+    return ret
+
+# Problem 13
+def minimum(numb):
+    m = numb[0]
+    for n in numb:
+        if n < m:
+            m = n
+    return m
+
+def maximum(numb):
+    m = numb[0]
+    for n in numb:
+        if n > m:
+            m = n
+    return m
+
+def mean(numb):
+    m = 0
+    for n in numb:
+        m += n
+    return m / len(numb)
+
+# Problem 14
+def find_unique(a):
+    ret = []
+    for x in a:
+        if x not in ret:
+            ret.append(x)
+    return ret
 
 # Results
 fruits = ["apples", "bananas", "pears"]
@@ -95,3 +166,20 @@ print(f"extract_less_than_ten(nums) -> {extract_less_than_ten(nums)}")
 print(f"extract_less_than_ten([1, 11, 111, 2, 8]) -> {extract_less_than_ten([1, 11, 111, 2, 8])}\n")
 
 print(f"common_elements(nums, [1, 2, 4, 8, 16]) -> {common_elements(nums, [1, 2, 4, 8, 16])}\n")
+
+print(f"combine(['a','b','c'],[1,2,3]) -> {combine(['a','b','c'],[1,2,3])}\n")
+
+print(f"find_pair([5, 6, 2, 3], 7) -> {find_pair([5, 6, 2, 3], 7)}\n")
+
+print(f"merge([5,2,1], [6,8,2]) -> {merge([5,2,1], [6,8,2])}\n")
+
+print(f"combine_all([[5,2,3],[4,5,1],[7,6,3]]) -> {combine_all([[5,2,3],[4,5,1],[7,6,3]])}\n")
+
+print(f"fibonacci(8) -> {fibonacci(8)}\n")
+
+nums = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+print(f"minimum(nums) -> {minimum(nums)}")
+print(f"maximum(nums) -> {maximum(nums)}")
+print(f"mean(nums) -> {mean(nums)}\n")
+
+print(f"find_unique([12, 24, 35, 24, 88, 120, 155, 88, 120, 155]) -> {find_unique([12, 24, 35, 24, 88, 120, 155, 88, 120, 155])}\n")

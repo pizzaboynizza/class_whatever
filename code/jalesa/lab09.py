@@ -30,26 +30,26 @@
 # 1 inch is 0.0254 m
 
 # ANSWER
-# user_distance = int(input("what is the distance? "))
-# user_units = input("what are the units? ")
+user_distance = int(input("what is the distance? "))
+user_units = input("what are the units? ")
 
-# if user_units == "ft" or "feet":
-#     print(f"{user_distance * 0.3048} feet")
-# elif user_units == "miles" or "mi":
-#     print(f"{user_distance * 1609.34} miles ")
-# elif user_units == "m" or "meter":
-#     print(f"{user_distance * 1} meter") 
-# elif user_units == "km" or "kilometers":
-#     print(f"{user_distance * 1000} kilometers")      
-# elif user_units == "yd" or "yards":
-#     print(f"{user_distance * 0.9144} yards")
-# elif user_units == "in" or "inches":
-#     print(f"{user_distance * 0.0254} inches")
-# else:
-#     if user_distance != ["feet", "miles", "meters", "kilometers", "yards", "inches"]:
-#         print("You must enter feet, miles, meters, kilometers, yards, or inches")
-#     else: 
-#         print("You must enter a number for the distance")
+if user_units == "ft" or "feet":
+    print(f"{user_distance * 0.3048} feet")
+elif user_units == "miles" or "mi":
+    print(f"{user_distance * 1609.34} miles ")
+elif user_units == "m" or "meter":
+    print(f"{user_distance * 1} meter") 
+elif user_units == "km" or "kilometers":
+    print(f"{user_distance * 1000} kilometers")      
+elif user_units == "yd" or "yards":
+    print(f"{user_distance * 0.9144} yards")
+elif user_units == "in" or "inches":
+    print(f"{user_distance * 0.0254} inches")
+else:
+    if user_distance != ["feet", "miles", "meters", "kilometers", "yards", "inches"]:
+        print("You must enter feet, miles, meters, kilometers, yards, or inches")
+    else: 
+        print("You must enter a number for the distance")
 
 
 
@@ -92,13 +92,13 @@ converted_meters = {
     "mi": 1609.34,
     "m": 1,
     "km": 1000,
-    "yd": 0.9144
-    "in": 0.0254
+    "yd": 0.9144,
+    "in": 0.0254,
 }
 
-if from_units == 'mi' and to_units == 'km':
+if user_units == 'mi' and output_units == 'km':
     meters = print(f'{user_distance * 1609.34}')
-    print(f"{meters / 1000} kilometers")
+    print(f"{user_distance / 1000} kilometers")
     
 
 
