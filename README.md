@@ -34,6 +34,9 @@ Presentation Day: ???
  Lab 20 -- Credit Card Validation  
  Lab 15 -- Number to Phrase  
  Lab 19 -- Blackjack  
+ Lab 17 -- Palindrome/Anagram  
+ Lab 13 -- ROT13  
+ Lab 14 -- Pick 6  
 
 #### Optional Python Labs
 

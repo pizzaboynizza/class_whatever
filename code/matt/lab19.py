@@ -14,11 +14,10 @@ For one half, add 1, for the other, add 11.
 This ensures if you have multiple aces that you account for the full range of possible values.
 """
 Face_cards = {
-    "A": 1,
+    "A": 11,
     "J": 10,
     "Q": 10,
     "K": 10,
-    "1": 1,
     "2": 2,
     "3": 3,
     "4": 4,
@@ -27,7 +26,7 @@ Face_cards = {
     "7": 7,
     "8": 8,
     "9": 9,
-    "a": 1,
+    "a": 11,
     "j": 10,
     "q": 10,
     "k": 10
@@ -47,6 +46,15 @@ if user3 not in Face_cards:
 
 
 card_value = Face_cards[user1] + Face_cards[user2] + Face_cards[user3]
+
+num_ace = 0
+for card in [user1, user2, user3]:
+    if card == "a" or card == "A":
+        num_ace += 1
+        # print(num_ace)
+
+if card_value > 21 and num_ace > 0:
+    card_value = card_value - 10 * num_ace
 
 if card_value == 21:
     print("21! Blackjack!")

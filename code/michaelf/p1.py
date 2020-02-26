@@ -38,8 +38,8 @@ def maximum_of_three(a, b, c):
 
 #problem5
 def powers_of(a, b, c):
-        for a in range(c):
-             print(a ** b)
+        for i in range(b, c):
+             print(a ** i)
 
         
 powers_of(2, 0, 20)

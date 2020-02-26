@@ -8,7 +8,6 @@ card_three = input('What\'s your third card? ')
 sum_of_cards = (card_dictionary[card_one] + card_dictionary[card_two] + card_dictionary[card_three])
 
 def card_function(sum_of_cards):
-    sum_of_cards = (card_dictionary[card_one] + card_dictionary[card_two] + card_dictionary[card_three])
     if sum_of_cards == 21:
         return("BlackJack!!")
     if sum_of_cards >= 22:
