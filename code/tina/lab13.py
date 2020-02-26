@@ -19,16 +19,23 @@ print("this is number each letter", code)
 print("This is store in code", code)
 
 co2 = []
-
 for g in code:
     # This take g in code plus the index by 13 and then % div it by 26 giving it the other rot number
-    new = [(g + 13)%26]
+    new = (g + 13)%26
     # add all the letter/number to the list to be printed out
     co2.append(new)
-print("This is co2 list", co2)
 
 
+print(co2)
 
+done = []
+for x in co2:
+    done.append(rot[x])
+    
+print(done)
+
+
+# print(other)
 
 
 
