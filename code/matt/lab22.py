@@ -24,6 +24,7 @@ that is suitable for an average person 16-17 years old.
 --------------------------------------------------------
 """
 import string
+import math
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
      2: {'ages':   '6-7', 'grade_level':    '1st Grade'},
@@ -59,22 +60,18 @@ characters = list(noChars)
 while('' in sentences) :
     sentences.remove("")
 
+while(" " in characters) :
+    characters.remove(" ")
 
 characters_count = len(characters)
 words_count = len(words)
 sentences_count = len(sentences)
 
 
+maths = (4.71 * (characters_count / words_count)) + (0.5 * (words_count / sentences_count)) - 21.43
 
-ari = (4.71 * (characters_count / words_count)) + (0.5 * (words_count / sentences_count)) - 21.43    
+ari = math.ceil(maths)
 
-print(characters_count)
-print(words_count)
-print(sentences_count)
-print(ari)
-
-
-
-# print(f"The ARI for '{content}' is {ari_scale[ari]}") #should output number of key in dict.
-# print(f"This corresponds to a {ari_scale[grade_level[ari]]} level of difficulty")
-# print(f"that is suitable for an average person {ari_scale[age[ari]]} years old.")
+print(f"The ARI for '{content}' is {ari}") #should output number of key in dict.
+print(f"This corresponds to a {ari_scale[ari]['grade_level']} level of difficulty")
+print(f"that is suitable for an average person {ari_scale[ari]['ages']} years old.")
