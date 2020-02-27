@@ -23,15 +23,21 @@ years = 0
 while len(jack) <= 1000:
     
     for i in range(0, len(jack)):
-        if 4 <= jack[i] <= 8:
+        # if jack >= 3 and jack <= 7:
+        if 3 <= jack[i] <= 7:
             jack[i] += 1
             jack.append(0)
+            print(jack)
         elif jack[i] > 9:
             jack.remove(jack[i])
         else:
             jack[i] += 1
+            print(jack)
     years += 1
-
+# for i in range(0, len(jack)):
+#     if jack[i] == 10:
+#         jack.remove(10)
+    
 print(jack)
 print(len(jack))
 print(years)
