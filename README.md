@@ -37,6 +37,8 @@ Presentation Day: ???
  Lab 17 -- Palindrome/Anagram  
  Lab 13 -- ROT13  
  Lab 14 -- Pick 6  
+ Lab 22 -- ARI  
+ Lab 21 -- Count Words  
 
 #### Optional Python Labs
 
