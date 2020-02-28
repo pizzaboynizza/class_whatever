@@ -60,6 +60,7 @@ data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 
 ```
 '''
+import random
 def peaks(data):
     result = []
     for i in range(1, len(data)-1):
@@ -83,19 +84,6 @@ def peaks_and_valleys(data):
             result.append(i)
     return result
 
-# print(peaks(data))
-# print(valleys(data))
-# print(peaks_and_valleys(data))
-
-data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
-maximum = max(data)
-peak = peaks(data)
-valley = valleys(data)
-if data[len(data) - 1] > data[len(data) - 2]:
-    peak.append(len(data) - 1)
-if data[0] > data[1]:
-    peak.append(0)
-# print(peak)
 def between_two_peaks(i, peak):
     for j in range(1, len(peak)):
         if peak[j-1] < i < peak[j]:
@@ -108,6 +96,23 @@ def get_height_shortest_nearby_peak(i, peak, data):
         if peak[j-1] < i < peak[j]:
             return min(data[peak[j-1]], data[peak[j]])
 
+def random_data():
+    result = [1]
+    for i in range(1, 20):
+        if result[i-1] == 1:
+            result.append(result[i-1] + 1)
+        else:
+            result.append(result[i-1] + random.choice([-1, 1]))
+    return result
+data = random_data()
+maximum = max(data)
+peak = peaks(data)
+valley = valleys(data)
+if data[len(data) - 1] > data[len(data) - 2]:
+    peak.append(len(data) - 1)
+if data[0] > data[1]:
+    peak.append(0)
+# print(peak)
 # print(between_two_peaks(17, peak))
 for i in range(maximum):
     line_str = ' '
