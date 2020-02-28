@@ -10,7 +10,7 @@ lottery_numbers = random_gen()
 def lottery_function(lottery_numbers):
     q = 0
     user_balance = 0
-    while q < 100:
+    while q < 10000: #change to 100,000 to complete lab
         
         user_ticket = [random.randrange(1,100) for i in range (6)]
         user_balance -= 2
