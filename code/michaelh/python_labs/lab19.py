@@ -66,18 +66,21 @@ elif aces == 3:
     # values.append(value + 23)
     # values.append(value + 33)
 
-print(values)
-vmax = 0
-for v in values:
-    if v > vmax and v <= 21:
-        vmax = v
-
-value = vmax
-if value > 21:
-    print(f'{value} bust.')
-elif value == 21:
-    print(f'{value} blackjack.')
-elif value >= 17:
-    print(f'{value} stay.')
-else:
-    print(f'{value} hit.')
+if aces == 0:
+    if value > 21:
+        print(f'{value} bust.')
+    elif value == 21:
+        print(f'{value} blackjack.')
+    elif value >= 17:
+        print(f'{value} stay.')
+    else:
+        print(f'{value} hit.')
+elif aces > 0:
+    if max(values) > 21 and min(values) > 21:
+        print(f'{min(values)} bust.')
+    elif values[0] == 21 or values[1] == 21:
+        print(f'21 blackjack.')
+    elif max(values) > 21 and min(values) >= 17:
+        print(f'{min(values)} stay.')
+    else:
+        print(f'{min(values)} hit.')
