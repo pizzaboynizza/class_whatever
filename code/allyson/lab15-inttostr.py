@@ -1,4 +1,4 @@
-##  Convert Numbers to Phrase (Level 1) ##
+(##  Convert Numbers to Phrase (Level 1) ##
 
 num=input('Type Number Here  -->')
 num=str(num)
@@ -17,7 +17,9 @@ teen ={
 dou ={
       2:'Twenty', 3:'Thirty', 4:'Fourty',5:'Fifty', 6:'Sixty', 7:'Seventy', 8:'Eighty', 9:'Ninety'
 }
-
+tri={
+      '':'Hundred'
+}
 count=[]
 wordArray=[]
 l=len
@@ -27,17 +29,20 @@ count=wordSpliter(num)
 chk=len(count)
 
 for i in range(len(count)):
-  if chk == 1:
-    wordArray.append(sin[int(count[i])])
-  elif chk == 2:
-    if int(num) < 20: 
-      wordArray.append(teen[int(num)])
+      if chk == 1:
+            wordArray.append(sin[int(count[i])])
+      elif chk == 2:
+            if int(num) < 20: 
+                  wordArray.append(teen[int(num)])
       break
-    else:
-      if i == 0:
-        wordArray.append(dou[int(count[i])])
-      elif i == 1:
-        wordArray.append(sin[int(count[i])])
+      
+      else:
+            if i == 0:
+                  wordArray.append(dou[int(count[i])])
+            elif i == 1:
+                  wordArray.append(sin[int(count[i])])
+      if chk == 3:
+            wordArray.append(tri[int(count[i])])
 
 finalWordNumberString = ''.join(wordArray)
 print('Entered Number is: ' + finalWordNumberString)

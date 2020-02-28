@@ -30,3 +30,7 @@ def greet(name,msg):
 
 greet("Monica","Good morning!")
 '''
+
+# Insert at Index
+#tens.insert(1, teens)
+
