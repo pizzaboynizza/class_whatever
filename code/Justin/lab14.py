@@ -53,6 +53,9 @@ def lottery_numbers():
             profit += -2
         num += 1
 
-    print(profit)
+        profit_string = str(profit)
+
+        print("Your profit in dollars is " + profit_string)
+        break
 
 lottery_numbers()

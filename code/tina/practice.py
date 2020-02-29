@@ -7,8 +7,8 @@
 # # Check if a number is even or odd
 # print(is_even(3))
 
-user = input("Number: ")
-def opposite(a):
+
+def opposite(a, b):
     if a >= 0:
         if a == 0:
             print("zero")
@@ -18,7 +18,7 @@ def opposite(a):
         print("Nega")
     return
 
-print(opposite(user))
+print(opposite(-1, 2))
 
         
     
