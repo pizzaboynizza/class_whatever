@@ -1,6 +1,6 @@
 mylist = [1,1]
 n = len(mylist)
-while len(mylist) < 1000:
+while len(mylist) <=1000:
     for age in mylist:
         if 4 <= age <= 8:
     
