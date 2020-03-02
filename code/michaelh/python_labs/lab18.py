@@ -104,24 +104,32 @@ def random_data():
         else:
             result.append(result[i-1] + random.choice([-1, 1]))
     return result
+
+water = 0
 data = random_data()
 maximum = max(data)
 peak = peaks(data)
 valley = valleys(data)
+#If the height at the very beginning and end of the list is greater than the adjacent value it can be considered a peak for the purposes of filling in water
 if data[len(data) - 1] > data[len(data) - 2]:
     peak.append(len(data) - 1)
 if data[0] > data[1]:
     peak.append(0)
-# print(peak)
-# print(between_two_peaks(17, peak))
+
+#To print the hills we need to loop through and print one line for every height up to the tallest mountain
 for i in range(maximum):
     line_str = ' '
+    #We print one character (or space) for each of the data values
     for i, datum in enumerate(data):
         if datum >= maximum:
             line_str += 'x'
+        #If the index is between two peaks it might be a place to print some water
         elif between_two_peaks(i, peak):
+            #If the shortest nearby peak is less than datum (the height of the data at that point) print a 'O'. This restricts the printing along the x-axis.
+            #If the shortest nearby peak is less than maximum (the height at which maximum) print a 'O'. This restricts the printing along the y-axis.
             if get_height_shortest_nearby_peak(i, peak, data) > datum and get_height_shortest_nearby_peak(i, peak, data) >= maximum:
                 line_str += 'O'
+                water += 1
             else:
                 line_str += ' '
         else:
@@ -130,4 +138,4 @@ for i in range(maximum):
     print(line_str)
     maximum -= 1
 print(data)
-# print(get_height_shortest_nearby_peak(9, peak, data))
+print(f'The amount of water in these hills is :{water}')
