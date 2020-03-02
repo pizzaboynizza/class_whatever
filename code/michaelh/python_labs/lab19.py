@@ -37,23 +37,50 @@ cards.append(input('What\'s your first card? '))
 cards.append(input('What\'s your second card? '))
 cards.append(input('What\'s your third card? '))
 # print(cards)
-num_cards = range(2, 11)
+num_cards = ['2','3','4','5','6','7','8','9','10']
 # print(num_cards)
 
 value = 0
+aces = 0
 for card in cards:
     if card == 'A':
-        value += 1
-    elif int(card) in num_cards:
+        # value += 1
+        aces += 1
+    elif card in num_cards:
         value += int(card)
     else:
         value += 10
 
-if value > 21:
-    print(f'{value} bust.')
-elif value == 21:
-    print(f'{value} blackjack.')
-elif value >= 17:
-    print(f'{value} stay.')
-else:
-    print(f'{value} hit.')
+values = []
+values.append(value)
+if aces == 1:
+    values[0] += 1
+    values.append(value + 11)
+elif aces == 2:
+    values[0] += 2
+    values.append(value + 12)
+    # values.append(value + 22)
+elif aces == 3:
+    values[0] += 3
+    values.append(value + 13)
+    # values.append(value + 23)
+    # values.append(value + 33)
+
+if aces == 0:
+    if value > 21:
+        print(f'{value} bust.')
+    elif value == 21:
+        print(f'{value} blackjack.')
+    elif value >= 17:
+        print(f'{value} stay.')
+    else:
+        print(f'{value} hit.')
+elif aces > 0:
+    if max(values) > 21 and min(values) > 21:
+        print(f'{min(values)} bust.')
+    elif values[0] == 21 or values[1] == 21:
+        print(f'21 blackjack.')
+    elif max(values) > 21 and min(values) >= 17:
+        print(f'{min(values)} stay.')
+    else:
+        print(f'{min(values)} hit.')

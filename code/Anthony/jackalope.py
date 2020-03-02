@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+mylist = [1,1]
+n = len(mylist)
+while len(mylist) <=1000:
+    for age in mylist:
+        if 4 <= age <= 8:
+    
+            mylist.insert(age, age+1)
+            # mylist.append(0)
+            print(mylist)
+=======
 
 jack = [0 , 0]
 years = 0
@@ -16,6 +27,7 @@ while len(jack) <= 1000:
         if jack[i] == 10:
             jack.remove(jack[i])
             print(jack)
+>>>>>>> 026e0c06097ec0cfc9dbb799bd161b15a92561eb
         else:
             print('nope!')
     print(jack)
