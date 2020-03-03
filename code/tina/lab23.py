@@ -56,45 +56,12 @@ def update_contact():
     print("Update a contact, Name-Game-Pet")
     up = input("Who do you want to update? ")
     change = input("What do you want to update?: ")
-    new_name = input("What is the new Name? ")
+    new_change = input("What is the new info? ")
 
     for duck in con2:
         if duck['name'] == up:
             if change in duck:
-                duck[change] == new_name
-                print(duck[change])
-                print(new_name)
-
-
-            # if change == 'name':
-                
-            #     new_name = input("What is the new Name? ")             
-            #     con2['name'] = new_name 
-            #     print("This change the name")
-            # elif change == 'game':
-            #     new_game = input("What is the new game? ")
-            #     con2[0]['game'] = new_game
-            #     print("this is game")
-            # elif change == 'pet':
-            #     new_pet = input("What is the new pet? ")
-            #     con2[0]['pet'] = new_pet      
-            #     print("this is pet")
-        
-
-
-        
-            
-
-
-
-
-    
-    
-
-
-
-
-
+                duck[change] = new_change
 
 
 
