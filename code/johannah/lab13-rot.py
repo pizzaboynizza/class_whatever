@@ -1,30 +1,28 @@
 '''
-prompts the user for a string, and encodes it with ROT13. For each character, find the corresponding character, add it to an output string
+Prompt the user for a string, and encode it with ROT13. For each character, find the corresponding character, add it to an output string
 '''
 
-user_input = input("Enter something (letters only) to find out each character's ROT13 correspondence: ")
-#add 13 to index except when more than 25 loop to 0 (0 = 26)
-#modulus 26????
-for i in range(26):
-  print((i + 13) % 26)
 
-'''
-dictionary
-chars = "abcdefghijklmnopqrstuvwxyz"
-for char in chars:
-  i + 13 < i=26
-  if i > 25:
-    26 = i 0
-    27 = 1
-    28 = 2
-    29 = 3
-    30 = 4
-    31 = 5
-    32 = 6
-    33 = 7
-    34 = 8
-    35 = 9
-    36 = 10
-    37 = 11
-    25 = 12
-'''
+result_output = ''
+user_input = input("Enter a word/phrase/sentence (letters only) to find out each character's ROT13 correspondence: ")
+input_lowered = user_input.lower()  # lowercase user input
+print(input_lowered)
+
+chars = 'abcdefghijklmnopqrstuvwxyz'
+
+for i in range(len(input_lowered)):
+  index_of_letter = int(chars.find(input_lowered[i]))  # index of letter in input_lowered
+  index_for_chars = index_of_letter + 13   #index of chars to be translated back to letters in ROT13
+  if (index_for_chars) > 25:
+    index_of_chars_thirteen = index_for_chars - 26
+    #print(chars[index_of_chars_thirteen])
+    result_output += (chars[index_of_chars_thirteen])  # new index of chars to be add to result_output
+    #print(result_output)
+    #print(result_output.join(chars[index_of_chars_thirteen]))
+  else:
+    #print(chars[index_for_chars])
+    result_output += (chars[index_for_chars])
+    #print(result_output)
+    #print(result_output.join(chars[index_for_chars]))
+
+print(result_output)
