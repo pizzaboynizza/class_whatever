@@ -48,16 +48,12 @@ def welcome():
     5: Exit
 Your option: """)
         if user_input == "1":
-            print("test. you entered 1")
             contact_add()
         elif user_input == "2":
-            print("test. you entered 2")
             contact_retrieve()
         elif user_input == "3":
-            print("test. you entered 3")
-            # contact_update()
+            contact_update()
         elif user_input == "4":
-            print("test. you entered 4")
             contact_delete()
         elif user_input == "5":
             print("Okay, bye.")
@@ -142,12 +138,43 @@ def contact_delete():
                 contact_actually.remove(name)
 
 
+def contact_update():
+    lookup = input("Enter contact name to update: ")
+    for name in contact_actually:
+        if name["name"] in lookup:
+            update_test = input(f"You want to update {name}. Is this correct? (Y/N): ")
+            if update_test.lower() in ["yes", "y"]:
+                update_item = input(f"""Items available to update for {name}:
+        1. Name
+        2. Favorite Game
+        3. Favorite Color
+        4. Infected Status
+        5. Exit (Done)
+Enter the number for the item you wish to update: """)
+                if update_item == "1":
+                    name["name"] = input("Type their new Name: ")
+                elif update_item == "2":
+                    name["favorite game"] = input("Type their new Favorite Game: ")
+                elif update_item == "3":
+                    name["favorite color"] = input("Type their new Favorite Color: ")
+                elif update_item == "4":
+                    name["infected?"] = input("Enter their current Infected Status (Yes/No): ")
+                elif update_item == "5":
+                    print("Okay, bye.")
+                else:
+                    print("something went wrong. try again.")
+            print(f"Contact is now {name}")
 
 
-# welcome()
+
+
+
+
+welcome()
 # contact_add()
 # contact_retrieve()
 # contact_delete()
+# contact_update()
 
 
 
