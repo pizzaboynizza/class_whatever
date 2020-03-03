@@ -11,7 +11,10 @@ nums2 = []
 
 while True:
 
+    user_input = input("pick a number:")
 
+    nums2.append(user_input)
+    print(nums2)
 
     if user_input == "done":
 

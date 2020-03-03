@@ -18,22 +18,22 @@ peaks_and_valleys(data)
 
 data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 
-def graph_peaks_and_valleys(data):
-#
-    for y in range(max(data), 0, -1):
-        for x in range(len(data)):
-            if data[x] >= y:
-                print("X ", end="")
-            else:
-                print("", end="")
-            print("")
-            for d in data:
-                if d < 10 and d > -1:
-                    print(f"{d}  ", end="")
-                else:
-                    print(f"{d} ", end="")
+# def graph_peaks_and_valleys(data):
+# #
+#     for y in range(max(data), 0, -1):
+#         for x in range(len(data)):
+#             if data[x] >= y:
+#                 print("X ", end="")
+#             else:
+#                 print("", end="")
+#             print("")
+#             for d in data:
+#                 if d < 10 and d > -1:
+#                     print(f"{d}  ", end="")
+#                 else:
+#                     print(f"{d} ", end="")
 
 
-graph_peaks_and_valleys(data)
+# graph_peaks_and_valleys(data)
 
 

@@ -26,13 +26,6 @@ def peaks_and_valleys(x):
 
 print(peaks_and_valleys(data))
 
-def between_peaks(x):
-    for i in x:
-        if x[i] in peaks(x):
-            return True
-    
-
-
 def print_mountains(x):
     for i in range(max(x), 0, -1):
         pr = ''
@@ -41,20 +34,8 @@ def print_mountains(x):
                 pr += 'X '
             elif x[j] != i:
                 pr += '  '
-            
-            
-                
-
-                
+                   
         print(pr)
-        # for i in range(0, len(x)):
-        #     print('X ' * x[i])
-    
-        # for i in range(len(print_xs)):
-        #     print(print_xs[i])
-        
-        
-
 
 print_mountains(data)
 

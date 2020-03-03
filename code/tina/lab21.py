@@ -2,10 +2,11 @@ import string
 
 
 
-# remove = dict.fromkeys(map(ord, '\n' + string.punctuation))
+# remove = (string.punctuation)
 with open("faith.txt", 'r') as inputfile:
     f = inputfile.read()
 count = {}
+two = {}
 f = f.lower()
 # removeing punctuation with maketrans
 trans = str.maketrans('','', string.punctuation)
@@ -18,6 +19,7 @@ stopwords = ['terms','know','see','like','ship','looked','said','cant','works','
 new_words = [word for word in word1 if word not in stopwords]
 
 
+
 # adding words to a dic with a key being the word and a value being +1 each time it seen
 for word in new_words:
     if word in count:
@@ -26,12 +28,11 @@ for word in new_words:
         count[word] = 1
 
 
+
 words = list(count.items()) 
 words.sort(key=lambda tup: tup[1], reverse=True) 
 for i in range(min(10, len(words))): 
     print(words[i])
 
-# print(count)
-# print('the'in count)
-# count['the'] +=1
-# print(count['the'])
+
+
