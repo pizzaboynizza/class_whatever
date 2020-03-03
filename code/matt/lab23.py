@@ -57,7 +57,7 @@ Your option: """)
             contact_delete()
         elif user_input == "5":
             print("Okay, bye.")
-            # close file (how?)
+            # contact_exit()
             break
         else:
             print("something went wrong. try again.")
@@ -166,10 +166,6 @@ Enter the number for the item you wish to update: """)
             print(f"Contact is now {name}")
 
 
-
-
-
-
 welcome()
 # contact_add()
 # contact_retrieve()
@@ -177,5 +173,16 @@ welcome()
 # contact_update()
 
 
+list_keys = []
+list_keys.append(list(contact_actually[0].keys()))
 
-# # Thoughts out-loud:
+for x in contact_actually:
+    list_keys.append(list(x.values()))
+
+unit_out = []
+for blah in list_keys:
+    unit_out.append(",".join(blah))
+
+lines_out = "\n".join(unit_out)
+with open('contacts.csv', 'w') as contact_list_file:
+    contact_list_file.write(lines_out)
