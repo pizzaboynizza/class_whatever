@@ -34,3 +34,7 @@ greet("Monica","Good morning!")
 # Insert at Index
 #tens.insert(1, teens)
 
+
+
+
+ # loop 100,000 times all different and all using 6 diff random  numbers
