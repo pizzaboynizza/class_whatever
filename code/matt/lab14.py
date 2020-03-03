@@ -44,11 +44,12 @@ def matching_num():
 
     combined = zip(player1, computer)
     combined2 = list(combined)
+    print(combined2)
 
     for x, y in combined2:
         if x == y:
             count += 1
-    # print(count)
+    print(count)
 
     if count == 0:
         # print(f"Losing ticket. Try again. Your current balance is ${balance}.")
@@ -76,9 +77,9 @@ def matching_num():
 times_run = 0
 while times_run <= 100000:
     matching_num()
-    if times_run%250==0:
-        print("test")
+    # if times_run%250==0:
+    #     print("test")
     times_run += 1
 if times_run == 100000:
     print("Done.")
-    print(f"Done. Balance is {balance}.")
+    # print(f"Done. Balance is {balance}.")

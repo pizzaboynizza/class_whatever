@@ -24,11 +24,8 @@ Convert a number to roman numerals.
 
 Convert a time given in hours and minutes to a phrase.
 '''
-while True:
-    org_num = input('Enter a number with up to two digits: ')
-    if org_num == 'done_rep':
-        break
-    
+def number_to_phrase(org_num):
+    #This block is for English 
     org_num = int(org_num)
     one_rep = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
     tenth_rep = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
@@ -38,8 +35,8 @@ while True:
     one_place = org_num % 10
     tenth_place = (org_num % 100) // 10
     hundredth_place = org_num // 100
-    print(hundredth_place, tenth_place, one_place)
-    print(hundredth_rep[hundredth_place], tenth_rep[tenth_place], one_rep[one_place])
+    # print(hundredth_place, tenth_place, one_place)
+    # print(hundredth_rep[hundredth_place], tenth_rep[tenth_place], one_rep[one_place])
     eng_rep = ''
     
     if tenth_place == 1:
@@ -56,5 +53,30 @@ while True:
             hundredth_rep[hundredth_place]
         else:
             eng_rep = hundredth_rep[hundredth_place] + ' and ' + eng_rep
-        
-    print(eng_rep)
+    return eng_rep
+
+while True:
+    # org_num = input('Enter a number with up to three digits: ')
+    org_num_hr = input('Enter the time in hours: ')
+    org_num_min = input('Enter the time in minutes: ')
+    if org_num_hr == 'done' or org_num_min == 'done':
+        break
+    
+    eng_rep_hr = number_to_phrase(org_num_hr)
+    eng_rep_min = number_to_phrase(org_num_min)
+
+    if eng_rep_min == '':
+        print(f'The time is {eng_rep_hr} o\'clock')
+    else:
+        print(f'The time is {eng_rep_hr} {eng_rep_min}')
+
+    #This block is for Roman numerals
+    # org_num = int(org_num)
+    # one_place = org_num % 10
+    # tenth_place = (org_num % 100) // 10
+    # hundredth_place = org_num // 100
+    # hundredth_rep = ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'XM']
+    # tenth_rep = ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC']
+    # one_rep = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX']
+    # roman_numeral_rep = hundredth_rep[hundredth_place] + tenth_rep[tenth_place] + one_rep[one_place]
+    # print(roman_numeral_rep)
