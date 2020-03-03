@@ -5,7 +5,6 @@ def peaks(x):
     for i in range(1, len(x)-1):
         if  x[i-1] < x[i] > x[i+1]:
             peaks.append(i)
-
     return peaks
 
 print(peaks(data))
@@ -26,16 +25,5 @@ def peaks_and_valleys(x):
 
 print(peaks_and_valleys(data))
 
-def print_mountains(x):
-    for i in range(max(x), 0, -1):
-        pr = ''
-        for j in range(len(x)):
-            if x[j] >= i :
-                pr += 'X '
-            elif x[j] != i:
-                pr += '  '
-                   
-        print(pr)
 
-print_mountains(data)
 
