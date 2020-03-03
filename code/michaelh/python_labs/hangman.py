@@ -35,7 +35,7 @@ Guess a letter:
 import random
 def load_long_words():
     filename = 'dictionary.txt'
-    with open('/home/michael/Desktop/pdxcode/class_whatever/code/michaelh/python_labs/'+filename, 'r') as f:
+    with open(filename, 'r') as f:
         contents = f.read()
     words = contents.split('\n')
     long_words = []
@@ -44,13 +44,28 @@ def load_long_words():
             long_words.append(word)
     return long_words
 
-words = load_long_words()
+def check_guess(guess_char, rand_word):
+    if guess_char in rand_word:
+        for i in range(len(rand_word)):
+            if guess_char not in guesses and guess_char == rand_word[i]:
+                display_str[i] = display_str[i].replace(display_str[i], guess_char)
+    guesses.append(guess_char)
+    return display_str     
+        # print(''.join(display_str))
 
-rand_word = random.choice(words)
+words = load_long_words()
+rand_word = list(random.choice(words))
 print(rand_word)
-print('*'*len(rand_word))
+display_str = list('*'*len(rand_word))
+print(display_str)
+
+guesses = []
 guess_char = input('What is a letter in the word? ')
-if guess_char in rand_word
+
+check_guess(guess_char, rand_word)
+print(''.join(display_str))
+print(guesses)
+
     
 # print(words[0])
 # print(len(words))
