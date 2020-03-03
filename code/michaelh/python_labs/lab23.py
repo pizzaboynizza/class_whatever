@@ -43,58 +43,81 @@ def create_initial_list(attributes, contacts):
         contact_list.append(cur_contact)
     return contact_list
 
+def is_in_contacts(contact_list, first_name):
+    for contact in contact_list:
+        if contact[attributes[0]] == first_name:
+            return True
+    return False
+
 def create(contact_list, attributes):
     cur_contact = {}
-    for attribute in attributes:
-        cur_contact[attribute] = input(f'What is the contact\'s {attribute}? ')
+    cur_contact[attributes[0]] = first_name
+    for i in range(1, len(attributes)):
+        cur_contact[attributes[i]] = input(f'What is the contact\'s {attributes[i]}? ').lower()
     contact_list.append(cur_contact)
 
-def retrieve(contact_list, attributes):
-    first_name = input(f'What is the contact\'s {attributes[0]}? ')
+def retrieve(contact_list, attributes, first_name):
     for contact in contact_list:
         if contact[attributes[0]] == first_name:
             for i in range(1, len(attributes)):
-                print(f'{contact[attributes[0]]}\'s {attributes[i]} is {contact[attributes[i]]}')
+                print(f'{contact[attributes[0]].capitalize()}\'s {attributes[i]} is {contact[attributes[i]].capitalize()}')
 
-def update(contact_list, attributes):
-    first_name = input(f'What is the contact\'s {attributes[0]}? ')
-    attribute_to_update = input(f'What would you like to update? ')
+
+def update(contact_list, attributes, first_name, attribute_to_update):
     for contact in contact_list:
         if contact[attributes[0]] == first_name and attribute_to_update in attributes:
-            contact[attribute_to_update] = input(f'Enter the new {attribute_to_update}: ')
+            contact[attribute_to_update] = input(f'Enter the new {attribute_to_update}: ').lower()
 
-def delete(contact_list, attributes):
-    first_name = input(f'What is the contact\'s {attributes[0]}? ')
+def delete(contact_list, attributes, first_name):
     for i, contact in enumerate(contact_list):
         if contact[attributes[0]] == first_name:
             contact_list.pop(i)
 
 filename = 'contacts.csv'
 with open('/home/michael/Desktop/'+filename, 'r') as f:
-    contents = f.read()
+    contents = f.read().lower()
 attributes = contents.split('\n')[0]
 contacts = contents.split('\n')[1:len(contents)]
 contact_list = create_initial_list(attributes, contacts)
 
 attributes = attributes.split(',')
 while True:
-    REPL_function = input('How would you like to alter your contact list? ')
-    REPL_function = REPL_function.lower()
+    REPL_function = input('How would you like to alter your contact list? ').lower()
+    REPL_function = REPL_function
     if REPL_function == 'done':
         break
+    
     elif REPL_function == 'create':
-        create(contact_list, attributes)
-    elif REPL_function == 'retrieve':
-        retrieve(contact_list, attributes)
-    elif REPL_function == 'update':
-        update(contact_list, attributes)
-    elif REPL_function == 'delete':
-        delete(contact_list, attributes)
+        first_name = input(f'What is the contact\'s {attributes[0]}? ').lower()
+        while is_in_contacts(contact_list, first_name):
+            print(f'There already exists a contact with the {attributes[0]} {first_name}.')
+            first_name = input(f'What is the contact\'s {attributes[0]}? ').lower()
+        create(contact_list, attributes, first_name)
+
+    elif REPL_function == 'retrieve' or REPL_function == 'update' or REPL_function == 'delete':
+        first_name = input(f'What is the contact\'s {attributes[0]}? ').lower()
+        while not is_in_contacts(contact_list, first_name):
+            print(f'There is no contact with the {attributes[0]} {first_name}.')
+            first_name = input(f'What is the contact\'s {attributes[0]}? ').lower()
+
+        if REPL_function == 'retrieve':
+            retrieve(contact_list, attributes, first_name)
+
+        elif REPL_function == 'update':
+            attribute_to_update = input(f'What would you like to update? ').lower()
+            while attribute_to_update not in attributes:
+                print(f'That is not a valid attribute.')
+                attribute_to_update = input(f'What would you like to update? ').lower()
+            update(contact_list, attributes, first_name, attribute_to_update)
+
+        else:
+            delete(contact_list, attributes, first_name)
     else:
         print('Enter \"create\", \"retrieve\", \"update\", \"delete\" or \"done\".')
+    
 
 save_str = ','.join(attributes)
-print(contact_list)
+# print(contact_list)
 for contact in contact_list:
     save_str += '\n'
     for i, attribute in enumerate(attributes):
