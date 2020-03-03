@@ -49,5 +49,8 @@ words = load_long_words()
 rand_word = random.choice(words)
 print(rand_word)
 print('*'*len(rand_word))
+guess_char = input('What is a letter in the word? ')
+if guess_char in rand_word
+    
 # print(words[0])
 # print(len(words))
