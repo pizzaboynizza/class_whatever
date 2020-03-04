@@ -16,6 +16,7 @@ with open('contacts copy.csv', 'r') as file:
     def new_contact():
         user_input = [input("What is your name?"),input("Favorote fruit?"), input("Favorite color?")]
         newcontact = dict(zip(key_value, user_input))
+        print(newcontact)
 
     def retrieve_info():
 
@@ -45,5 +46,41 @@ with open('contacts copy.csv', 'r') as file:
         user_input = input("Which user would you like to remove?") 
         del user_input
 
+new_contact()
+
+# def convert_to_list()
+
+# new_contact = {(key_value: user_input), (key_value: user_input), (key_value: user_input)}
+# d1.items()
+# dict_items([(key_value: user_input), (key_value: user_input), (key_value: user_input)])
+# l1 = list(d1.items())
+# l1
+# [(key_value: user_input), (key_value: user_input), (key_value: user_input)]
+# d1.keys()
+# dict_keys([key_value, key_value, key_value])
+#  l2 = list(d1.keys())
+# l2
+# [user_input, user_input, user_input]
+# l3 = list(d1.values())
+# l3
+# ['Ravi', 23, 56]
+
+dict_one = contacts.keys()
+print(dict_one)
+
+for contact in contacts:
+        dict_two= contacts.values()
+        row = row.join(",")
+        row = lines[line]
+        key_value = key_value.join(",")
+        key_value = lines[0]
+        
+        
+        
+        
+        contacts.append(row)
+        
+        
+
 with open('contacts copy.csv', 'w') as contacts_copy_two:
-    contacts_copy_two.write('contacts copy.csv'
+   contacts_copy_two.close()
