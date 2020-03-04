@@ -54,7 +54,7 @@ def update_contact():
     up = input("Who do you want to update? ")
     change = input("What do you want to update?: ")
     new_change = input("What is the new info? ")
-
+# running a for loop to look thought each item in the list of dic to compaire the names with the keys
     for duck in con2:
         if duck['name'] == up:
             if change in duck:

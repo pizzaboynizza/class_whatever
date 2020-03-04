@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw
+
 width = 500
 height = 500
 
@@ -9,8 +10,6 @@ draw = ImageDraw.Draw(img)
 
 
 draw.rectangle(((0, 0), (width, height)), fill= "green")
-
-draw.rectangle(((100, 50), (width, height)), fill= "pink")
 
 
 circle_x = width/2
@@ -28,7 +27,11 @@ draw.line((width/2, height/2, width/2 + (width/5), height/2 - (width/3)), fill='
 
 
 
-draw.rectangle((width/2, height/5 + 50, width/2, height/2), fill= 'black')
-
-
+draw.line((width/2, height/5 + 50, width/2, height/2), fill= 'black')
 img.show()
+
+
+
+
+
+
