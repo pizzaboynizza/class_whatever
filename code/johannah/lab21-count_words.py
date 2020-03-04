@@ -21,14 +21,14 @@ split by spaces to strip punctuation
 
 
 # 1. open file
-with open('midsummer-night-dream.txt') as midsummer_file:
-    midsummer_data = midsummer_file.read().split('\n')
+with open('midsummer-night-dream.txt', 'r') as f:
+    contents = f.read()
+    for line in f:
+        lines = line.lower()
+    print(lines)
 
-midsummer_night_dream = {}
-for line in midsummer_data:
-    name, number = line.split() #####################################
-    phone_book[name] = number  #####################################
-# make everything lowercase
+# 2. make everything lowercase, strip punctuation, split into a list of words
+# lowercase
 
 # strip punctuation
 import string
