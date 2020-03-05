@@ -33,7 +33,6 @@ class ATM:
             return False
 
     def withdraw(self, test_amount):
-        # self.check_withdrawal(test_amount)
         if self.check_withdrawal(test_amount) == True:
             self.balance -= test_amount
             transactions.append(f"Withdrew ${test_amount} from account.")
@@ -48,7 +47,6 @@ class ATM:
         print("Transaction History:")
         for entry in transactions:
             print(entry)
-        # print(", ".join(transactions))
 
 account = ATM(0)
 transactions = []
