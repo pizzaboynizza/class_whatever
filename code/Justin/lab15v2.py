@@ -75,65 +75,86 @@ def convert_to_english(num):
             b = "ninety"
             print(b) 
 
-        if ones_digit == 0 and tens_digit == 1:
-            print("ten")
+        d = ''
 
-        elif ones_digit == 1 and tens_digit == 1:
-            print("eleven")
+        if ones_digit == 0 and tens_digit_two == 1:
+            d = "ten"
+            print(d)
 
-        elif ones_digit == 2 and tens_digit == 1:
-            print("twelve")
+        elif ones_digit == 1 and tens_digit_two == 1:
+            d = "eleven"
+            print(d)
 
-        elif ones_digit == 3 and tens_digit == 1:
-            print("thirteen")
+        elif ones_digit == 2 and tens_digit_two == 1:
+            d = "twelve"
+            print(d)
 
-        elif ones_digit == 4 and tens_digit == 1:
-            print("fourteen")
+        elif ones_digit == 3 and tens_digit_two == 1:
+            d = "thirteen"
+            print(d)
 
-        elif ones_digit == 5 and tens_digit == 1:
-            print("fifteen")
+        elif ones_digit == 4 and tens_digit_two == 1:
+            d = "fourteen"
+            print(d)
 
-        elif ones_digit == 6 and tens_digit == 1:
-            print("sixteen")
+        elif ones_digit == 5 and tens_digit_two == 1:
+            d = "fifteen"
+            print(d)
 
-        elif ones_digit == 7 and tens_digit == 1:
-            print("seventeen")
+        elif ones_digit == 6 and tens_digit_two == 1:
+            d = "sixteen"
+            print(d)
 
-        elif ones_digit == 8 and tens_digit == 1:
-            print("eighteen")
+        elif ones_digit == 7 and tens_digit_two == 1:
+            d = "seventeen"
+            print(d)
 
-        elif ones_digit == 9 and tens_digit == 1:
-            print("nineteen")
+        elif ones_digit == 8 and tens_digit_two == 1:
+            d = "eighteen"
+            print(d)
+
+        elif ones_digit == 9 and tens_digit_two == 1:
+            d = "nineteen"
+            print(d)
 
         a = ''
         if ones_digit == 1:
             a = "one"
+            print(a)
 
         elif ones_digit == 2:
             a = "two"
+            print(a)
 
         elif ones_digit == 3:
             a = "three"
+            print(a)
 
         elif ones_digit == 4:
             a = "four"
+            print(a)
 
         elif ones_digit == 5:
             a = "five"
+            print(a)
 
         elif ones_digit == 6:
             a = "six"
+            print(a)
 
         elif ones_digit == 7:
             a = "seven"
+            print(a)
 
         elif ones_digit == 8:
             a = "eight"
+            print(a)
 
         elif ones_digit == 9:
             a = "nine"
+            print(a)
 
         elif ones_digit == 0:
             print(" ")
 
-convert_to_english(320)
+convert_to_english(309)
