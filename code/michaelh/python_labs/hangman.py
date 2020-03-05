@@ -50,22 +50,55 @@ def check_guess(guess_char, rand_word):
             if guess_char not in guesses and guess_char == rand_word[i]:
                 display_str[i] = display_str[i].replace(display_str[i], guess_char)
     guesses.append(guess_char)
-    return display_str     
+    result = display_str   
+    return result  
         # print(''.join(display_str))
 
 words = load_long_words()
 rand_word = list(random.choice(words))
-print(rand_word)
+# print(rand_word)
 display_str = list('*'*len(rand_word))
-print(display_str)
+# print(display_str)
+# _____
+#      |
+#      |
+#      |
+#      O
+#     V|V
+#      |
+#      |
+#     / \
+#    /   \
+
+# 
+# check_guess(guess_char, rand_word)
+# print(''.join(display_str))
+# print(guesses)
+hangman = ['     /   \\','      / \\','       |','       |', '      V|V', '       O', '       |','       |', '       |', '    _____']
 
 guesses = []
-guess_char = input('What is a letter in the word? ')
-
-check_guess(guess_char, rand_word)
-print(''.join(display_str))
-print(guesses)
-
-    
+num_guess=10
+dummy = ''
+while num_guess>0:
+    check=display_str.copy()
+    print(''.join(display_str))
+    print(f'Remaining Guesses: {num_guess}')
+    guesses_print = ', '.join(guesses)
+    print(f'Already Guessed: {guesses_print}')
+    print(dummy)
+    guess_char = input('What is a letter in the word? ')
+    if guess_char not in guesses:
+        check_guess(guess_char, rand_word)
+        if check == display_str:
+            num_guess -=1
+            dummy += hangman[num_guess] + '\n'
+    else:
+        print('You have already guessed that letter.')
+    if display_str == rand_word:
+        print('You win!')
+        break     
+else:
+    print('You lost!')
+    print(dummy)
 # print(words[0])
 # print(len(words))
