@@ -2,8 +2,6 @@
 
 #print(nums[2::])
 
-from turtle import *
-
 #fillcolor('blue')
 #speed(10)
 
@@ -21,16 +19,26 @@ from turtle import *
 
 #done()
 
-nums = []
+# nums = []
 
-while True:
+# while True:
 
-	user_input = input("enter a number, or 'done':")
+# 	user_input = input("enter a number, or 'done':")
 
-	nums.append(user_input)
+# 	nums.append(user_input)
 
-	total = 0
-	for num in nums:
-		total += num
+# 	total = 0
+# 	for num in nums:
+# 		total += num
 
-print(total/len(nums))
+# print(total/len(nums))
+
+user_input = ("Enter a guess:")
+
+list = [a, b, c, d, e]
+
+blanks = [_, _, _, _, _]
+
+for x in blanks:
+	if user_input in list:
+	print(index(list))
