@@ -1,9 +1,9 @@
 
 def convert_to_english(num):
-    if 0 <= num <= 999:
-        hundreds_digit = (num//100)
+    if 0 <= num <= 99:
         tens_digit = (num//10)
-        ones_digit = (num%10)
+        
+#         print(ones_digit)
 
     if ones_digit == 0 and tens_digit == 1:
         print("ten")
@@ -98,50 +98,4 @@ def convert_to_english(num):
         b = "ninety"
         print("ninety" + a)
 
-    c = ''
-    if hundreds_digit == 1:
-        c = "one hundred" 
-        print(c + b + a)
-
-    elif hundreds_digit == 2:
-        c = "two hundred"
-        print(c + b + a)
-
-    elif hundreds_digit == 3:
-        c = "three hundred"
-        print(c)
-
-    elif hundreds_digit == 4:
-        c = "four hundred"
-        print(c)
-
-    elif hundreds_digit == 5:
-        c = "five hundred"
-        print(c)
-
-    elif hundreds_digit == 6:
-        c = "six hundred"
-        print(c)
-
-    elif hundreds_digit == 7:
-        c = "seven hundred"
-        print(c)
-
-    elif hundreds_digit == 8:
-        c = "eight hundred"
-        print(c)
-
-    elif hundreds_digit == 9:
-        c = "nine hundred"
-        print(c)
-
-convert_to_english(220)
-
-
-
-
-
-
-
-
-
+convert_to_english(99)
