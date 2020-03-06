@@ -9,7 +9,6 @@
 8. If that matches the check digit, the whole card number is valid.
 '''
 
-
 nums = []
 while True:
   user_input = input("Enter your credit card number one number at a time and then press a blank enter when complete: ")
@@ -17,26 +16,34 @@ while True:
     nums.append(int(user_input))
   else:
     break
-#print(nums.append(float(user_input)))
 print(nums)
+# 2. Slice off the last digit. That is the check digit
 nums_sliced = nums[0:-1]
 print(nums_sliced)
+# 3. Reverse the digits
 nums_reversed = nums_sliced[::-1]
 print(nums_reversed)
 # 4. Double every other element in the reversed list
-double_second = (nums_reversed[0::2])*2
-#[0:-1:2]
-#[x*2 for x in range(10)]
-print(double_second)
-
-'''
-items=[]
-i=0
-while 1:
-    i+=1
-    item=input('Enter item %d: '%i)
-    if item=='':
-        break
-    items.append(item)
-print(items)
-'''
+for i in range(0,len(nums_reversed),2):
+    nums_reversed[i] *= 2
+print(nums_reversed)
+# 5. Subtract nine from numbers over nine.
+for i in range(len(nums_reversed)):
+    if nums_reversed[i] > 9:
+        nums_reversed[i] -= 9
+print(nums_reversed)
+# 6. Sum all values
+sum_vals = sum(nums_reversed)
+print(sum_vals)
+# 7. Take the second digit of that sum.
+string_sum = str(sum_vals)
+second_digit = string_sum[1]
+print(second_digit)
+# 8. If that matches the check digit (the last digit from step 1), the whole card number is valid
+check_digit = str(nums[-1])
+# print(type(check_digit))
+# print(type(second_digit))
+if second_digit == check_digit:
+    print("Valid!")
+else:
+    print("Sorry that is invalid.")
