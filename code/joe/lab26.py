@@ -66,7 +66,7 @@ while play_again:
         else:
             current_player = player2
         
-        user_in = input(f"{current_player.name}, pick a spot (row col ; 0,0 is top left): ")
+        user_in = input(f"{current_player.name}, pick a spot (row col ; 0 0 is top left): ")
         user_in = user_in.split()
         if len(user_in) != 2:
             print("Invalid input!")
