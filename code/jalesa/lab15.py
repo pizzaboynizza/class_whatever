@@ -19,7 +19,7 @@ collection = {1:"one", 2:"two", 3:'three', 4:"four", 5:"five",
 70:"seventy", 80:"eighty", 90:"ninety", 100:"onehundred", 
 200:"two-hundred", 300: "three-hundred", 400:"four-hundred", 
 500:"five-hundred", 600:"six-hundred", 700:"seven-hundred",
-800:"eight-hundred", 900:"nine-hundred", 1000:"one-thousand"
+800:"eight-hundred", 900:"nine-hundred"
 }
 
 user_input = int(input("Enter a number 0-99: "))
