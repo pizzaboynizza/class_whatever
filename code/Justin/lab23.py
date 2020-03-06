@@ -1,4 +1,4 @@
-with open('contacts copy.csv', 'r') as file:
+with open('contacts_copy.csv', 'r') as file:
     lines = file.read().split('\n')
     # print(lines)
 
@@ -13,10 +13,35 @@ with open('contacts copy.csv', 'r') as file:
         contacts.append(row)
     print(contacts) #this makes your dict
 
+    def export():
+        global contacts
+        list_w = []
+        contacts[0].values()
+        list(contacts[0].values()) 
+        list(contacts[0].values())
+        contacts[0].keys()
+        ",".join(contacts[0].keys())
+        ",".join(contacts[0].values())
+
+
+        for contact in range(len(contacts)):
+            list_w.append(",".join(contacts[contact].values()))
+            '\n'.join(list_w)
+            # row = lines[line]
+            # key_value = key_value.join(",")
+            # key_value = lines[0]
+            # contacts.append(row)
+            
+            
+
+        with open('contacts_copy.csv', 'w') as contacts_copy:
+            contacts_copy.write("\n".join(list_w))
+
     def new_contact():
         user_input = [input("What is your name?"),input("Favorote fruit?"), input("Favorite color?")]
         newcontact = dict(zip(key_value, user_input))
-        print(newcontact)
+        contacts.append(newcontact)
+        export()
 
     def retrieve_info():
 
@@ -31,22 +56,22 @@ with open('contacts copy.csv', 'r') as file:
 
     def change_info():
 
-        user_input = input("What is the user's name?")
+        input("Would you like to change their info?")
 
-        output = input("What's their favorite fruit?")
-        output_two = input("What's their favorite color?")
+        user_input = input("What is their name?")
+       
+        for x in contacts:
+           return user_input
+           print(user_input)
 
-        fruit = user_input_two = {'Justin': output, 'Billy': output, 'James': output, "Pickles": output, "Pinnochio": output}
-
-        color = user_input_three = {"Justin": output_two, "Billy": output_two, "James": output_two, "Pickles": output_two, "Pinnochio": output_two}
-
-        print(output + (" ") + output_two)
+        export()
 
     def remove_user():
         user_input = input("Which user would you like to remove?") 
         del user_input
+        export()
 
-new_contact()
+change_info()
 
 # def convert_to_list()
 
@@ -65,22 +90,7 @@ new_contact()
 # l3
 # ['Ravi', 23, 56]
 
-dict_one = contacts.keys()
-print(dict_one)
+# dict_one = contacts.keys()
+# print(dict_one)
 
-for contact in contacts:
-        dict_two= contacts.values()
-        row = row.join(",")
-        row = lines[line]
-        key_value = key_value.join(",")
-        key_value = lines[0]
-        
-        
-        
-        
-        contacts.append(row)
-        
-        
-
-with open('contacts copy.csv', 'w') as contacts_copy_two:
-   contacts_copy_two.close()
+    
