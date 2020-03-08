@@ -56,28 +56,28 @@ while times_played < 100:
 # print(f"Your lottery ticket numbers are {lottery_ticket}")
 
 
-# if lottery_ticket[i] == winning_ticket[i]:
-if lottery_ticket[0] == winning_ticket[0]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[1] == winning_ticket[1]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[2] == winning_ticket[2]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[3] == winning_ticket[3]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[4] == winning_ticket[4]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[5] == winning_ticket[5]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-# DO I NEED TO LOOP THROUGH THIS 100,000 TIMES OR PUT IT IN THE WHILE OR FOR LOOP???
-else:
-    print(f"Sorry, you have {matches} matches")  # this should read "0 times"
+    # if lottery_ticket[i] == winning_ticket[i]:
+    if lottery_ticket[0] == winning_ticket[0]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[1] == winning_ticket[1]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[2] == winning_ticket[2]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[3] == winning_ticket[3]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[4] == winning_ticket[4]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[5] == winning_ticket[5]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    # DO I NEED TO LOOP THROUGH THIS 100,000 TIMES OR PUT IT IN THE WHILE OR FOR LOOP???
+    else:
+        print(f"Sorry, you have {matches} matches")  # this should read "0 times"
 
 
 

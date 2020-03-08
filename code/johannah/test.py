@@ -37,4 +37,10 @@ greet("Monica","Good morning!")
 
 
 
- # loop 100,000 times all different and all using 6 diff random  numbers
+# loop 100,000 times all different and all using 6 diff random  numbers
+
+
+
+from collections import Counter
+z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+print(Counter(z))
