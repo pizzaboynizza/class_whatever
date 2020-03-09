@@ -44,39 +44,55 @@ with open('contacts.csv', 'r') as file:
         with open('contacts.csv', 'w') as contacts:
             contacts.write("\n".join(list_w))
 
-    def new_contact():
+    def create_contact():
         user_input = [input("What is your name?"),input("Favorote fruit?"), input("Favorite color?")]
         newcontact = dict(zip(key_value, user_input))
         contacts.append(newcontact)
         export()
 
-    def retrieve_info():
+    def read_contact():
 
-        user_input = input("What is your name?")
+        user_input = input("What is the contact?")
 
         user_input_two = {'Justin': "Pineapple", 'Billy': "Apple", 'James': "Orange", "Pickles": "Peach", "Pinnochio": "Apricot"}
 
         user_input_three = {"Justin": "Orange", "Billy": "Red", "James": "Blue", "Pickles": "Pink", "Pinnochio": "Green"}
 
-        # if user_input in user_input_two:
-        #     print(str(user_input_two[user_input] + (" ") + user_input_three[user_input]))
+        if user_input in user_input_two:
+            print(str(user_input_two[user_input] + (" ") + user_input_three[user_input]))
+        for result in data_results:
+            for key, value in result.items():
+                print(f'{key}: {value}')
+            print('')
+    # def update_contact():
 
-    def change_info():
+    #     input("Would you like to change their info?")
 
-        input("Would you like to change their info?")
+    #     user_input = input("What is their name?")
 
-        user_input = input("What is their name?")
+    #     user_input_two = input("What is their favorite fruit?")
 
-        user_input_two = input("What is their favorite fruit?")
+    #     user_input_three = input("What is their favorite color?")
 
-        user_input_three = input("What is their favorite color?")
+        for result in data_results:
+            for key, value in result.items():
+                print(f'{key}: {value}')
+            print('')
 
-        export()
+            index_to_update = int(input(f'Which entry do you want to update? (1-{len(data_results)})')) - 1
+            key_to_update = input(f'Which key do you want to update? {keys}')
+            value_to_update = input(f'What do you want to change {key_to_update} to?')
+            [index_to_update][key_to_update] = value_to_update
+    #     export()
 
-    def remove_user():
-        del lines[2]
-        print(lines[2])
-        export()
+    # def delete_contact():
+    #     del lines[2]
+    #     print(lines[2])
+    #     export()
+
+    data_results = read_contacts(data, keys)
+    index_to_delete
+    data.remove(data_results[index_to_delete])
 
 # def convert_to_list()
 
@@ -98,6 +114,20 @@ with open('contacts.csv', 'r') as file:
 # dict_one = contacts.keys()
 # print(dict_one)
 
-remove_user()
-export()
+while True:
+    user_input = input("create, read, update, delete, quit?")
+    if user_input == 'quit':
+        break
+    elif user_input == 'create':
+        create_contact(data, keys)
+    elif user_input == 'read':
+        read_contact(data, keys)
+    elif user_input == 'update':
+        update_contact(data, keys)
+    elif user_input == 'delete':
+        delete_contact(data,keys)
+
+
+
+read_contact()
     
