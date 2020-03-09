@@ -35,11 +35,10 @@ When REPL loop finishes, write the updated contact info to the CSV file to be sa
 '''
 def create_initial_list(attributes, contacts):
     contact_list = []
-    num_attributes = len(attributes.split(','))
     for contact in contacts:
         cur_contact = {}
-        for j in range(num_attributes):
-            cur_contact[attributes.split(',')[j]] = contact.split(',')[j]
+        for j in range(len(attributes)):
+            cur_contact[attributes[j]] = contact.split(',')[j]
         contact_list.append(cur_contact)
     return contact_list
 
@@ -59,8 +58,13 @@ def create(contact_list, attributes):
 def retrieve(contact_list, attributes, first_name):
     for contact in contact_list:
         if contact[attributes[0]] == first_name:
+            str_info = f'{contact[attributes[0]].capitalize()}\'s '
             for i in range(1, len(attributes)):
-                print(f'{contact[attributes[0]].capitalize()}\'s {attributes[i]} is {contact[attributes[i]].capitalize()}')
+                if i == len(attributes) - 1:
+                    str_info += f'and {attributes[i]} is {contact[attributes[i]].capitalize()}.'
+                else:
+                    str_info += f'{attributes[i]} is {contact[attributes[i]].capitalize()}, '    
+            print(str_info)
 
 
 def update(contact_list, attributes, first_name, attribute_to_update):
@@ -78,15 +82,18 @@ with open('/home/michael/Desktop/'+filename, 'r') as f:
     contents = f.read().lower()
 attributes = contents.split('\n')[0]
 contacts = contents.split('\n')[1:len(contents)]
-contact_list = create_initial_list(attributes, contacts)
-
 attributes = attributes.split(',')
+contact_list = create_initial_list(attributes, contacts)
+print(list(contact_list[0].keys()))
+
 while True:
     REPL_function = input('How would you like to alter your contact list? ').lower()
-    REPL_function = REPL_function
     if REPL_function == 'done':
         break
     
+    elif REPL_function != 'create' and REPL_function != 'retrieve' and REPL_function != 'update' and REPL_function != 'delete':
+        print('Enter \"create\", \"retrieve\", \"update\", \"delete\" or \"done\".')
+
     elif REPL_function == 'create':
         first_name = input(f'What is the contact\'s {attributes[0]}? ').lower()
         while is_in_contacts(contact_list, first_name):
@@ -94,7 +101,8 @@ while True:
             first_name = input(f'What is the contact\'s {attributes[0]}? ').lower()
         create(contact_list, attributes, first_name)
 
-    elif REPL_function == 'retrieve' or REPL_function == 'update' or REPL_function == 'delete':
+    else:
+        check = contact_list
         first_name = input(f'What is the contact\'s {attributes[0]}? ').lower()
         while not is_in_contacts(contact_list, first_name):
             print(f'There is no contact with the {attributes[0]} {first_name}.')
@@ -111,13 +119,9 @@ while True:
             update(contact_list, attributes, first_name, attribute_to_update)
 
         else:
-            delete(contact_list, attributes, first_name)
-    else:
-        print('Enter \"create\", \"retrieve\", \"update\", \"delete\" or \"done\".')
-    
+            delete(contact_list, attributes, first_name)  
 
 save_str = ','.join(attributes)
-# print(contact_list)
 for contact in contact_list:
     save_str += '\n'
     for i, attribute in enumerate(attributes):

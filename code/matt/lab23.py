@@ -48,20 +48,16 @@ def welcome():
     5: Exit
 Your option: """)
         if user_input == "1":
-            print("test. you entered 1")
             contact_add()
         elif user_input == "2":
-            print("test. you entered 2")
             contact_retrieve()
         elif user_input == "3":
-            print("test. you entered 3")
-            # contact_update()
+            contact_update()
         elif user_input == "4":
-            print("test. you entered 4")
             contact_delete()
         elif user_input == "5":
             print("Okay, bye.")
-            # close file (how?)
+            # contact_exit()
             break
         else:
             print("something went wrong. try again.")
@@ -142,13 +138,51 @@ def contact_delete():
                 contact_actually.remove(name)
 
 
+def contact_update():
+    lookup = input("Enter contact name to update: ")
+    for name in contact_actually:
+        if name["name"] in lookup:
+            update_test = input(f"You want to update {name}. Is this correct? (Y/N): ")
+            if update_test.lower() in ["yes", "y"]:
+                update_item = input(f"""Items available to update for {name}:
+        1. Name
+        2. Favorite Game
+        3. Favorite Color
+        4. Infected Status
+        5. Exit (Done)
+Enter the number for the item you wish to update: """)
+                if update_item == "1":
+                    name["name"] = input("Type their new Name: ")
+                elif update_item == "2":
+                    name["favorite game"] = input("Type their new Favorite Game: ")
+                elif update_item == "3":
+                    name["favorite color"] = input("Type their new Favorite Color: ")
+                elif update_item == "4":
+                    name["infected?"] = input("Enter their current Infected Status (Yes/No): ")
+                elif update_item == "5":
+                    print("Okay, bye.")
+                else:
+                    print("something went wrong. try again.")
+            print(f"Contact is now {name}")
 
 
-# welcome()
+welcome()
 # contact_add()
 # contact_retrieve()
 # contact_delete()
+# contact_update()
 
 
+list_keys = []
+list_keys.append(list(contact_actually[0].keys()))
 
-# # Thoughts out-loud:
+for x in contact_actually:
+    list_keys.append(list(x.values()))
+
+unit_out = []
+for blah in list_keys:
+    unit_out.append(",".join(blah))
+
+lines_out = "\n".join(unit_out)
+with open('contacts.csv', 'w') as contact_list_file:
+    contact_list_file.write(lines_out)

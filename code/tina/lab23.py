@@ -5,7 +5,9 @@
 
 
 contact = []
+# open csv contact withopen as file
 with open("contact.csv", 'r') as file:
+    #split the lines in the file
     lines = file.read().split('\n')
     
     con2 = []
@@ -18,15 +20,12 @@ with open("contact.csv", 'r') as file:
     
       
     for thing in contact:
+        #zip the leys with values and looping thought them
         con = dict(zip(contact[0],thing))
         con2.append(con)
     del con2[0]
 
-
-
-# print("this is con2", con2)
-
-
+# This is a fuc to add a new contact to the csv
 def add_contact():
     name = input("Name: ")
     game = input("Game: ")
@@ -40,122 +39,88 @@ def add_contact():
         else:
             add = True
     if add:
-        con2.append({name:'name', game:'game',pet:'pet'})
-   
+        con2.append({'name':name, 'game':game,'pet':pet})
 
-
+# this is how you look up a name in the csv file
 def retrieve():
     ret = input("Name: ")
     for eve in con2:
         if eve['name'] == ret:
-            print(eve)
-        
-         
-            
+            print(eve)                 
+
+#how to update a contact within the csv
 def update_contact():
-    print("Update a contact, Name-Game-Pet")
+    print("Update a contact,Pick what one you want to update Name, Game and Pet")
     up = input("Who do you want to update? ")
     change = input("What do you want to update?: ")
-    new_name = input("What is the new Name? ")
-
+    new_change = input("What is the new info? ")
+# running a for loop to look thought each item in the list of dic to compaire the names with the keys
     for duck in con2:
         if duck['name'] == up:
             if change in duck:
-                duck[change] == new_name
-                print(duck[change])
-                print(new_name)
+                duck[change] = new_change
 
-
-            # if change == 'name':
-                
-            #     new_name = input("What is the new Name? ")             
-            #     con2['name'] = new_name 
-            #     print("This change the name")
-            # elif change == 'game':
-            #     new_game = input("What is the new game? ")
-            #     con2[0]['game'] = new_game
-            #     print("this is game")
-            # elif change == 'pet':
-            #     new_pet = input("What is the new pet? ")
-            #     con2[0]['pet'] = new_pet      
-            #     print("this is pet")
-        
-
-
-        
-            
-
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-print("Create a record: c","Retrieve a record: r","Update a record: u","Delete a record: d")   
-user = input("What do you want to do?" )
+# how to delete a contact with in the csv
+def delete():
+    print("What contact do you want to delete?")
+    dele = input("Who do you want to delete? ")
+    for life in con2:
+        if life['name'] in dele:
+            con2.remove(life)
 
 
 while True:
+#this loop thought the whole loop
+    print("Create a record: c","Retrieve a record: r","Update a record: u","Delete a record: d")
+    print(f"This is the curret address book {con2}")   
+    user = input("What do you want to do?" )
+    
+
     if user == 'c':
         add_contact()
         print('Create a record')
-        print(con2)
-        break
-
-
     elif user == 'r':
         retrieve()
         print('Retrive a record')
-        break
-
-
     elif user == 'u':
         update_contact()
         print('Update a record')
-        print(con2)
-        break
-
-
-
     elif user == 'd':
+        delete()
         print("Delete a record")
+    elif user == 'no':
         break
+        
 
 
-
+with open("contact.csv", 'w') as file:
+    newcon = []
+    djoin = []
+    jd = []
+    done = []
+    newcon.append(list(con2[0].keys()))
     
-# def add_contact():
-#     name = input("Name: ")
-#     game = input("Game: ")
-#     pet = input("Pet: ")
-#     add = False
-#     for i in con2:
-#         if i.lower() == name.lower():
-#             print('Name already there')
-#         elif con2[i]['name'].lower() == name.lower():
-#             print('Name Added')
-#         else:
-#             add = True
-#     if add:
-#         con2.append({name:'name', game:'game',pet:'pet'})
+    for x in con2:
+        newcon.append(list(x.values()))
+
+    for g in newcon:
+        jd = ','.join(g)
+        djoin.append(jd)
+
+
+    done = '\n'.join(djoin)
+    print(done)
+
+    file.write(done)
+
+
+
+
+
+
+
+  
    
 
 
-# def retrieve(record):
-#     pass
-
-
-# def update(update):
-#     pass
-
-
-# def delete(delete):
-#     pass
 
