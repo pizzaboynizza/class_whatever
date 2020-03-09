@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 import random
+import requests
+
 
 bot = commands.Bot(command_prefix='$')
 
@@ -26,7 +28,7 @@ async def greet(ctx):
     await ctx.send(":smiley: :wave: Hello, there!")
 
 @bot.command()
-async def cat(ctx):
+async def cat1(ctx):
     await ctx.send("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif")
 
 #ARG will pass whatever the user word is and the bot will report it, To copy more then one word, You must use "around" the word, Add the * star in to the () allow many argument to be passed in.
@@ -54,6 +56,11 @@ async def slap(ctx, members: commands.Greedy[discord.Member], *, reason='no reas
     await ctx.send(f'{slapped} just got slapped for {reason}')
 
 
+@bot.command()
+async def cat(ctx):
+        cat = getCat()
+    await ctx.send(cat)
+    
 
 
 bot.remove_command('help')
@@ -72,5 +79,5 @@ async def help(ctx):
     embed.add_field(name="$word", value="Bot will copy what you say", inline=False)
 
     await ctx.send(embed=embed)
-
-bot.run('Njg1NTc1ODYxNTk2MDYxNzA2.XmMuQg.-6pIL-ZlTKaXWWjOrGdoUEt1O0Y')
+#remove token before commiting
+bot.run('')
