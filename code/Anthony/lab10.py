@@ -18,22 +18,31 @@ for num in nums:
 
 # loop over the indices
 for i in range(len(nums)):
-    print(nums[i])
+    print(nums[i])'''
+#VERSION 1
+nums = [5, 0, 8, 3, 4, 1, 6]
+# i'm going to need a for loop to iterate the list
+# im going to need a variable(total) thats adds to the list
+sum = 0
+for i in nums:
+    sum+=i 
+print(sum)
+new_sum = sum/len(nums)
+print(round(new_sum,2))
 
-'''
+
+#VERSION 2
 nums = []
-total = 0
+sum = 0
 while True:
-    user_input = input("Enter number or done: ")
-    if user_input == 'done':
-        break
-    nums.append(int(user_input))
+  user = input("Enter number or done: ")
+  if user == 'done':
+    break
+  nums.append(int(user))
 print(nums)
-
-for numbers in nums:
-    total+= numbers
-new_total = total/len(nums)
-print(f"Average is {new_total}")
-
+for i in nums:
+  sum+=i
+average = sum/len(nums)
+print(f"The Average of {nums} is {average}")
 
 
