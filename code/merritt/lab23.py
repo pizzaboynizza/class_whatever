@@ -1,14 +1,28 @@
 with open('contacts.csv', 'r') as f:
     data_csv = f.read()
-data_csv = [line.split(',') for line in data_csv.split('\n')]
+# data_csv = [line.split(',') for line in data_csv.split('\n')]
+csv_lines = data_csv.split('\n')
+data_csv = []
+for line in csv_lines:
+    data_csv.append(line.split(','))
+# print(data_csv)
 
 keys = data_csv[0]
 data = []
-for i, row in list(enumerate(data_csv))[1::]:
-    line_dict = {}
-    for j, cell in enumerate(row):
-        line_dict[keys[j]] = cell
-    data.append(line_dict)
+# for i, row in list(enumerate(data_csv))[1::]:
+#     line_dict = {}
+#     for j, cell in enumerate(row):
+#         line_dict[keys[j]] = cell
+#     data.append(line_dict)
+
+# for i, values in list(enumerate(data_csv))[1::]:
+#     data.append(dict(zip(keys, values)))
+
+# for i in range(1, len(data_csv)):
+#     data.append(dict(zip(keys, data_csv[i])))
+data = [dict(zip(keys, row)) for row in data_csv[1::]]
+# print(data)
+
 
 def create_contact(data, keys):
     new_contact = {}
@@ -20,38 +34,50 @@ def read_contact(data, keys):
     key_returned_string = "\n" + "\n".join(keys) + "\n"
     key_input = input(f'What would you like to search by? Choose from{key_returned_string}: ')
     contact_input = input("What is your search term? ")
-    data_results = list(filter(lambda contact: contact[key_input] == contact_input, data))
+    # data_results = list(filter(lambda contact: contact[key_input] == contact_input, data))
+    # print(data_results)
+    # for result in data_results:
+    #     for key, value in result.items():
+    #         print(f'{key}: {value}')
+    #     print('')
+
+    data_results = []
+    for contact in data:
+        if contact[key_input] == contact_input:
+            data_results.append(contact)
     print(data_results)
-    for result in data_results:
-        for key, value in result.items():
-            print(f'{key}: {value}')
-        print('')
+
+    return data_results
+
 
 def update_contact(data, keys):
-    key_returned_string = "\n" + "\n".join(keys) + "\n"
-    key_input = input(f'What would you like to search by? Choose from{key_returned_string}: ')
-    contact_input = input("What is your search term? ")
-    data_results = list(filter(lambda contact: contact[key_input] == contact_input, data))
-    print(data_results)
-    for result in data_results:
-        for key, value in result.items():
-            print(f'{key}: {value}')
-        print('')
+    # key_returned_string = "\n" + "\n".join(keys) + "\n"
+    # key_input = input(f'What would you like to search by? Choose from{key_returned_string}: ')
+    # contact_input = input("What is your search term? ")
+    # data_results = list(filter(lambda contact: contact[key_input] == contact_input, data))
+    # print(data_results)
+    # for result in data_results:
+    #     for key, value in result.items():
+    #         print(f'{key}: {value}')
+    #     print('')
+    data_results = read_contact(data, keys)
+    
     index_to_update = int(input(f'Which entry do you want to update? (1-{len(data_results)}) ')) - 1
     key_to_update = input(f'Which key do you want to update? {keys} ')
     value_to_update = input(f"What do you want to change {key_to_update} to? ")
     data_results[index_to_update][key_to_update] = value_to_update
 
 def delete_contact(data, keys):
-    key_returned_string = "\n" + "\n".join(keys) + "\n"
-    key_input = input(f'What would you like to search by? Choose from{key_returned_string}: ')
-    contact_input = input("What is your search term? ")
-    data_results = list(filter(lambda contact: contact[key_input] == contact_input, data))
-    print(data_results)
-    for result in data_results:
-        for key, value in result.items():
-            print(f'{key}: {value}')
-        print('')
+    # key_returned_string = "\n" + "\n".join(keys) + "\n"
+    # key_input = input(f'What would you like to search by? Choose from{key_returned_string}: ')
+    # contact_input = input("What is your search term? ")
+    # data_results = list(filter(lambda contact: contact[key_input] == contact_input, data))
+    # print(data_results)
+    # for result in data_results:
+    #     for key, value in result.items():
+    #         print(f'{key}: {value}')
+    #     print('')
+    data_results = read_contact(data, keys)
     index_to_delete = int(input(f'Which entry do you want to delete? (1-{len(data_results)}) ')) - 1
     data.remove(data_results[index_to_delete])
 
