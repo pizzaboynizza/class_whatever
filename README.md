@@ -44,7 +44,7 @@ Presentation Day: ???
  Lab 23 -- Contact List  
  Lab 25 -- ATM  
  Lab 26 -- Tic Tac Toe  
- Python Mini-Capstone: Mini presentations first thing Thursday, March 12th
+ Python Mini-Capstone: Mini presentations first thing 2:30pm Friday, March 13th
 
 #### Optional Python Labs
 
