@@ -39,82 +39,83 @@ print(f"The winning ticket is {winning_ticket}")
 
 # Calculate Net Winnings 2. Start your balance at 0
 earnings = [0, 4, 7, 100, 50000, 1000000, 25000000]
-# net_winnings = earnings[i] - 2
-# net_winnings = [-2, 2, 5, 98, 49998, 999998, 24999998]
 matches = 0
 balance = 0
 # loop thru lottery_ticket and match against winning_ticket AND loop thru matches and balance 100,100 times
 times_played = 0
 
-while times_played < 100:
+while times_played < 100000:  # TO TEST CHANGE TO < 100 or COMMENT OUT PRINT STATEMENT
     lottery_ticket = []
     times_played += 1
     balance -= 2
     for i in range(6):
         lottery_ticket.append(random.randint(1,100))
     print(lottery_ticket)
-# print(f"Your lottery ticket numbers are {lottery_ticket}")
 
 
-# if lottery_ticket[i] == winning_ticket[i]:
-if lottery_ticket[0] == winning_ticket[0]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[1] == winning_ticket[1]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[2] == winning_ticket[2]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[3] == winning_ticket[3]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[4] == winning_ticket[4]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-elif lottery_ticket[5] == winning_ticket[5]:
-    matches += 1
-    print(f"Yay! You have {matches} matches")
-# DO I NEED TO LOOP THROUGH THIS 100,000 TIMES OR PUT IT IN THE WHILE OR FOR LOOP???
-else:
-    print(f"Sorry, you have {matches} matches")  # this should read "0 times"
-
+    if lottery_ticket[0] == winning_ticket[0]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[1] == winning_ticket[1]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[2] == winning_ticket[2]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[3] == winning_ticket[3]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[4] == winning_ticket[4]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    elif lottery_ticket[5] == winning_ticket[5]:
+        matches += 1
+        print(f"Yay! You have {matches} matches")
+    # DO I NEED TO LOOP THROUGH THIS 100,000 TIMES OR PUT IT IN THE WHILE OR FOR LOOP???
+    else:
+        print(f"You have {matches} matches")  # this should read "0 times" until there's at least 1 match in this loop
+print(f"Alright! You have a total of {matches} matches")
 
 
 if matches == 0:
-    net_winnings = earnings[0]
-    print(f"You earned ${net_winnings}")
+    winnings = earnings[0]
+    print(f"You earned ${winnings}")
     #you win $0
 elif matches == 1:
-    net_winnings = earnings[1]
-    print(f"You earned ${net_winnings}")
+    winnings = earnings[1]
+    print(f"You earned ${winnings}")
     #you win $4
 elif matches == 2:
-    net_winnings = earnings[2]
-    print(f"You earned ${net_winnings}")
+    winnings = earnings[2]
+    print(f"You earned ${winnings}")
     #you win $7
 elif matches == 3:
-    net_winnings = earnings[3]
-    print(f"You earned ${net_winnings}")
+    winnings = earnings[3]
+    print(f"You earned ${winnings}")
     #you win $100
 elif matches == 4:
-    net_winnings = earnings[4]
-    print(f"You earned ${net_winnings}")
+    winnings = earnings[4]
+    print(f"You earned ${winnings}")
     #you win $50,000
 elif matches == 5:
-    net_winnings = earnings[5]
-    print(f"You earned ${net_winnings}")
+    winnings = earnings[5]
+    print(f"You earned ${winnings}")
     #you win $1,000,000
 elif matches == 6:
-    net_winnings = earnings[6]
-    print(f"You earned ${net_winnings}")
+    winnings = earnings[6]
+    print(f"You earned ${winnings}")
     #you win $25,000,000
 else:
-    print("You have more than 6 matches!")
+    winnings = earnings[6]
+    print(f"You have more than 6 matches! To be exact you have {matches} matches. You earned ${winnings}") #you win $25,000,000
+print(f"You have won a total of ${winnings}")
 
 
-#after 100,000 tries:
-balance = net_winnings - (2 * 100000)
-print(f"Net winnings: ${net_winnings}")
 
+#after 100,000 purchased tix at $2 each:
+balance = winnings - 200000
+print("Your expenses were $200,000 due to spending $2 per 100,000 lottery tickets.")
 print(f"After 100,000 purchased lottery tickets, your balance/net winnings are ${balance}")
+#ROI = (earnings - expenses)/expenses. Calculate your ROI, print it out along with your earnings and expenses.
+ROI = (balance / 200000)
+print(f"Your ROI is ${ROI}")
