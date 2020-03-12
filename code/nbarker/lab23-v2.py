@@ -14,27 +14,43 @@ Delete a record: ask the user for the contact's name, remove the contact with th
 '''
 from operator import itemgetter
 
-def opener(path):
-    contacts = []
-    with open(path, 'r') as file:
-        text = file.read()
-    lines = text.split('\n')
-    header = lines[0].split(',')
-    for i in range(1, len(lines)):
-        row = lines[i].split(',')
-        contact = dict(zip(header,row)) 
-        contacts.append(contact)
-    #print("This is contacts:", contacts)
-    #print("This is conTACT:", contact)
-    #print("This is the MFING HEADER:", header)
-    return contacts, contact, header
+# def opener(file):
+#     contacts_list = []
+#     with open(contacts, 'r') as file:
+#         text = file.read()
+#         lines = text.split('\n')
+#         header = lines[0].split(',')
+#     for i in range(1, len(lines)):
+#         row = lines[i].split(',')
+#         print(row)
+#         contact = dict(zip(header,row)) 
+#         contacts_list.append(contact)
+#     print(contact[0])
+#     print("These are the contact keys:", contact.keys())
+#     print("THese are the contact values:", contact.values())
+#     print(contact)
+#     print(contacts)
+#     return contacts_list
 
-contacts, contact, header = opener('contacts.csv')
+'''
+first_name,favorite_fruit,favorite_color
+matthew,melons,maroon
+ken,kiwi,key_lime
+on,rasberries,red
+'''
 
-dict_values = ['matthew', 'melons', 'maroon', 'ken', 'kiwi', 'key_lime', 'ron', 'rasberries', 'red']
+contacts = [{'first_name': 'matthew', 'favorite_fruit': 'melons', 'favorite_color': 'maroon'}, {'first_name': 'ken', 'favorite_fruit': 'kiwi', 'favorite_color': 'key_lime'}, {'first_name': 'ron', 'favorite_fruit': 'rasberries', 'favorite_color': 'red'}]
 
-def add_new_contact():
-#______________Version 2 (add new entry)
+def print_contact():
+    '''
+    pretty prints contact
+    '''
+    print("Let's find someone to print!")
+    to_print = input("Who would you like to search for?").lower()
+    snippersnapper = next(item for item in contacts if item["first_name"] == to_print)
+    print(snippersnapper)
+
+def add_new_contact():     #______________Version 2 (add new entry)
     print("For your new contact: ")    
     first_name = input("Please enter the first name of your new contact:")
     favorite_fruit = input("Please enter the favorite fruit of your new contact:") 
@@ -44,68 +60,56 @@ def add_new_contact():
     result = dict(zip(contact, dict2))
     contacts.append(result)
 
-add_new_contact()
-
-print(contacts)
-
-def update_contact():
-#____________________updating a contact
-    print("Let's change some info!")
-    already_in = input("Who would you like to update?")
-    if already_in not in dict_values:
+def update_contact(): #____________________updating a contact
+    print("Let's find someone to retrieve!")
+    from_above = input("Who would you like to search for?").lower()
+    snippersnapper = next(item for item in contacts if item["first_name"] == from_above)
+    print(snippersnapper)
+    if from_above not in contacts:
        add_new_contact()
     else:
-        first_name = input("Please enter the first name of the contact tupdate:")
+        first_name = input("Please enter the first name of the contact to update:")
         favorite_fruit = input("Please enter the updated favorite fruit:")
         favorite_color = input("Please enter the updated favorite color:")
         dict_new = [first_name, favorite_fruit, favorite_color]
         update_result = dict(zip(contact, dict_new))
-        contacts.append(update_result)
-
-update_contact()
-
-print(contacts)
+        contacts.update(update_result)
 
 def delete_contact():
     #_____________________deleting a contact
     print("Let's delete a contact!")
     who_to_delete = input("Who shall we delete?")
     if who_to_delete in dict_values:
-        try:contacts.remove(who_to_delete)
+        try: contacts.pop(who_to_delete)
         except ValueError:
             print("That entry is not on the list")
     
-
-delete_contact()
-
 def retrieve_contact():
     #________________retrieve_contact
-    print("Let's find a pirate!")
-    who_to_find = input("Who shall we find?")
-    if who_to_find in contacts:
-        print()
+    print("Let's find someone to retrieve!")
+    from_above = input("Who would you like to search for?").lower()
+    snippersnapper = next(item for item in contacts if item["first_name"] == from_above)
+    print(snippersnapper)
 
-print('*****')
-print([(k, contact[k]) for k in contacts]) 
-
-
-def endgame():
-    while True:
-        action = user_input("What would you like to do?: ")
+work = True
+#work is True
+while work is True:
     print('1. look up a record')
     print('2. update a record')
     print('3. delete a record')
-    print('4. exit')
-        if action == '1':
-            retrieve_contact()
-        elif action == '2':
-            update_contact()
-        elif action == '3':
-            delete_contact()
-        elif action == '4':
-            break
-        else:
-            print("this was the worst lab ever")
-
-
+    print('4. print a record')
+    print('5. exit')
+    action = input("What would you like to do?: ")
+    if action == '1':
+        retrieve_contact()
+    elif action == '2':
+        update_contact()
+    elif action == '3':
+        delete_contact()
+    elif action == '4':
+        print_contact()
+    elif action == '5': 
+        work = False
+        print("Goodbye!")
+        break
 

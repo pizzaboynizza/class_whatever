@@ -1,8 +1,15 @@
 import discord
 from discord.ext import commands
 import random
+import requests
+from discord.utils import get
 
+
+#This set the precommand for the bot, This is how you call the bot to action
 bot = commands.Bot(command_prefix='$')
+
+#async and await are a event loop
+
 
 @bot.event
 # this is logged in the bot with commandline. 
@@ -15,6 +22,7 @@ async def on_ready():
 @bot.command()
 #def a bot command say hey, take a(user input) and b(user input) and add them togeather. 
 async def add(ctx, a: int, b: int):
+    #Passes function contrl back to the event loop, its like return but it will send to the channel
     await ctx.send(a+b)
 
 @bot.command()
@@ -56,6 +64,49 @@ async def slap(ctx, members: commands.Greedy[discord.Member], *, reason='no reas
 
 
 
+@bot.command(pass_context=True)
+async def giverole(ctx,user: discord.Member, role:discord.Role):
+    await user.add_roles(role)
+    await ctx.send("Done")
+
+
+
+# reddit1 = praw.Reddit(client_id='my client id',client_secret='my client secret',user_agent='my user agent')
+
+# @bot.command()
+# async def reddit(ctx,reddit1)
+#     for submission in reddit.subreddit('learnpython').hot(limit=10):
+#     await ctx.send(susubmission.title)
+
+
+
+@bot.command()
+async def play(ctx,game):
+    if game == "guess the number":
+        await ctx.send("Ok lets play guess the number")
+        await ctx.send("Guess the number i have choosen")
+        await ctx.send("Use $guess and your guess")
+    @bot.command()
+    async def guess(ctx):
+        number = random.randint(0, 100)
+        if int(guess) > number:
+            await ctx.send("Try again you were to high")
+        if int(guess) < number:
+            await ctx.send("Try again you were to low")
+        if int(guess) == number:
+            await ctx.send("You were right")
+        await ctx.send(number)
+
+
+
+
+
+
+
+
+
+
+
 bot.remove_command('help')
 
 @bot.command()
@@ -70,7 +121,8 @@ async def help(ctx):
     embed.add_field(name="$help", value="Gives this message", inline=False)
     embed.add_field(name="$slap", value="Give someone a little touch", inline=False)
     embed.add_field(name="$word", value="Bot will copy what you say", inline=False)
+    embed.add_field(name="$giverole rolename", value="bot will give you a role.", inline=False)
 
     await ctx.send(embed=embed)
-
-bot.run('Njg1NTc1ODYxNTk2MDYxNzA2.XmMuQg.-6pIL-ZlTKaXWWjOrGdoUEt1O0Y')
+#remove token before commiting
+bot.run('token')

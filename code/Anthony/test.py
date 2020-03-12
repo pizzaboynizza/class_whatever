@@ -90,7 +90,7 @@ merged_list = merged_list.drop(['index'], axis=1)
 #X AND Y
 # ONLY TOP 10 COUNTRIES COS THERE ARE ABOUT 200 COUNTRIES HERE
 names = merged_list['country']
-print(names)
+# print(names)
 # Y AXIS
 line = (merged_list['population_growth'] / 10**6)
 # print(line)
