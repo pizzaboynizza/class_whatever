@@ -12,13 +12,39 @@ Write a function check_palindrome which takes a string, and returns True if the 
 word_input = input("Enter a word: ")
 # word_input = input("Enter the word: ")
 
+# def check_palindrome(word_input):
+    
+#     if word_input == word_input[::-1]:
+#         return True
+#     else:
+#         return False
+# print(check_palindrome(word_input))
+
+#BETTER WAY BELOW
 def check_palindrome(word_input):
     
-    if word_input == word_input[::-1]:
-        return True
-    else:
-        return False
+    return word_input == word_input[::-1]
+    print(f"{word_input} is a palindrome")
 print(check_palindrome(word_input))
+
+
+# version 2
+user1 = input("Enter a word: ")
+user2 = input("Enter another word: ")
+user1 = user1.lower()
+user2 = user2.lower()
+user1 = user1.replace(' ', '')
+user2 = user2.replace(' ', '')
+user1 = sorted(user1)
+user2 = sorted(user2)
+
+
+def check_anagram(user1, user2):
+    return user1 == user2
+    
+print(check_anagram(user1, user2))
+
+
 
 
 
