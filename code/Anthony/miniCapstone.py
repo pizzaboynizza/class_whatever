@@ -50,16 +50,6 @@ merged_list = countries_1952.merge(countries_2007, left_on= 'country', right_on 
 # 4    Argentina    1952      17876956    2007      40301927
 
 
-
-#TO CLEAN UP OUR DATA, ADD YEAR TO POPULATION, FIRST DELETE YEAR AND ADD TO POPULATION RESPECTIVELY
-# merged_list.drop(['year_x', 'year_y'], axis=1)
-# print(merged_list.head())
-
-#MERGE YEAR WITH POPULATION
-# merged_list.rename(columns = {'population_x' : 'population_1952', 'population_y' : 'population_2007'}, inplace =True)
-# print(merged_list.head())
-
-
 # # GET THE DIFFERENCE/POPULATION GROWTH FROM 1952 TO 2007
 merged_list['population_growth'] = merged_list['population_y'] - merged_list['population_x']
 # print(merged_list.head())
