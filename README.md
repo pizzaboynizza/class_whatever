@@ -39,11 +39,19 @@ Presentation Day: ???
  Lab 14 -- Pick 6  
  Lab 22 -- ARI  
  Lab 21 -- Count Words  
+ Lab 18 -- Peaks and Valleys  
+ Lab 16 -- Image Manipulation  
+ Lab 23 -- Contact List  
+ Lab 25 -- ATM  
+ Lab 26 -- Tic Tac Toe  
+ Python Mini-Capstone: Mini presentations first thing 2:30pm Friday, March 13th
 
 #### Optional Python Labs
 
  Practice 1-5  
  Labs 02-08, 12 (You did these during the intro course)   
+ Lab 24 -- Rain Data  
+ Lab 27 -- Connect Four  
 
 ## Student Presentations
 

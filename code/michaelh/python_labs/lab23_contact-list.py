@@ -48,7 +48,7 @@ def is_in_contacts(contact_list, first_name):
             return True
     return False
 
-def create(contact_list, attributes):
+def create(contact_list, attributes, first_name):
     cur_contact = {}
     cur_contact[attributes[0]] = first_name
     for i in range(1, len(attributes)):
@@ -84,7 +84,7 @@ attributes = contents.split('\n')[0]
 contacts = contents.split('\n')[1:len(contents)]
 attributes = attributes.split(',')
 contact_list = create_initial_list(attributes, contacts)
-print(list(contact_list[0].keys()))
+# print(list(contact_list[0].keys()))
 
 while True:
     REPL_function = input('How would you like to alter your contact list? ').lower()
@@ -112,10 +112,13 @@ while True:
             retrieve(contact_list, attributes, first_name)
 
         elif REPL_function == 'update':
-            attribute_to_update = input(f'What would you like to update? ').lower()
+            attributes_string = ', '.join(attributes)
+            attribute_to_update = input(f'What would you like to update ({attributes_string})? ').lower()
             while attribute_to_update not in attributes:
                 print(f'That is not a valid attribute.')
-                attribute_to_update = input(f'What would you like to update? ').lower()
+
+                attribute_to_update = input(f'What would you like to update ({attributes_string})? ').lower()
+            retrieve(contact_list, attributes, first_name)
             update(contact_list, attributes, first_name, attribute_to_update)
 
         else:
