@@ -40,3 +40,13 @@ greet("Monica","Good morning!")
 # loop 100,000 times all different and all using 6 diff random  numbers
 
 
+from PIL import Image, ImageDraw
+
+width = 500
+height = 500
+
+im = Image.new('RGB', (width, height))
+
+draw = ImageDraw.Draw(im)
+draw.line((0, 0) + im.size, fill=128)
+draw.line((0, im.size[1], im.size[0], 0), fill=128)
