@@ -1,51 +1,95 @@
+
+
 class Musical_Artist:
-    def __init__(self, name, popularity, influence, musical_impact, cultural_impact): 
+    def __init__(self, name, digitaldreamdoor, rolling_stone, ultimateclassic, whenwasitcool, vh1): 
         self.name = name
-        self.popularity= popularity
-        self.influence = influence
-        self.musical_impact = musical_impact
-        self.cultural_impact = cultural_impact
-        # return((popularity + influence + musical_impact + cultural_impact)/4)
+        self.digitaldreamdoor = digitaldreamdoor
+        self.rolling_stone = rolling_stone
+        self.ultimateclassic = ultimateclassic
+        self.whenwasitcool = whenwasitcool
+        self.vh1 = vh1
 
-b1 = Musical_Artist("The Beatles", 100
-b2 = Musical_Artist("Elvis Presley", 
-b3 = Musical_Artist("Bob Dylan"
-b4 = Musical_Artist("The Rolling Stones", 96)
-b5 = Musical_Artist("Stevie Wonder"
-b6 = Musical_Artist("Chuck Berry"
-b7 = Musical_Artist("The Who",
-b8 = Musical_Artist("Led Zeppelin", 99)
-b9 = Musical_Artist("Ray Charles"
-b10 = Musical_Artist("The Beach Boys"
-b11 = Musical_Artist("Aretha Franklin"
-b12 = Musical_Artist("Fats Domino"
-b13 = Musical_Artist("Michael Jackson"
-b14 = Musical_Artist("Madonna"
-b15 = Musical_Artist("Jimi Hendrix"
-b16 = Musical_Artist("Little Richard"
-b17 = Musical_Artist("Bruce Springsteen"
-b18 = Musical_Artist("Marvin Gaye"
-b19 = Musical_Artist("Sam Cooke"
-b20 = Musical_Artist("James Brown"
-b21 = Musical_Artist("Santana", 81
-b22 = Musical_Artist("CCR"), 82
-b23 = Musical_Artist("Journey", 83)
-b24 = Musical_Artist("Van Halen", 84)
-b25 = Musical_Artist("U2", 85)
-b26 = Musical_Artist("Bon Jovi", 86)
-b27 = Musical_Artist("Maroon 5", 87)
-b28 = Musical_Artist("Red Hot Chili Peppers", 88)
-b29 = Musical_Artist("Linkin Park", 89)
-b30 = Musical_Artist("Fleetwood Mac", 90)
-b31 = Musical_Artist("Aerosmith", 91)
-b32 = Musical_Artist("Guns N' Roses", 92)
-b33 = Musical_Artist("Metallica", 93)
-b34 = Musical_Artist("The Eagles", 94)
-b35 = Musical_Artist("AC/DC", 95)
-b36 = Musical_Artist("Pink Floyd", 97)
-b37 = Musical_Artist("Queen", 98)
+b1 = Musical_Artist("The Beatles", 1, 1, 1, 1, 1)
+The_Beatles = [1, 1, 1, 1, 1]
+The_Beatles_Rank = 1
+
+b2 = Musical_Artist("Elvis Presley", 2, 3, 100, 2, 8)
+Elvis_Presley = [2, 3, 100, 2, 8]
+Elvis_Presley_Rank = 23
+
+b3 = Musical_Artist("James Brown", 3, 7, 100, 100, 6)
+James_Brown = [3, 7, 100, 100, 6] 
+James_Brown_Rank = 43.2
+
+b4 = Musical_Artist("Bob Dylan", 4, 2, 5, 18, 5)
+Bob_Dylan = [4, 2, 5, 18, 5]
+Bob_Dylan_Rank = 6.8
+
+b5 = Musical_Artist("The Rolling Stones", 5, 4, 2, 3, 2)
+The_Rolling_Stones = [5, 4, 2, 3, 2]
+The_Rolling_Stones_Rank = 3.2
+
+b6 = Musical_Artist("Stevie Wonder", 6, 15, 100, 27, 11)
+Stevie_Wonder = [6, 15, 100, 27, 11]
+Stevie_Wonder_Rank = 31.8
+
+b7 = Musical_Artist("Chuck Berry", 7, 5, 100, 100, 26)
+Chuck_Berry = [7, 5, 100, 100, 26]
+Chuck_Berry_Rank = 47.6
+
+b8 = Musical_Artist("The Who", 8, 29, 12, 39, 9)
+The_Who = [8, 29, 12, 39, 9]
+The_Who_Rank =  19.4
+
+b9 = Musical_Artist("Led Zeppelin", 9, 14, 3, 5, 4)
+Led_Zeppelin = [9, 14, 3, 5, 4]
+Led_Zeppelin_Rank = 7
+
+b10 = Musical_Artist("Ray Charles", 10, 10, 100, 100, 12)
+Ray_Charles = [10, 10, 100, 100, 12]
+Ray_Charles_Rank = 46.4
+
+import matplotlib.pyplot as plt
+
+plt.plot(The_Beatles)
+plt.ylabel('The Beatles')
+plt.show()
+
+plt.plot(Elvis_Presley)
+plt.ylabel('Elvis Presley')
+plt.show()
+
+plt.plot(James_Brown)
+plt.ylabel('James Brown')
+plt.show()
+
+plt.plot(Bob_Dylan)
+plt.ylabel('Bob Dylan')
+plt.show()
+
+plt.plot(The_Rolling_Stones)
+plt.ylabel('The Rolling Stones')
+plt.show()
+
+plt.plot(Stevie_Wonder)
+plt.ylabel('Stevie Wonder')
+plt.show()
+
+plt.plot(Chuck_Berry)
+plt.ylabel('Chuck Berry')
+plt.show()
+
+plt.plot(The_Who)
+plt.ylabel('The Who')
+plt.show()
+
+plt.plot(Led_Zeppelin)
+plt.ylabel('Led Zeppelin')
+plt.show()
+
+plt.plot(Ray_Charles)
+plt.ylabel('Ray Charles')
+plt.show()
 
 
-
-print(b1.popularity)
 
