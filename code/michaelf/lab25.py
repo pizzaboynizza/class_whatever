@@ -1,61 +1,64 @@
 class Account:
     def __init__(self, balance = 0):
-        self.balance = balance
-        self.transactions = []
+        self.__balance = balance
+        self.__transactions = []
 
     def check_balance(self):
-        return self.balance
+        return self.__balance
 
     def deposit(self, amount):
         self.amount = amount
-        self.balance += self.amount
-        self.transactions.append(f'user deposited {self.amount}')
-        return self.balance
+        self.__balance += self.amount
+        self.__transactions.append(f'user deposited {self.amount}')
+        return self.__balance
 
     def check_withdraw(self, amount):
         self.amount = amount
-        if self.amount <= self.balance:
+        if self.amount <= self.__balance:
             return True
         else:
             return False
+        #return True if self.balance >= amount else False
+        #return self.balance >= amount
 
     def withdraw(self, amount):
         self.amount = amount
-        self.balance -= self.amount
-        self.transactions.append(f'user withdrew {self.amount}')
-        return self.balance
+        self.__balance -= self.amount
+        self.__transactions.append(f'user withdrew {self.amount}')
+        return self.__balance
     
     def print_transactions(self):
-        print(self.transactions)
+        print(self.__transactions)
     
 
 account1 = Account()
-# print(account1.check_balance())
-# print(account1.deposit(600))
-# print(account1.check_balance())
-# print(account1.check_withdraw(555))
-# print(account1.withdraw(555))
-# account1.print_transactions()
+# account2 = Account()
 
 while True:
-    user_choice = input("1. check balance\n2. deposit\n3. withdrawal\n4. transcation history\n5. quit\n>>> ")
+    user_choice = input("1. check balance\n2. deposit\n3. withdrawal\n4. transaction history\n5. quit\n>>> ")
 
     if user_choice == "1":
         print(account1.check_balance())
         
-    if user_choice == "2":
-        amount = int(input("how much would you like to deposit? "))
+    elif user_choice == "2":
+        amount = float(input("how much would you like to deposit? "))
         print(account1.deposit(amount))
 
-    if user_choice == "3":
-        amount = int(input("How much would you like to withdraw? "))
+    elif user_choice == "3":
+        amount = float(input("How much would you like to withdraw? "))
         if account1.check_withdraw(amount) == True:
             print(account1.withdraw(amount))
         else:
             print("Insufficient funds.")
 
-    if user_choice == "4":
+    elif user_choice == "4":
         account1.print_transactions()
 
-    if user_choice == "5":
+    elif user_choice == "5":
         break
+    
+    else:
+        print("I'm sorry, i don't understand. Please try again.")
+
+# print(account1.check_balance())
+# print(account2.check_balance())
