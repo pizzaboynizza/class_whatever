@@ -1,5 +1,6 @@
-import re
+# https://esolangs.org/wiki/BF_Joust
 
+import re
 
 #take string and turn into list of valid commands
 def parse(prgm):
