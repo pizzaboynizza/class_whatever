@@ -49,6 +49,13 @@ b10 = Musical_Artist("Ray Charles", 10, 10, 100, 100, 12)
 Ray_Charles = [10, 10, 100, 100, 12]
 Ray_Charles_Rank = 46.4
 
+Artist_Rank = {'The Beatles': 1, 'Elvis Presley': 23, 'James Brown': 43.2, 'Bob Dylan': 6.8, 'The Rolling Stones': 3.2, 'Stevie Wonder': 31.8, 'Chuck Berry': 47.6, 'The Who': 19.4, 'Led Zeppelin': 7, 'Ray Charles': 46.4}
+
+Artist_Rank_Two = list(Artist_Rank.items())
+Artist_Rank_Two.sort(key=lambda tup: tup[1], reverse=True)
+for i in range(min(10, len(Artist_Rank_Two))):
+        print(Artist_Rank_Two[i])
+
 import matplotlib.pyplot as plt
 
 plt.plot(The_Beatles)
@@ -90,6 +97,8 @@ plt.show()
 plt.plot(Ray_Charles)
 plt.ylabel('Ray Charles')
 plt.show()
+
+
 
 
 
