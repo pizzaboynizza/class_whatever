@@ -1,7 +1,7 @@
 import re
 
 
-#take string and turn into list
+#take string and turn into list of valid commands
 def parse(prgm):
     parsed = []
     i = 0
@@ -13,8 +13,8 @@ def parse(prgm):
             parsed.append(temp.group())
             i += temp.end()
         else:
-            print(f"Unknown error while parsing file at position {i}/{strlen}") #got an error for temp being None, usure of cause
-            i += 1
+            #print(f"Unknown error while parsing file at position {i}/{strlen}") #got an error for temp being None, unsure of cause
+            i = strlen # pretty sure the cause is comments at the end of a program, so let's just end the parsing
     return parsed
 
 class Stack:
@@ -100,12 +100,21 @@ def pCompile(prgm):
             print(f"ERROR! Unknown command {prgm[i]} on line {line}")
             
         i += 1
-    ret.append(["EOP"])
+    ret.append(["EOP"]) # end of program; I've forgotton why I've included this in here, but I'm sure it's important
+
+    # Unmatched (, [, and {; set there endpoints to themselves, which should mean the interpreter will just skip them
+    for p in paren.stk:
+        print(f"ERROR! Unmatched ( on {p}")
+        ret[p][1] = p
+    for p in bracket.stk:
+        ret[p][1] = len(ret) - 1 # except for [, which sets its end point to the end of the program
+        print(f"ERROR! Unmatched [ on {p}")
+    for p in curly.stk:
+        ret[p][1] = p
+        print("ERROR! Unmatched { on", p)
     return ret
 
-
-
-
+# Testing
 def printList(l):
     i = 0
     for e in l:
@@ -113,8 +122,9 @@ def printList(l):
         i += 1
 
 
-# import bfjppWeb as web
+if __name__ == "__main__":
+    import bfjppWeb as web
 
-# p = web.loadProgram("Gregor_furry_furry_strapon_pegging_girls")
+    p = web.loadProgram("quintopia_space_elevator")
 
-# printList(pCompile(parse(p)))
+    pCompile(parse(p))
