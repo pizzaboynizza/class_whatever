@@ -1,6 +1,7 @@
 from recipe_scrapers import scrape_me
 import string
 import copy
+import re
 
 def get_just_ing(recipe_list):
     stopwords = boring_word_list + unit_word_list
@@ -62,17 +63,17 @@ def intersecting_tuples(org_list):
                 return True
     return False
 
-#takes a dictionaries with tuple:num as the pairs and removes pairs where the value num = 1 and the key tuple intersects with two of the other keys tuple that don't intersect
-def remove_infrequent_intersections(org_dict):
-    #gets the keys that intersect with each key and puts them as the values for intersection_dict, a list of tuples
-    keys = list(org_dict.keys())
-    intersection_dict = {}
-    org_dict_temp = org_dict.copy()
-    for key_tup in keys:
-        intersection_dict[key_tup] = []
-        for other_key_tup in keys:
-            if key_tup != other_key_tup and len(set(key_tup) & set(other_key_tup)) > 0:
-                intersection_dict[key_tup].append(other_key_tup)
+# #takes a dictionaries with tuple:num as the pairs and removes pairs where the value num = 1 and the key tuple intersects with two of the other keys tuple that don't intersect
+# def remove_infrequent_intersections(org_dict):
+#     #gets the keys that intersect with each key and puts them as the values for intersection_dict, a list of tuples
+#     keys = list(org_dict.keys())
+#     intersection_dict = {}
+#     org_dict_temp = org_dict.copy()
+#     for key_tup in keys:
+#         intersection_dict[key_tup] = []
+#         for other_key_tup in keys:
+#             if key_tup != other_key_tup and len(set(key_tup) & set(other_key_tup)) > 0:
+#                 intersection_dict[key_tup].append(other_key_tup)
 
     #loops through the intersecting_dict and figures out if there's some wierd sort of intersection (where two of the tuples it intersects with do not intersect with one another)
     weird_intersection_dict = {}
@@ -178,7 +179,9 @@ def remove_garnish_dict(org_dict):
     return new_dict
 
 def get_amounts(recipe_list_org):
+    amount_exp_list = []
     for recipe in recipe_list_org:
+        cur_recipe = []
         for ing in recipe:
             ing_copy = ing
             ing = ing.lower()
@@ -186,16 +189,49 @@ def get_amounts(recipe_list_org):
             if len(set(ing_list) & set(garnish_indicator_list)) > 0:
                 ing = 'garnish'
             else:
-                ing = ing.replace('½', ' 1/2 ')
-                ing = ing.replace('¾', ' 3/4 ')
-                ing = ing.replace('¼', ' 1/4 ')
-                ing = ing.replace('1 1/2', ' 3/2 ')
-                ing = ing.replace('1 1/4', ' 5/4 ')
+                ing = ing.replace('1¾', ' 1.75 ')
+                ing = ing.replace('1¼', ' 1.25 ')
+                ing = ing.replace('1½', ' 1.5 ')
+                ing = ing.replace('¾', ' 0.75 ')
+                ing = ing.replace('1 1/2', ' 1.5 ')
+                ing = ing.replace('1 1/4', ' 1.25 ')
+                ing = ing.replace('1/2', ' 0.5 ')
+                ing = ing.replace('1/4', ' 0.25 ')
+                ing = ing.replace('/', ' ')
 
-                fluid_ounce_phrase = ['fluid ounces', 'fl oz', 'ounce', 'ounces', 'fluid ounce', 'oz.', 'oz']
-                ing = replace_phrase_once(ing, fluid_ounce_phrase, ' fluid_ounce ')
-            # print(f'old: {ing_copy}, new: {ing}')
-            print(ing)
+                fluid_ounce_phrase = ['fluid ounces', 'fluid ounce', 'fl oz.', 'fl oz', 'ounces', 'ounce', 'oz.', 'oz']
+                ing = replace_phrase_once(ing, fluid_ounce_phrase, ' FLOZ ')
+                teaspoon_phrase = ['teaspoons', 'teaspoon', 'tsp', 'tsp.']
+                ing = replace_phrase_once(ing, teaspoon_phrase, 'TSP')
+                tablespoon_phrase = ['tablespoons', 'tablespoon', 'tbsp', 'tbsp.']
+                ing = replace_phrase_once(ing, tablespoon_phrase, 'TBSP')
+            pattern = '([+\-])?((?:\d+\/|(?:\d+|^|\s)\.)?\d+)\s*([^\s\d+\-.,:;^\/]+(?:\^\d+(?:$|(?=[\s:;\/])))?(?:\/[^\s\d+\-.,:;^\/]+(?:\^\d+(?:$|(?=[\s:;\/])))?)*)?'
+            result = re.findall(pattern, ing)
+            supported_units = ['ml', 'TBSP', 'FLOZ', 'cup', 'TSP']
+
+            amount_in_ml = 0
+            for amount_tuple in result:
+                if len(amount_tuple) > 0 and supported_units.count(amount_tuple[2]) > 0:
+                    # print(result, amount_tuple[0], amount_tuple[1], amount_tuple[2])
+                    amount = float(amount_tuple[1])
+                    units = amount_tuple[2]
+                    amount_in_ml = convert_vol_to_ml(amount, units)
+            # print(f'raw: {ing_copy}, amount: {result} , standardized amount {amount_in_ml} ml')
+            cur_recipe.append(amount_in_ml)
+        amount_exp_list.append(cur_recipe)
+    return amount_exp_list
+
+def convert_vol_to_ml(volume_units_org, units_org):
+    volume_ml = float(volume_units_org)
+    if units_org == 'TBSP':
+        volume_ml *= 14.79
+    elif units_org == 'FLOZ':
+        volume_ml *= 29.57
+    elif units_org == 'cup':
+        volume_ml *= 236.6
+    elif units_org == 'TSP':
+        volume_ml *= 4.929
+    return volume_ml
 
 def replace_phrase_once(str_to_replace, phrase_list_old, new_phrase):
     phrase_flag = False
@@ -206,6 +242,7 @@ def replace_phrase_once(str_to_replace, phrase_list_old, new_phrase):
     i = 0
     str_to_replace_new = str_to_replace
     while str_to_replace == str_to_replace_new and phrase_flag:
+        # print(i, len(phrase_list_old), str_to_replace, str_to_replace_new)
         str_to_replace_new = str_to_replace.replace(phrase_list_old[i], new_phrase)
         i += 1
     return str_to_replace_new
@@ -221,7 +258,7 @@ def main_function(recipe_list_org):
     # print(ing_duplicate_dict)
     ing_duplicate_dict = remove_garnish_dict(ing_duplicate_dict)
     # print(ing_duplicate_dict)
-    ing_duplicate_dict = remove_infrequent_intersections(ing_duplicate_dict)
+    # ing_duplicate_dict = remove_infrequent_intersections(ing_duplicate_dict)
     # print(ing_duplicate_dict)
     ing_duplicate_dict = dict_merge_subsets(ing_duplicate_dict)
     # print(ing_duplicate_dict)
@@ -231,6 +268,41 @@ def main_function(recipe_list_org):
     # print(recipe_list_copy)
     ing_id = identify_ingredients(recipe_list_just_ing, ing_duplicate_dict.keys())
     amounts = get_amounts(recipe_list_org)
+
+    ml_tequila_in_recipe = []
+    amount_normalize_tequila = []
+    ratios = []
+    # print(list(ing_duplicate_dict.keys()))
+    for i, recipe in enumerate(recipe_list_org):
+        amount_normalize_tequila_single_recipe = []
+        for j in range(len(recipe)):
+            if ing_id[i][j].count('tequila') > 0:
+                ml_tequila_in_recipe.append(amounts[i][j])
+                break
+        for j in range(len(recipe)):
+            amount_normalize_tequila_single_recipe.append(amounts[i][j]/ml_tequila_in_recipe[i])
+        amount_normalize_tequila.append(amount_normalize_tequila_single_recipe)
+        ratios_single_recipe = []
+        for j in range(len(recipe)):
+            for ing_tuple in list(ing_duplicate_dict.keys()):
+                # print(ing_id[i][j], ing_tuple)
+                if ing_id[i][j] == ing_tuple:
+                    ratios_single_recipe.append((ing_tuple, amount_normalize_tequila[i][j]), )
+                    break
+
+        ratios.append(ratios_single_recipe)
+
+    for ing_tuple in list(ing_duplicate_dict.keys()):
+        avg_recipe = 0
+        num_ing = 0
+        for recipe in ratios:
+            for ing_from_recipe in recipe:
+                ing, amount = ing_from_recipe
+                if ing_tuple == ing:
+                    avg_recipe += amount
+                    num_ing += 1
+        print(ing_tuple, avg_recipe/num_ing, num_ing)
+    # print(ratios)
 
 recipe_list_org = [['1 tablespoon kosher salt', '1 1/2 fluid ounces tequila', '1 fluid ounce orange flavored liqueur (such as Cointreau®)', '1/2 fluid ounce lime juice', '1 cup ice', '1 lime wheel'], ['35ml/1¼fl oz Reposado Tequila', '20ml/¾fl oz Cointreau', '35ml/1¼fl oz fresh lime juice', 'handful ice cubes', 'lime wedge, to garnish'], ['ice', '50ml tequila reposado', '25ml lime juice', '20ml triple sec (we used Cointreau)', 'salt', '2 lime wedges'], ['Ice cubes', '3 tablespoons tequila (1 1/2 oz)', '2 teaspoons lime juice', '1 teaspoon Cointreau', '1 lime slice'], ['Kosher salt (for serving)', '½ thick lime wheel (for serving)', '2 oz. tequila blanco', '¾ oz. fresh lime juice', '¾ oz. simple syrup'], ['2 ounces tequila', '1 ounce triple sec', '2 ounces fresh lime juice', '1/4 cup powdered sugar', '2 tablespoons frozen sweetened strawberries', '1 cup ice'], ['1 lime wedge, plus 2 lime wheels for garnish', '1 tablespoon coarse salt, for glass rims', '4 ounces (120ml) high-quality blanco tequila (see note)', '2 ounces (60ml) Cointreau', '1 1/2 ounces (45ml) fresh juice from 2 limes'], ['Ice cubes', '3 ounces tequila', '2 ounces freshly squeezed lime juice', '1 ounce Simple Syrup, recipe follows', '1/2 to 1 teaspoon orange liqueur', '1 tablespoon Lime-salt-sugar, recipe follows', '1 cup sugar', '1 cup water', 'Zest of one lime', '2 tablespoons kosher salt', '2 tablespoons sugar']]
 replace_chars = string.digits + string.punctuation + '®' + '¼' + '¾' + '½'
