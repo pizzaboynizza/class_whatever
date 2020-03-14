@@ -10,11 +10,6 @@ from bfjppParser import parse, pCompile, printList
 from bfjppGame import Turn, Game
 from bfjppWeb import getPrograms, loadProgram, programName
 
-# TODO:
-#   -Tidy up UI
-#   -Comment code
-
-
 pg.init()
 
 size = width, height = 1200, 600 # size of the display window
@@ -77,7 +72,7 @@ while True:
     pressed = None
     for event in pg.event.get(): #event handling
         if event.type == pg.QUIT: sys.exit()
-        if event.type == pg.KEYUP: # Key presses on keyboard
+        elif event.type == pg.KEYUP: # Key presses on keyboard
             if event.key == pg.K_ESCAPE: sys.exit()
             elif event.key == pg.K_BACKSPACE:   pressed = "back"
             elif state != STATE_MENU:
@@ -125,6 +120,7 @@ while True:
             print(loadProgram(pressed[1:]))
         elif pressed == "play": # Play through all games between selected programs and goto menu
             display_update = True
+            breakout = False # a flag for canceling the playing of all games
             p1_name = programName(p1_select, screen, hugefont)
             p2_name = programName(p2_select, screen, hugefont)
 
@@ -148,8 +144,14 @@ while True:
             score = 0 # Total score (positive for p1, negative for p2)
 
             for p in range(2):
+                if breakout: break # canceling this process
                 #p=0 for not polarized, p=1 for polarized
                 for i in range(10, 31):
+                    for event in pg.event.get(): # need to grab events or the window will stop responding; might as well allow exiting too
+                        if event.type == pg.QUIT: sys.exit()
+                        elif event.type == pg.KEYUP and event.key == pg.K_ESCAPE: sys.exit()
+                        elif event.type == pg.KEYUP and event.key == pg.K_BACKSPACE: breakout = True # cancel this process
+                    if breakout: break # canceling this process
                     temp = Game(i, False if p == 0 else True, p1, p2)
                     temp.play()
                     all_games.append(temp)
@@ -166,6 +168,11 @@ while True:
                     screen.blit(menu_buttons[-1].img, menu_buttons[-1].getrect())
                     pg.display.flip()
 
+            if breakout: # if the process was canceled
+                state = STATE_INI
+                continue
+
+            # Print final score
             score_string = ""
             if score > 0:
                 score_string = f"{p1_name} wins ({score})"
@@ -174,7 +181,7 @@ while True:
             else:
                 score_string = f"Tie game ({score})"
 
-            menu_buttons.append(Button("back", "back.bmp", 5 * width // 6, 10))
+            menu_buttons.append(Button("back", "back.bmp", 5 * width // 6, 10)) # back button
             
             state = STATE_MENU
 
@@ -282,7 +289,7 @@ while True:
             screen.blit(bigfont.render(score_string, 0, (0xFF, 0xFF, 0xFF)), pg.Rect(width//3, 4 * height//6, 200, 60)) # total results
             for button in menu_buttons: # all buttons
                 screen.blit(button.img, button.getrect())
-            for i in range(10, 31):
+            for i in range(10, 31): # tape length indicators
                 screen.blit(font.render(str(i), 0, (0x80, 0xFF, 0x80)), pg.Rect(width//3 - (15 - i) * 30 + 8, height // 3 - 20, 30, 30))
 
         elif state == STATE_INI: # Inital screen display

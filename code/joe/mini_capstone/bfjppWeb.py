@@ -43,6 +43,7 @@ def programName(name, screen, font):
 def loadProgram(name):
     if name[0] == "/": # if a file, load as a file
         with open(name[1:]) as file:
+            print("File Loaded!")
             return file.read()
     else: # otherwise, it's on EgoJSout; it should all be plaintext
         return requests.get(f"http://codu.org/eso/bfjoust/in_egobot/{name}.bfjoust").text

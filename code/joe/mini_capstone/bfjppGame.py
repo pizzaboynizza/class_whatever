@@ -1,53 +1,55 @@
+# https://esolangs.org/wiki/BF_Joust
+
 from bfjppParser import Stack, parse, pCompile
 from copy import deepcopy
 from draw import showMessage
 
 class Turn:
     def __init__(self, tape, p1_pos, p2_pos, p1_code, p2_code, p1_line, p2_line):
-        self.tape = deepcopy(tape)
-        self.p1_pos = p1_pos
-        self.p2_pos = p2_pos
-        self.p1_code = p1_code
-        self.p2_code = p2_code
-        self.p1_line = p1_line
-        self.p2_line = p2_line
+        self.tape = deepcopy(tape) # The tape
+        self.p1_pos = p1_pos # Position of player 1
+        self.p2_pos = p2_pos # Position of player 2
+        self.p1_code = p1_code # Code executed by player 1 (+-<>.[]X)
+        self.p2_code = p2_code # Code executed by player 2
+        self.p1_line = p1_line # Line of code player 1 is on
+        self.p2_line = p2_line # Line of code player 2 is on
 
 
     def __str__(self):
-        ret = f"[{self.p1_line}]{' '*(5 - len(str(self.p1_line)))}" #displaying p1 info
+        ret = f"[{self.p1_line}]{' '*(5 - len(str(self.p1_line)))}" # Displaying p1 info
         ret += f" '{self.p1_code}'  "
 
-        if self.p1_pos == -1: #out of bounds on the left
+        if self.p1_pos == -1: # Out of bounds on the left
             if self.p2_pos == -1:
-                ret += "XAN "
+                ret += "XAN " # both players are out of bounds on the left
             else:
-                ret += ">AN "
+                ret += ">AN " # player 1 is out of bounds on the left
         elif self.p2_pos == -1:
-            ret += "<AN "
+            ret += "<AN " # player 2 is out of bounds on the left
 
-        for i in range(len(self.tape)): # the tape
+        for i in range(len(self.tape)): # The tape
             if self.p1_pos == i:
                 if self.p2_pos == i:
-                    ret += "X"
+                    ret += "X" # both players are on the current cell
                 else:
-                    ret += ">"
+                    ret += ">" # player 1 is on this cell
             elif self.p2_pos == i:
-                ret += "<"
+                ret += "<" # player 2 is on this cell
             else:
-                ret += " "
-            ret += hex(self.tape[i]).upper()[2:]if len(hex(self.tape[i])) == 4 else '0'+hex(self.tape[i]).upper()[2:]
-            ret += " "
+                ret += " " # no player is on this cell
+            ret += hex(self.tape[i]).upper()[2:]if len(hex(self.tape[i])) == 4 else '0'+hex(self.tape[i]).upper()[2:] # the value of the cell
+            ret += " " # spacing
 
-        if self.p1_pos == len(self.tape): #out of bounds on the right
+        if self.p1_pos == len(self.tape): # Out of bounds on the right
             if self.p2_pos == len(self.tape):
-                ret += "XAN "
+                ret += "XAN " # both players are out of bounds on the right
             else:
-                ret += ">AN "
+                ret += ">AN " # player 1 is out of bounds on the right
         elif self.p2_pos == len(self.tape):
-            ret += "<AN "
+            ret += "<AN " # player 2 is out of bounds on the right
         
         ret += f"  '{self.p2_code}' "
-        ret += f"{' '*(5 - len(str(self.p2_line)))}[{self.p2_line}]" #displaying p2 info
+        ret += f"{' '*(5 - len(str(self.p2_line)))}[{self.p2_line}]" # Displaying p2 info
 
         return ret
 
@@ -55,7 +57,7 @@ class Turn:
 def findLine(code, pos):
     while pos > 0:
         if code[pos][0] == "\n":
-            return code[pos][1]
+            return code[pos][1] # actual line number is stored as the second value
         pos -= 1
     return 0
 
@@ -186,9 +188,11 @@ class Game:
         p1_line = 0
         p2_line = 0
         while self.turns < 100000:
+            # Get which instruction is to be executed this turn by each player
             p1_cmd, p1, p1_line = oneTurn(self.p1_code, p1, p1_stack, p1_line)
             p2_cmd, p2, p2_line = oneTurn(self.p2_code, p2, p2_stack, p2_line)
 
+            # Execute any conditional instructions (the [ and ] instruction)
             if p1_cmd == "?":
                 p1_cmd = self.p1_code[p1][0]
                 p1, p1_line = turnConditional(self.p1_code, p1, self.tape[p1_pos] != 0, p1_line)
@@ -196,21 +200,21 @@ class Game:
                 p2_cmd = self.p2_code[p2][0]
                 p2, p2_line = turnConditional(self.p2_code, p2, self.tape[p2_pos] != 0, p2_line)
 
+            # Execute any non-conditional instructions (+ - < > and .)
             p1_pos = turnAction(self.tape, p1_cmd, p1_pos, True, self.polarity)
             p2_pos = turnAction(self.tape, p2_cmd, p2_pos, False, False)
 
+            # Record the turn and append to game history
             self.history.append(Turn(self.tape, p1_pos, p2_pos, p1_cmd, p2_cmd, p1_line, p2_line))
 
-            # p1_hist = p1
-            # p2_hist = p2
-
-            # check if lose
+            # Check if either player has met loss conditions
             if p1_pos < 0 or p1_pos > len(self.tape) - 1 or (self.tape[0] == 0 and p1_flag):
                 p1_lose = True
             if p2_pos < 0 or p2_pos > len(self.tape) - 1 or (self.tape[-1] == 0 and p2_flag):
                 p2_lose = True
 
-            if p1_lose: #check if game over
+            # Check if the game is over (one or both players have met a loss condition)
+            if p1_lose:
                 if p2_lose:
                     return
                 self.winner = "P2 Wins"
@@ -219,18 +223,20 @@ class Game:
                 self.winner = "P1 Wins"
                 return
 
-            if self.tape[0] == 0: #flags at zero
+            # Check if either of the flags are currently at zero (they must be zero for 2 consecutive turns before a loss occurs)
+            if self.tape[0] == 0:
                 p1_flag = True
             else:
                 p1_flag = False
-            
             if self.tape[-1] == 0:
                 p2_flag = True
             else:
                 p2_flag = False
 
+            # Increment turn counter
             self.turns += 1
 
+    # Returns a string describing the properties of the game
     def title(self):
         return f"Tape length {len(self.tape)}{', polarity inverted' if self.polarity else ''}"
     
@@ -242,6 +248,7 @@ class Game:
             turn += 1
         print(self.winner)
 
+    # Save the game to a file
     def save(self, p1, p2, screen, font):
         showMessage("Enter filename in terminal", screen, font, (0x0, 0xFF, 0x0), 1200, 600)
         filename = input("Enter filename to save to (enter nothing to cancel): ")
@@ -263,7 +270,7 @@ if __name__ == "__main__":
     p2 = web.loadProgram("Gregor_furry_furry_strapon_pegging_girls")
 
     p1_code = pCompile(parse(p1))
-    p2_code = pCompile(parse("->++>-->>+>>->+>+(>[(+)*9[-].[.+]])*2(+<)*4(+)*23<(-)*23<(-)*30<(+)*30<(-)*30<(+)*29(>)*9++(>[(+)*16[-].[.+]][-[+]])*19"))
+    p2_code = pCompile(parse(p2))
 
     for pol in range(2):
         for i in range(10, 31):
