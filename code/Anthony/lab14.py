@@ -82,6 +82,7 @@ while i <=5: # or count<= 5
     selected_numbers = pick6_numbers
     print(selected_numbers, "selected numbers")
     mixed_numbers = zip(random_numbers, selected_numbers)
+    print(mixed_numbers)
     mixed_numbers = list(mixed_numbers)
     print(mixed_numbers)
     i+=1 #or count+=1

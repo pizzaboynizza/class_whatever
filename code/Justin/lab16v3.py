@@ -7,13 +7,23 @@ img = Image.new('RGB', (width, height))
 
 draw = ImageDraw.Draw(img)
 
-draw.ellipse((150, 100, 200, 150), fill=(255, 0, 0), outline=(0, 0, 0))
+draw.ellipse((110, 110, 200, 200), fill=(255, 0, 0), outline=(0, 0, 0))
 
 color = (255, 0, 0)  
 
-draw.line((1, 10, 150, 100), fill=color)
+draw.line((150, 200, 150, 300), fill=color)
 
-draw.line((-270, 10, 150, 100), fill=color)
+draw.line((150, 200, 100, 300), fill=color)
+
+draw.line((150, 175, 200, 300), fill=color)
+
+draw.line((250, 200, 100, 300), fill=color)
+
+draw.line((250, 175, 200, 300), fill=color)
+
+draw.line((150,300, 50, 450), fill=color)
+
+draw.line((150, 300, 250, 400), fill=color)
 
 
 # draw.rectangle(((100, 100)
