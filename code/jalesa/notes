@@ -7,6 +7,7 @@
 3/03/2020..... GROUP LAB -      DONE
 3/04/2020..... Lab 25 ATM ---  doc class.md
 3/05/20........ LAB 26: TIC-TAC-TOE --- doc 15 Classes
+3/06/2020 ..... doc Sets.md, docstings.md, Modules and Packages
 
 Comprehensions.md
 
@@ -54,5 +55,6 @@ DICTIONAIRIES
 #access dictionairy with collection and 
 total = sum(collection[first_card], collection[second_card], collection[third_card])
 print(total)
+
 
 

@@ -1,7 +1,7 @@
 class ATM:
-    def __init__(self,balance): 
+    def __init__(self,balance): # ALWAYS FIRST INITIALIZE AN INIT METHOD
         self.account_balance = balance
-
+#CREAT A CHECK BALACNE METHOD
     def check_balance(self):
         print(self.account_balance)
 
