@@ -120,3 +120,24 @@ while True:
    # if user== c
 # creat_data(data, keys)
 
+# while True:
+#     user_input = input("(c)reate, (r)ead, (u)pdate, (d)elete, (q)uit? ")
+#     if user_input == 'q':
+#         break
+#     elif user_input == 'c':
+#         create_contact(data, keys)
+#     elif user_input == 'r':
+#         read_contact(data, keys)
+#     elif user_input == 'u':
+#         update_contact(data, keys)
+#     elif user_input == 'd':
+#         delete_contact(data, keys)
+
+# data_csv_output = []
+# data_csv_output.append(list(data[0].keys()))
+# for contact in data:
+#     data_csv_output.append(list(contact.values()))
+# data_csv_output = [",".join(line) for line in data_csv_output]
+# data_csv_output = "\n".join(data_csv_output)
+# with open('contacts.csv', 'w') as f:
+#     f.write(data_csv_output)
