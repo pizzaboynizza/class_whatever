@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+    color: #00ff00;
+    background-color: #000000;
+}
+
+img {
+    float: right;
+    border-radius: 25px;
+}
+
+p {
+    padding: 5%;
+    margin: 4%;
+}
+
+.listtitle {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #ffff00;
+}
+
+q, select {
+    font-family: monospace;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding-left: 16px;
+}
+
+li:before {
+    content: ">";
+    padding-right: 8px;
+}
+
+table {
+    padding: 10px;
+    display: inline;
+}
+
+.th2 {
+    font-weight: bold;
+}
