@@ -1,0 +1,46 @@
+body {
+    text-align: center;
+    font-family: "Amita"; color: #5D707F;
+    background-color: #F9DE8B;
+}
+
+a {
+    color: #1C77C3;
+}
+
+ul {
+    display: inline-block;
+    list-style-type: square;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+h4 {
+    font-weight: normal;
+    margin-top: 10px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+p {
+    width: 750px;
+    margin: auto;
+    /* margin-right: 50px; */
+    padding-right: 50px;
+}
+
+img {
+    float: right;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-radius: 50%;
+    margin-right: 375px;
+    margin-top: 75px;
+}
+
+h5 {
+    margin-left: 320px;
+    margin-top: auto;
+}
