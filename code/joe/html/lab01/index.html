@@ -7,24 +7,30 @@
     ☑ A quote from them
 -->
 <!--Part 2
-    ☐ Center the entire content of the body
-    ☐ Add / pick an existing image in one of the sections and float it
-    ☐ Modify the padding and margins on your paragraphs to look better
+    ☑ Center the entire content of the body
+    ☑ Add / pick an existing image in one of the sections and float it
+    ☑ Modify the padding and margins on your paragraphs to look better
 -->
 <!--Part 3
-    ☐ Pick a color scheme and modify the background, body text, and link text color.
-    ☐ Change the typeface of the quote.
-    ☐ Add a rounded border to the picture.
-    ☐ Change the bullet points on the list of places to be a different character, like ☞.
+    ☑ Pick a color scheme and modify the background, body text, and link text color.
+    ☑ Change the typeface of the quote.
+    ☑ Add a rounded border to the picture.
+    ☑ Change the bullet points on the list of places to be a different character, like ☞.
 -->
 <!--Part 4
-    ☐ Peruse the complete HTML element list and try to incorporate some of them.
+    ☑ Peruse the complete HTML element list and try to incorporate some of them.
+        <meta> <hr> <h5> <select> <table> <var> <link rel="icon"> <header> <h1>
 -->
 <html>
     <head>
         <title>Alan Turing</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" href="icon.png" />
+
+        <meta name="author" content="Joe Dean"/>
     </head>
     <body>
+        <header><h1>Alan Turing</h1></header>
         <p>
             <a href="https://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a>, born on June 23rd, 1923, was most famous for his contributions to computer science. In fact, he is widely regarded as the father of theoretical computer science. He was born in Madia Vale in London, and went to King's College in Cambridge at 1931. During WWII, he worked on Cryptanalysis for the UK, inventing the bombe, a way to decrypt Enigma code. <!--More-->
         </p>
@@ -32,9 +38,9 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg" alt="Passport photo of Alan Turing, age 16" wifth="150" height="300" />
 
         <br />
-        <q><i>We are not interested in the fact that the brain has the consistency of cold porridge.</i></q>
-
-        <p>Places Alan Turing has lived:</p>
+        <q>We are not interested in the fact that the brain has the consistency of cold porridge.</q>
+        <hr/>
+        <h5>Places Alan Turing has lived:</h5>
         <ul>
             <li>London</li>
             <li>Hastings</li>
@@ -42,5 +48,83 @@
             <li>Hampton</li>
             <li>Richmond</li>
         </ul>
+        <br/>
+        <select>
+            <option value="1">True</option>
+            <option value="0">False</option>
+        </select>
+        <br/>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3"><var>A</var> | <var>B</var></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="th2">0</td>
+                    <td class="th2">1</td>
+                </tr>
+                <tr>
+                    <td class="th2">0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="th2">1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3"><var>A</var> & <var>B</var></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="th2">0</td>
+                    <td class="th2">1</td>
+                </tr>
+                <tr>
+                    <td class="th2">0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="th2">1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3"><var>A</var> ^ <var>B</var></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="th2">0</td>
+                    <td class="th2">1</td>
+                </tr>
+                <tr>
+                    <td class="th2">0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="th2">1</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
