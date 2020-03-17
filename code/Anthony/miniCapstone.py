@@ -1,12 +1,15 @@
-import tkinter as tkr
+import tkinter as tkr #FOR CREATING GUI
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg #imbedd graph into tkinter
 import pandas as pd
-import numpy as np
+# import numpy as np
 import matplotlib.pyplot as plt #used to plot graph
 
 
+# PROJECT : USE pip INSTALL TO DO SOMETHING!!!
+#TALK ABOUT INTERST IN POLICITCS AND ALWAYS WONDERED HOW ELECTION DATA AND GRAPHS ARE GENERATED. SP SET OUT TO DO BASIC GRPAH.
 
-
+#NORMALY WER USE split PUNC, MAKE INTO LIST, DICTS, CONDITIONAL STATMENTS AND THEN ANALYSE DATA
+#PANDAS LETS ONE ANAYLISE RAW DATA LIKE CSV FILES, IT PUTS FILES INTO ROWS AND COLUMNS CALLED DATAFRAME(a table)
 
 countries = pd.read_csv('countries.csv')
 # countries = countries_df
@@ -17,6 +20,7 @@ countries = pd.read_csv('countries.csv')
 # 2  Afghanistan  1962    10267083
 # 3  Afghanistan  1967    11537966
 # 4  Afghanistan  1972    13079460
+print(countries.shape)
 
 
 # SIZE IS LARGE SO  I WILL ONLY ANALYZE POPULATION GROWH FROM 1952 TO 2007
@@ -41,6 +45,7 @@ countries_2007 = countries.loc[countries['year']==2007]
 # 58    Argentina  2007    40301927
 merged_list = countries_1952.merge(countries_2007, left_on= 'country', right_on = 'country')
 # print(merged_list.head())
+# 0  Afghanistan    1952       8425333    2007      31889923           23464590
 
 #       country     year_x  population_x  year_y    population_y
 # 0  Afghanistan    1952       8425333    2007      31889923
@@ -54,7 +59,6 @@ merged_list = countries_1952.merge(countries_2007, left_on= 'country', right_on 
 merged_list['population_growth'] = merged_list['population_y'] - merged_list['population_x']
 # print(merged_list.head())
 #        country   year_x  population_x  year_y  population_y  population_growth
-# 0  Afghanistan    1952       8425333    2007      31889923           23464590
 # 1      Albania    1952       1282697    2007       3600523            2317826
 # 2      Algeria    1952       9279525    2007      33333216           24053691
 # 3       Angola    1952       4232095    2007      12420476            8188381
@@ -71,6 +75,7 @@ merged_list = merged_list.reset_index()
 merged_list = merged_list.drop(['index'], axis=1)
 # print(merged_list)
 
+
 #NOW TO SHOW THESE INFO ON A GRAPH, USING MATPLOTLIB
 #X AND Y
 # ONLY TOP 10 COUNTRIES COS THERE ARE ABOUT 200 COUNTRIES HERE
@@ -80,10 +85,12 @@ names = merged_list['country']
 line = (merged_list['population_growth'] / 10**6)
 # print(line)
 
+#GRAPHICAL USER INTERFACE(GUI)
 window = tkr.Tk() #Creating the tkinter window##
 #Editing tkinter window
 window.title("Poulation Growth Graph") # window name
-window.geometry('200x300') #window dimension
+window.geometry('5000x5000') #window dimension
+
 """CREATE VERT SCROLL BAR"""
 SBar = tkr.Scrollbar(window) #linked to window
 SBar.pack(side=tkr.RIGHT, fill="y") # packed into window to the right side and fill from top to bottom
