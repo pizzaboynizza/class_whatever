@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+}
+
+ul {
+    display: inline-block;
+    list-style-type: square;
+    margin: auto;
+    text-align: left;
+}
+
+h4 {
+    font-weight: normal;
+    margin-top: 10px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+p {
+    width: 750px;
+    margin: auto;
+    /* margin-right: 50px; */
+    padding-right: 50px;
+}
+
+img {
+    float: right;
+    margin-left: 10px;
+    padding-left: 10px;
+}
