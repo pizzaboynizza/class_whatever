@@ -18,10 +18,14 @@ for i in range(width):
         h, s, v = colorsys.rgb_to_hsv(r/255, g/255, b/255)
 
         # do some math on h, s, v
-        h = float(h) #rotate hue
-        s = float(s*10)
-        v = float(v)
-        b = int(b/10)
+        h = float(h+1.2)  #rotate hue
+        if h >= 1:
+            h = h - 1
+        s = float(s*10)  #increase saturation
+        v = float(v/5)  #decrease brightness
+        b = int(b)
+
+        
 
         r, g, b = colorsys.hsv_to_rgb(h, s, v)
 
@@ -35,4 +39,3 @@ for i in range(width):
         pixels[i, j] = (r, g, b)
 
 img.show()
-#img.show(Y)
