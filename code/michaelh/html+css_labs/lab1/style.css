@@ -1,0 +1,46 @@
+/*
+## Part 4
+* Peruse the [complete HTML element list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) and try to incorporate some of them. --> */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    text-align:center;
+    background-color: #0B0c10;
+    color: #66FCF1;
+}
+a {
+    color: #45A29E;
+}
+q {
+    font-style: oblique 40deg;
+    font-family: Arial;
+}
+li{
+    list-style-type: circle;
+}
+figure{
+    float: none;
+    margin-right: 0.5rem;
+}
+img {
+    border-radius: 10%;
+}
+aside {
+    width: 40%;
+    padding: .5rem;
+    margin: .5rem;
+    float: right;
+    font-style: italic;
+
+}
+aside > p {
+    margin: .5rem;
+}
+p {
+    padding: .5rem;
+    margin: .5rem;
+}

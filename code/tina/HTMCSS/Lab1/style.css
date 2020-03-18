@@ -1,3 +1,13 @@
+
+html {
+
+    box-sizing: border-box;
+}
+*,*:before *after{
+    box-sizing: inherit;
+}
+
+
 .content {
     max-width: 800px;
     margin: auto;
@@ -9,21 +19,15 @@ img {
     height:578px;
     margin-left:15px;
     border-radius: 50%;
-    border: 100px;
-    border-color: purple;
+    border-style: solid;
+    border-color: black;
      }
     
-.board{
-    border: black;
-    padding: 15px;
-    border-image: url(border.png);
-
-
-}
 
 
 .pad {
     padding:10px;
+
 }
 
 body {
@@ -42,14 +46,13 @@ h3 {
 }
 
 p {
-    color:#FFFFFF
-
+    border-width: 5px;
 }
 
 blockquote {
 
     font-style: italic;
-    font-size: 10;
+    font-size: 8;
     color:#1c4966
 }
 
@@ -79,9 +82,20 @@ li {
 	background-position: left center;
 	background-size: 20px;}
 
+
+.div {
+    column-count: 2;
+}
+
+
+
+
+
+
+
 .centered {
     position: absolute;
-    top: 130%;
+    top: 175%;
     left: 68%;
     transform: translate(-50%, -50%);
       }
