@@ -1,0 +1,20 @@
+/* @media (min-width: 768px) {
+    .todo-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+    }
+
+    .todo-items{
+        width: 50%;
+    }
+
+}
+
+@media (mid-with: 1024px) {
+    .todo-items {
+        width: 33.3%;
+    }
+
+} */

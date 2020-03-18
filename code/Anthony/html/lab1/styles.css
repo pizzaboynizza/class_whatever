@@ -1,0 +1,52 @@
+html{
+    background-color: aqua;
+    
+    
+
+}
+body {
+    text-align: center;
+    color: blueviolet;
+}
+body img {
+    width: 200px;
+    height: 300px;
+    padding-top: 18px;
+    border-radius: 50px;
+    
+    
+}
+.img{
+    float: right;
+    padding: 150;
+    margin: 150;
+    border-radius: 100px;
+    
+}
+p{
+    padding:0;
+    margin:200;
+    /* background: #00eeff; */
+
+}
+blockquote{
+    font-size: medium;
+    font-style: italic;
+    color: darkorange;
+    font-family: cursive;
+}
+a{
+    color: black;
+}
+ul{
+    list-style: decimal;
+}
+table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
