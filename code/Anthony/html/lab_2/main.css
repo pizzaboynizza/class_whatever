@@ -1,22 +1,17 @@
-/* html {
+html {
     box-sizing: border-box;
 }
 *, *:before, *:after {
-    box-sizing: inherit; */
-/* } */
-header, footer {
-    /* padding: 12px 18px; */
-    background-color: #0f4c81;
+    box-sizing: inherit; 
+}
+#top{
+    background-color: blue;
     font-family: Helvetica, Arial, sans-serif; 
 }
 p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
 }
-
-
 .uav-item{
-    max-width: 100%;
     padding: 12px;
     margin: 12px;
     font-family: Georgia, serif;
@@ -28,9 +23,6 @@ p{
 }
 .img {
     display: block;
-
-    
-    
 }
 footer {
     text-align: center;
@@ -46,18 +38,18 @@ footer a:hover {
 .navbar {
     font-size: 1.2em;
 }
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
     #uav-container {
         flex-wrap: wrap;
         text-align: center;
-        /* justify-self: start; */
-    /* }
+        justify-self: start; 
+     }
     img {
         flex-shrink: initial;
     }
     .uav-item {
-        /* width: 50%; */
-        /* padding-top: 18px;
+        width: 50%; 
+        padding-top: 18px;
     }
 
     footer {
@@ -73,4 +65,4 @@ footer a:hover {
     .uav-item {
         width: 33.333%;
     }
-} */ 
+}  
