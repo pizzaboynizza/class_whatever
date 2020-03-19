@@ -1,0 +1,18 @@
+.content {
+    max-width: 500px;
+    margin: auto;
+  }
+p {
+    margin: 25px;
+    padding: 10%;
+  }
+
+#quote img {
+    float:left;
+   }
+
+body {background-color: blanchedalmond;}
+
+ul#bulletpoint  {
+  list-style-type: square;
+}
