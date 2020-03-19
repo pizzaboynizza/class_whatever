@@ -1,0 +1,85 @@
+<!-- 
+# Lab 2: Blog
+Let's make the template of a blog with a title, top-nav, footer, sidebar, and multiple posts. Use the [semantic elements](https://www.w3schools.com/html/html5_semantic_elements.asp) header, nav, section, and footer. You can make generate fake content using [Hipster Ipsum](https://hipsum.co/), [Doggo Ipsum](https://doggoipsum.com/), or [Bacon Ipsum](https://baconipsum.com/). 
+Make sure you have a [responsive design](../docs/09%20-%20CSS%20Responsive%20Design.md) that offers different, legible layouts for phone, tablet, and desktop screen sizes. You can test this in the broswer devtools. Don't forget to use cascading min-width media queries for a mobile first design, and remember to include the responsive meta tag in your HTML.
+It needs to look professional, but this does not mean it needs to be complicated. A clean, simple, minimalist layout with custom color pallate, fonts, and subtle backgrounds or whitespace works great. For examples of simple yet attractive design, check out:  
+http://www.geert.io/  
+https://www.blog.google/  
+http://www.nextportland.com/  
+https://daringfireball.net/  
+## Part 1:
+Create the HTML structure for your blog, with all content included.
+
+## Part 2:
+Create your mobile version, using the styling of your choice.
+
+## Part 3:
+Use ```min-width``` media queries to add a tablet layout using flexbox. Customize your styling as needed. You probably want your breakpoint between phone and tablet widths to be somewhere around 640-768px.
+
+## Part 4:
+Finally, add your desktop layout. Customize styling as needed. A good breakpoint for desktop screen sizes is around 960-1100px. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="favicon.ico">
+        <title>Temerious Thunderbolt</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header id="top">
+            
+            <h1><img src="favicon.ico" alt="Thunderbolt"> Temerious Thunderbolt</h1>
+            <h2>BY MICHAEL HIMMELSBACH</h2>
+        </header>
+        <nav class="topnav">
+            <a href="#top">Home</a>
+            <a href="#top">News</a>
+            <a href="#top">Projects</a>
+            <a href="#top">Archive</a>
+        </nav>
+        <nav class="sidenav">
+            <a href="#top">About</a>
+            <a href="#top">Services</a>
+            <a href="#top">Clients</a>
+            <a href="#top">Contact</a>
+        </nav>
+        <div class="container">
+            <section class="item">
+                <h3>Punjab Prisons (Pakistan)</h3>
+                <h4>24 FEB 2020</h4>
+                <p>The Punjab Prisons is a correctional organization, a uniformed service and an attached department of the provincial Home Department in Punjab, Pakistan. The organization works under administrative control of the Additional Chief Secretary Home to Government of the Punjab, Pakistan. Functional head of the organization is Inspector General of Prisons who manages 43 prisons in the province. The organization is responsible for custody, control, care and correction (4 Cs) of prisoners confined in various central, district and special jails in the province of Punjab, Pakistan)</p>
+            </section>
+            <section class="item">
+                <h3>USS Black Arrow</h3>
+                <h4>20 FEB 2020</h4>
+                <p>USS Black Arrow (ID-1534) was a troop transport commissioned in 1919 to assist in the post-World War I repatriation of U.S. troops from France. Black Arrow was originally SS Rhaetia, a passenger-cargo ship built in Germany in 1904–05 for the Hamburg-America Line. From 1905 to 1914, Rhaetia operated primarily between Hamburg, Germany and South America, though she was also intermittently employed as an immigrant ship to the United States. With the outbreak of World War I in August 1914, Rhaetia was interned at Philadelphia.</p>
+            </section>
+            <section class="item">
+                <h3>Red Creek Wildlife Management Area (Mississippi)</h3>
+                <h4>27 NOV 2019</h4>
+                <p>Red Creek Wildlife Management Area was established from land owned by the U.S. Forest Service and is located within the De Soto National Forest off Mississippi Highway 15. Red Creek WMA lies within Stone, George, and Jackson Counties, southeast of Wiggins, Mississippi, and contains approximately 23,000 acres (93 square km).</p>
+            </section>
+            <section class="item">
+                <h3>Dimitri Patterson</h3>
+                <h4>28 SEP 2019</h4>
+                <p>Dimitri Jonthiel Patterson (born June 18, 1983) is a former American football cornerback. He was signed by the Washington Redskins as an undrafted free agent in 2005. He played college football at Tuskegee and Southeast Missouri State University. Patterson has also played for the Kansas City Chiefs, Philadelphia Eagles, Cleveland Browns, Miami Dolphins, and New York Jets.</p>
+            </section>
+            <section class="item">
+                <h3>OpenMedia.ca</h3>
+                <h4>23 SEP 2019</h4>
+                <p>OpenMedia is a Canadian non-partisan, non-profit advocacy organization working to encourage open and innovative communication systems within Canada. Its stated mission is "to advance and support a media communications system in Canada that adheres to the principles of access, choice, diversity, innovation and openness." The organization employs online campaigns, participatory events, school presentations and workshops. Its online petition for the "StopTheMeter.ca" campaign became the largest online appeal of its kind in Canadian history. In 2013, OpenMedia launched campaigns aimed at ensuring accountability in the Canadian government's surveillance activities.</p>
+            </section>
+            <section class="item">
+                <h3>Change for a Dollar</h3>
+                <h4>16 SEP 2019</h4>
+                <p>Change for a Dollar is a short film by Sharon Wright. The short movie follows a seemingly homeless man wander through the course of a day, in which he gives away the dollar in change that was dumped into his tin can. Following the course of how the "dollar" was used, the viewer essentially gets an eye-opening opportunity to watch lives changed, based on the premise that it doesn't take much to make a difference. The film was filmed in a single day in Osawatomie, Kansas on March 13, 2010 with the assistance of several Kansas City, Missouri film makers, and a small cast. To date the video as posted on YouTube has had more than 2,200,000 views where it is stated to be "One of the MOST VIEWED films in schools nationwide". The film has won several awards including two regional Emmy awards, and two Telly Awards in 2012, and several others. Famous film critic Roger Ebert commented in his December 7, 2011 newsletter that "It touched me. Sharon Wright. Remember that name."</p>
+            </section>
+        </div>
+        <footer>
+            <p>Brought to you by The Temerious Bolt of Lightning Company LLC.</p>
+            <a href="#top">BACK TO TOP</a>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0em;
+    padding-top: 0.33em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 0px 0px 5px 10px;
+}
+
+header, footer, nav {
+    color: white;
+    background-color: #0f4c81;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    padding: 20px 0px;
+    margin-top: 20px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    text-align: center;
+    font-size: 1.375em;
+    padding-inline-start: 0em;
+}
+
+nav ul li {
+    margin: 0px 20px 20px 5px;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.blogio {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.blogio a {
+    border: 2px solid #073c81;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #135081;
+    color: white;
+    padding: 4px;
+    margin-left: 4px;
+    margin-right: 10px;
+}
+
+.continue {
+    font-size: 1.25em;
+}
+
+.backtop {
+    font-size: 0.75em;
+}
+
+main hr {
+    margin: 20px 0px;
+}
+
+.blogpost p {
+    padding: 0px 10px;
+    font-size: 1.09375em;
+}
+
+footer p {
+    margin-left: 10px;
+}
+
+@media (min-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    nav ul {
+        justify-content: space-around;
+    }
+
+    img {
+        max-width: 37.5%;
+        float: left;
+        margin: 5px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .backtop, main hr {
+        display: none;
+    }
+
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .blogpost {
+        width: 49%;
+        border: 1px solid grey;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        margin-bottom: 1px;
+    }
+
+    .continue {
+        margin-bottom: 20px;
+        align-self: flex-end;
+    }
+
+}
