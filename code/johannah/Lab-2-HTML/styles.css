@@ -1,9 +1,69 @@
-.topnav {
+.well {
   background-color: #339933;
   padding: 20px;
 }
 
-a {
+#Home, #Blog, #About {
   color: #ffdd99;
   font-size: 14pt;
+  margin-right: 26px;
+}
+
+h1 {
+  padding: 40px;
+  background-color: #d5f0df;
+}
+
+#evergreen {
+  width:8%;
+  height:8%;
+  margin-right: 18px;
+}
+
+#email {
+  color: blue;
+}
+
+ul, p {
+  font-family: Comic Sans, Comic Sans MS, cursive;
+  /* font-size: 12px; */
+}
+
+h5, h6 {
+  font-family: Comic Sans, Comic Sans MS, cursive;
+  font-weight: bold;
+}
+
+#blog-cont {
+  color: darkred;
+  text-align: center;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 12px;
+  padding-bottom: 30%;
+  width: 200px;
+  background-color: peachpuff;
+  /* position: fixed; */
+  /* height: 80%; */
+  /* overflow: auto; */
+  float: right;
+}
+
+/* footer {
+  position:fixed;
+  bottom:0;
+  margin-bottom: 15px;
+} */
+
+/* footer {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+} */
+
+.body {
+  background-color: #dbe5e2;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2392acaa' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
