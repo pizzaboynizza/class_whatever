@@ -130,10 +130,10 @@ main {
 
 }
 
-@media (mid-with: 1024px) {
+/* @media (mid-with: 1024px) {
     .todo-items {
         width: 33.3%;
-    }
+    } */
 
 }
 

@@ -60,6 +60,8 @@ img {
     align-items: baseline;
 }
 
+/*This selector seems to take precedence over anything below it; must investigate further*/
+/*Found fix that didn't use !important, but I still don't understand the underlying cause*/
 .blogio a {
     border: 2px solid #073c81;
     border-radius: 5px;
@@ -97,6 +99,16 @@ footer p {
         display: flex;
         flex-direction: column;
     }
+
+    .blogpost {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    a.continue {
+        margin-left: 40%;
+    }
     
     nav ul {
         justify-content: space-around;
@@ -128,9 +140,13 @@ footer p {
         margin-bottom: 1px;
     }
 
-    .continue {
+    a.continue {
         margin-bottom: 20px;
-        align-self: flex-end;
+        margin-left: 0px;
+    }
+
+    .blogio {
+        justify-content: flex-end;
     }
 
 }

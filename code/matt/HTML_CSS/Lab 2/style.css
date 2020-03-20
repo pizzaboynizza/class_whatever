@@ -1,0 +1,150 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px dashed red
+}
+
+h1 {
+    font-family:stencil-w01-bold,fantasy;
+}
+
+a {
+    display: none;
+}
+
+h5 {
+    margin: auto;
+}
+
+hr {
+    text-align: center;
+    width: 75%
+}
+
+#profile {
+    /* image resizing for profile image */
+    width: 75%;
+    border-radius: 50%;
+    /* height: 75%; */
+}
+
+.article {
+    /* article image adjustments */
+    height: 25%;
+    width: 25%;
+}
+
+.navbar {
+    background-image: linear-gradient(#0E0F0F, #36393A);
+    text-align: center;
+    width: 100%;
+}
+
+aside {
+    background-image: linear-gradient(#0E0F0F, #36393A);
+    text-align: center;
+    width: 100%;
+}
+
+body {
+    background-color: #36393A;
+    color: white;
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px dotted blue;
+    /* height: 100%; */
+    /* width: 100%; */
+}
+
+.main1, .main2, .main3 {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    /* border: 1px solid white; */
+}
+
+
+footer {
+    background-image: linear-gradient(#36393A, #0E0F0F);
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (min-width: 700px) {
+    .navbar {
+        background: none #0E0F0F;
+        width: 20%;
+        height: 100%;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        border: 5px dashed red
+    }
+    
+    aside {
+        background: none #0E0F0F;
+        width: 25%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        /* height: 100%; */
+        /* position: fixed; */
+    }
+
+    .main {
+        width: 75%;
+    }
+
+    #profile {
+        width: 50%;
+        text-align: center;
+        /* height: 50%; */
+    }
+
+    a {
+        display: block;
+        margin-top: 40px;
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+    /* .navbar {
+        background: none #0E0F0F;
+        width: 25%;
+        height: 100%;
+    } */
+
+    /* #profile {
+        height: 50%;
+        width: 50%;
+    } */
+
+    h4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
