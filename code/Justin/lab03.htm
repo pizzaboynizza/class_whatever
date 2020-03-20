@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nizza Pizza</title>
+
+    <style>
+      
+
+body {
+    background: rgb(19, 19, 19);
+    color: #fff;
+    font-family: 'Jeepers', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #353535;
+    font-size: 3rem;
+    color: #fff;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+  
+.card:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ }
+      
+.photo-grid {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
+}
+
+/* Medium screens */
+@media screen and (min-width: 600px) {
+  .card-tall {
+    grid-row: span 2 / auto;
+  }
+
+  .card-wide {
+    grid-column: span 2 / auto;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <h1>N i z z a  P i z z a </h1>
+
+    <div class="photo-grid">
+
+Phone Number: (501) 450-6528
+<br>
+<br>
+Address: 1908 Wigwam Cir, Conway, AR, 72032
+<br>
+<br>
+CARRYOUT HOURS
+<br>
+Closed at 10:00 PM
+<br>
+Carryout hours may vary
+<br>
+<br>
+DELIVERY HOURS
+<br>
+Closed at 10:00 PM
+<br>
+Delivery hours may vary
+      <div
+        class="card card-tall card-wide"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/download (12).jpeg')"
+      >
+      </div>
+      <div
+        class="card card-tall"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/pizza.jpg')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/DSC_0866_pizza_default-sm.png')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/pizza-menu-design-template-ec72ff7f192f0f630acbfa855cfd89ca_screen.jpg')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/76186139-diet-failure-of-fat-man-eating-fast-food-slice-pizza-on-plate-close-up-of-breakfast-for-hungry-overw.jpg')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/58f8f64d14000049001b5608.jpeg')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/brick-oven-pizza1.jpg')"
+      >
+      </div>
+      <div
+        class="card card-wide"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/eating_pizza_with_friends.jpg.653x0_q80_crop-smart.jpg')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/ZDHybAoAQA2BGpB7Dvtsia-320-80.jpg')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/9124194-single-slice-of-pepperoni-and-sausage-pizza-on-a-plate.jpg')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/36190303tmntthumb-1517620627001.jpg')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/tenor.png')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/photo-1534308983496-4fabb1a015ee.jpeg')"
+      >
+      </div>
+      <div
+        class="card"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/Simple-Location-Picker.png')"
+      >
+      </div>
+    </div>
+  </body>
+</html>
