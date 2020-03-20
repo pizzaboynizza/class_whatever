@@ -21,16 +21,18 @@
   font-size: 40px;
   text-align: center;
   background: white;
-  class=rounded-corners
 }
 
-header
-{
-    background-color:#A9A9A9;
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
 }
-
-.nav {
-
+.footer,
+.push {
+  height: 50px;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -63,12 +65,6 @@ header
   background-color: white;
   padding: 20px;
   margin-top: 20px;
-}
-
-.footer {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 /* Clear floats after the columns */
@@ -185,9 +181,9 @@ img.rounded-corners {
             activated charcoal gentrify cardigan XOXO anim adaptogen jean shorts 
             hammock listicle.</p>
         <h3>Popular Post</h3>
-        <center><div class="fakeimg"><img src="/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/images (10).jpeg" class=rounded-corners width="280"</div>
-        <div id= "#popular post" class="fakeimg"><img src="/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/images (11).jpeg" class=rounded-corners width = "280"</div>
-        <div class="fakeimg"><img src="/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/enhanced-24602-1409374401-1.webp" class=rounded-corners width="280"</div>
+        <center><div class="fakeimg"><img src="/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/images (10).jpeg" class=rounded-corners width="250"</div></center>
+        <center><div id= "#popular post" class="fakeimg"><img src="/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/images (11).jpeg" class=rounded-corners width = "250"</div></center>
+        <center><div class="fakeimg"><img src="/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/enhanced-24602-1409374401-1.webp" class=rounded-corners width="250"</div></center>
         <h3>Follow Me</h3>
         <p>Deep v flexitarian banh mi, chambray brunch ramps viral swag. 
         Direct trade vegan synth asymmetrical gluten-free. Leggings 
@@ -198,10 +194,13 @@ img.rounded-corners {
         tofu humblebrag cornhole.</p>
     </div>
     </section>
-<center>><footer>
-    <p>Posted by: Hege Refsnes</p>
-    <p> id ="contact" Contact information: <a href="mailto:someone@example.com">
-    someone@example.com</a>.</p>
-</footer></center
+    
+    <div class="wrapper">
+
+            footer
+      
+          <div class="push"></div>
+        </div>
+        <footer class="footer"></footer>
 </body>  
 </html>
