@@ -1,3 +1,4 @@
+/* Desktop Design */
 .well {
   background-color: #339933;
   padding: 20px;
@@ -75,9 +76,6 @@ h3 {
 }
 
 footer {
-  /* display: flex;
-  justify-content: center;
-  align-content: flex-end; */
   margin-bottom: 15px;
   /* margin-left: 15px; */
   text-align: center;
@@ -125,16 +123,6 @@ body {
   text-align: center;
 }
 
-/* #nicknames {
-  float: left;
-  width: 50%;
-}
-
-#contribute {
-  float: right;
-  width: 50%;
-} */
-
 #head {
   text-align: center;
 }
@@ -159,8 +147,51 @@ body {
   padding-top: 24px;
 }
 
-/* @media screen and (max-width: 600px) {
-  .column {
+.flexbox-container {
+  display: flex;
+}
+
+#nicknames, #contribute {
+  width: 50%;
+}
+
+#nicknames-head {
+  text-align: center;
+}
+
+/* Mobile Design */
+@media (max-width: 414px) {
+  .flexbox-container {
+      display: block;
+      /* display: inline; */
+  }
+
+  #nicknames, #contribute {
     width: 100%;
   }
-} */
+
+  #homepage {
+    padding-right: 0px;
+  }
+
+  .images {
+    max-width:65%;
+    height:auto;
+  }
+
+  .sidebar {
+      display: none;
+  }
+}
+
+/* Tablet Design */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .images {
+    max-width:45%;
+    height:auto;
+  }
+
+  ul, p {
+    font-size: 18px;
+  }
+}
