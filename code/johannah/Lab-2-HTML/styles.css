@@ -29,41 +29,138 @@ ul, p {
   /* font-size: 12px; */
 }
 
-h5, h6 {
+h3, h4, h5, h6 {
   font-family: Comic Sans, Comic Sans MS, cursive;
   font-weight: bold;
 }
 
-#blog-cont {
-  color: darkred;
+h3 {
+  border: 3px solid black;
+  border-radius: 24px;
+  margin: 6px;
   text-align: center;
+  padding: 10px;
+}
+
+#blog-cont {
+  text-align: center;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+#blog-link {
+  color: darkgreen;
+  /* font-size: 14pt; */
 }
 
 .sidebar {
   margin: 0;
   padding: 12px;
-  padding-bottom: 30%;
+  padding-bottom: 100%;
   width: 200px;
   background-color: peachpuff;
-  /* position: fixed; */
+  position: fixed;
   /* height: 80%; */
   /* overflow: auto; */
-  float: right;
+  /* float: right; */
+  right: 0;
 }
 
-/* footer {
-  position:fixed;
-  bottom:0;
-  margin-bottom: 15px;
-} */
+#sideheader {
+  text-align: center;
+}
 
-/* footer {
-  display: flex;
+#homepage {
+  padding-right: 200px;
+}
+
+footer {
+  /* display: flex;
   justify-content: center;
-  align-content: flex-end;
-} */
+  align-content: flex-end; */
+  margin-bottom: 15px;
+  /* margin-left: 15px; */
+  text-align: center;
+}
 
-.body {
+body {
   background-color: #dbe5e2;
   background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2392acaa' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
+
+.images {
+  max-width:25%;
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+#coast {
+  height: 20%;
+  width: auto;
+}
+
+/* #beerdiv, #centraldiv, #plantdiv {
+  float: left;
+  width: 50%;
+  right: 33%;
+}
+
+#winediv, #coastdiv, #foodcartdiv {
+  float: right;
+  width: 50%;
+  position: 0;
+} */
+
+#peoplediv, #gorgediv, #skidiv, #beerdiv, #winediv, #centraldiv, #coastdiv, #plantdiv, #foodcartdiv {
+  padding-top: 48px;
+  padding-bottom: 12px;
+  /* padding: 24px; */
+}
+
+.break {
+  text-align: center;
+}
+
+/* #nicknames {
+  float: left;
+  width: 50%;
+}
+
+#contribute {
+  float: right;
+  width: 50%;
+} */
+
+#head {
+  text-align: center;
+}
+
+#sideHome, #sideBlog, #sideAbout {
+  color: blue;
+  /* font-weight: bold; */
+  font-size: 14pt;
+  /* margin-bottome: 8px; */
+}
+
+#nav-side {
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-family: inherit;
+  font-size: 14pt;
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 0;
+}
+
+#about {
+  padding-top: 24px;
+}
+
+/* @media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+} */
