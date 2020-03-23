@@ -4,6 +4,14 @@
     Accent Color: #BF7B3F
 */
 
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
     background-color: #BFAE99;
     color: #262223;
@@ -33,6 +41,10 @@ header h1 a, footer a {
 footer h5 {
     margin-bottom: 0px;
     font-weight: normal;
+}
+
+.slogan {
+    text-align: center;
 }
 
 .contacts {
