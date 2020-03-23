@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neato Burrito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tacostyle.css" />
+  </head>
+  <header>
+      <h1>Neato Burrito!</h1>
+      <h1><a href=">Menu</a></h1>
+  </header>
+  <body>
+      <form action="https://webhook.site/4b9ac117-2dac-43a7-8497-f61126b57687" method="post" />
+      <div class="container">
+          <div class="user-size">
+              <fieldset class="user">
+                  <legend> Sign-In </legend>
+                  <input type="text" name="username" placeholder="User Name" pattern="[a-z]{1,15}" required/>
+                  <input type="text" name="password" placeholder="Password" pattern="^(?=.*\d).{4,8}$" title="Password needs to be between 4 and 8 characters" required/>
+                  <br>
+                  <input type="text" name="name" placeholder-="First + Last Name" required />
+                  <input type="email" name="email" placeholder="Email address" required />
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" name="phone" placeholder="xxx-xxx-xxxx" required />
+                   <br>
+                   <label for="dob">Date of Birth</label>
+                   <input type="date" name="dob" placeholder="Date of Birth" required />
+                   <label for="ssn">SSN</label>
+                   <input type="text" name="ssn" placeholder="SSN plz" required />
+                   <br>
+                   <input type="text" name="address" placeholder="Home Address" required />
+                   <input type="text" name="city" placeholder="City" required />
+                   <input type="text" name="state" placeholder="State" required />
+                   <br>
+                   <input type="text" name="zip" placeholder="Zip" required />
+              </fieldset>
+              <div class="img">
+                  <img src="b-squishy.jpg">
+              </div>
+            </div>
+            <fieldset class="form-size" />
+                <legend>* Order Form *</legend>
+                <div class="order-box">
+                    <label for="tortilla">Choose your Tortilla</label>
+                    <br>
+                    <input type="radio" name="tortilla" value="white" required /> White
+                    <input type="radio" name="tortilla" value="wheat"  /> Wheat
+                    <input type="radio" name="tortilla" value="corn"  /> Corn <br>
+                    <input type="radio" name="tortilla" value="gf"  /> Gluten-Free
+                    <input type="radio" name="tortilla" value="bowl" /> Bowl
+                    <br>
+                </div>
+                <div class="order-box">
+                    <label for="rice">Choose your Rice</label>
+                    <br>
+                    <input type="radio" name="rice" value="white" required /> White
+                    <input type="radio" name="rice" value="brown" /> Brown
+                    <input type="radio" name="rice" value="caul" /> Cauliflower
+                    <br>
+                </div>
+                <div class="order-box">
+                    <label for="beans">Choose your Beans</label>
+                    <br>
+                    <input type="radio" name="bean" value="black" required /> Black
+                    <input type="radio" name="bean" value="pinto" /> Pinto
+                    <br>
+                </div>
+                <div class="order-box">
+                    <label for="meat">Choose your Protein (Optional)</label>
+                    <br>
+                    <input type="radio" name="pro" value="carn" required /> Carnitas
+                    <input type="radio" name="pro" value="ckn" /> Pollo
+                    <input type="radio" name="pro" value="jk" /> Jackfruit<br>
+                    <input type="radio" name="pro" value="bb" /> Barbacoa
+                    <input type="radio" name="pro" value="vg" /> Veggies
+                    <br>
+                </div>
+                <div class="order-box">
+                    <label for="extras">Extras!</label>
+                    <br>
+                    <input type="radio" name="xt" value="ch" required /> Cheese
+                    <input type="radio" name="xt" value="sc" /> Sour Cream
+                    <input type="radio" name="xt" value="avo" /> Guacamole
+                    <br>
+                </div>
+                <button type="submit">ROLL ME UP!</button>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+  </body>
+</html>
