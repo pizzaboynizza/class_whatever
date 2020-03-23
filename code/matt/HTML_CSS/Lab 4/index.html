@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burrito Bonanza</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+<header>
+    <img src="https://cdn.pixabay.com/photo/2017/11/13/03/56/grilled-pineapple-pork-burrito-2944562_960_720.jpg" alt="Loaded Burrito"><br>
+    Texty Text Blah Header Header Header
+</header>
+
+<main>
+    <h2>Customize Your Burrito:</h2>
+
+    <form action="https://webhook.site/787ff076-005f-4027-9775-2fa8717304bd" method="POST">
+    
+    <div class="form">
+        <h3>Tortilla:</h3><br>
+        <div class="tortillas">
+            <label><span class="tortilla1"><input type="radio" name="tortilla" value="white">White Flour</span>
+                <span class="img1"><img src="https://live.staticflickr.com/65535/48792959296_c340520bae_b.jpg"></span></label>
+            <label><input type="radio" name="tortilla" value="wheat">Wheat Flour
+                <img src="https://live.staticflickr.com/65535/48806253746_d7e40e24e3_b.jpg"></label>
+            <label><span class="tortilla3"><input type="radio" name="tortilla" value="spinach">Spinach</span>
+                <span class="img3"><img src="https://images.pexels.com/photos/3346226/pexels-photo-3346226.jpeg?cs=srgb&dl=holiday-cooking-christmas-cooking-spinach-tortilla-3346226.jpg&fm=jpg"></span></label>
+            <label><input type="radio" name="tortilla" value="corn">Corn
+                <img src="https://cdn.pixabay.com/photo/2020/01/08/16/14/tortillas-4750524_960_720.jpg"></label>
+        </div>
+
+        <h3>Rice:</h3><br>
+        <div class="rice">
+            <label><input type="radio" name="rice" value="white">White Rice
+                <img src="https://storage.needpix.com/rsynced_images/white-rice-2907724_1280.jpg"></label>
+            <label><input type="radio" name="rice" value="brown">Brown Rice
+                <img src="https://cdn.pixabay.com/photo/2019/06/10/17/44/rice-4264846_960_720.jpg"></label>
+        </div>
+
+        <h3>Beans</h3><br>
+        <div class="beans">
+            <label><input type="radio" name="beans" value="black">Black Beans
+                <img src="https://live.staticflickr.com/1935/44480763344_c731a998f8_b.jpg"></label>
+            <label><input type="radio" name="beans" value="pinto">Pinto Beans
+                <img src="https://live.staticflickr.com/7878/46872800901_c102d3f06f_b.jpg"></label>
+        </div>
+
+        <h3>Protein:</h3><br>
+        <div class="proteins">
+            <label><input type="radio" name="protein" value="carnitas">Carnitas
+                <img src="https://live.staticflickr.com/4089/4950790802_6fcb32407a_b.jpg"></label>
+            <label><input type="radio" name="protein" value="chicken">Chicken
+                <img src="https://p1.pxfuel.com/preview/110/408/919/chicken-meat-poultry-poultry-meat-meat-food-eat.jpg"></label>
+            <label><input type="radio" name="protein" value="sofritas">Sofritas
+                <img src="https://pinchofyum.com/wp-content/uploads/Sofritas-Tofu-in-Pan.jpg" alt="Sofritas image courtesy of pinchofyum.com"></label>
+            <label><input type="radio" name="protein" value="none">None
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Forbidden_Symbol_Transparent.svg/240px-Forbidden_Symbol_Transparent.svg.png"></label>
+        </div>
+
+        <h3>Additional Ingredients:</h3>
+        <label><input type="checkbox" name="extras" value="cheese">Cheese</label>
+        <label><input type="checkbox" name="extras" value="sourcream">Sour Cream</label>
+
+    </div>
+
+        <fieldset>
+            <legend>Personal Info</legend>
+            <label>Username: <input type="text" name="username" pattern="[A-z\d]{6,}" placeholder="New Username" title="Must be at least 6 characters long." required></label><br>
+            <label>Password: <input type="password" name="password" pattern=".{6,}" placeholder="New Password" title="Must be at least 6 characters long" required></label><br>
+            <label>First Name: <input type="text" name="firstname" pattern="[A-z]{3,}" placeholder="John" title="Must be at least 3 letters." required></label><br>
+            <label>Last Name: <input type="text" name="lastname" pattern="[A-z]{3,}" placeholder="Doe" title="Must be at least 3 letters." required></label><br>
+            <label>E-mail: <input type="email" name="email" placeholder="johndoe@mail.com" required></label><br>
+            <label>Phone Number: <input type="tel" name="phone" pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890" maxlength="12" size="12" title="Must be valid Phone Number separated by dashes (-). Ex.: 123-456-7890" required></label><br>
+            <label>Date of Birth: <input type="date" name="birthday" placeholder="MM/DD/YYYY" required></label><br>
+            <label>Social Security Number: <input type="text" name="ssn" pattern="\d{3}-\d{2}-\d{4}" placeholder="123-45-6789" maxlength="11" size="11" title="Must be a valid Social Security Number separated by dashes (-)" required></label><br>
+            <label>Address: <input type="text" name="address" placeholder="123 Somewhere Rd" title="Please enter your street address." required></label><br>
+            <label>City: <input type="text" name="city" placeholder="City Name" title="Enter your City" required></label><br>
+            <label>State:
+                <select name="state">
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AZ">AZ</option>
+                    <option value="AR">AR</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DE">DE</option>
+                    <option value="DC">DC</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="IA">IA</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="ME">ME</option>
+                    <option value="MD">MD</option>
+                    <option value="MA">MA</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MS">MS</option>
+                    <option value="MO">MO</option>
+                    <option value="MT">MT</option>
+                    <option value="NE">NE</option>
+                    <option value="NV">NV</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NY">NY</option>
+                    <option value="NC">NC</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WV">WV</option>
+                    <option value="WI">WI</option>
+                    <option value="WY">WY</option>
+                </select></label>
+            <label>Zip Code: <input type="text" name="zip" pattern="\d{5}" placeholder="12345" maxlength="5" size="5" title="Enter your 5-digit Zip Code." required></label>
+            <input type="submit" value="Send it!">
+        </fieldset>
+
+
+    
+    
+    
+    
+    
+    
+    </form>
+
+</main>
+
+
+
+</body>
+</html>
