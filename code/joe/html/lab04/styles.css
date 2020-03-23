@@ -1,0 +1,59 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin: 12px 0px;
+}
+
+input[type="submit"] {
+    margin: 16px 4px 0px 16px;
+}
+
+h3 {
+    margin-block-end: 4px;
+}
+
+.button-list {
+    margin-left: 16px;
+}
+
+.button-list input, .button-list label {
+    margin: 6px 0px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+.textin {
+    margin: 8px 0px;
+}
+
+h1 {
+    margin-left: 4%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #DFD8C8;
+}
+
+legend {
+    font-size: 2em;
+}
+
+img {
+    width: 100%;
+    max-width: 512px;
+    align-self: flex-start;
+}
