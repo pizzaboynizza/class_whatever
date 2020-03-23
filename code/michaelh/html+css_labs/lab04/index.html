@@ -1,0 +1,100 @@
+<!-- 
+
+# Lab 4: Burrito Order Form
+
+Create a burrito order form with the following input controls. Try to incorporate some images and semantic elements. Below are some recommended fields, feel free to use your own. You should include all elements in a `form`, and use `fieldset`s. You may draw some inspiration from [this image](burrito-order-form.png).
+
+Tortilla (radio buttons)
+- White Flour
+- Wheat Flour
+- Spinach
+- Corn
+
+Rice (radio buttons)
+- White Rice
+- Brown Rice
+
+Beans (radio buttons)
+- Black Beans
+- Pinto Beans
+
+Protein (radio buttons)
+- Carnitas
+- Chicken
+- Sofritas
+- None
+
+Additional Ingredients (check boxes)
+- Cheese
+- Sour Cream
+
+For personal info, use the `required`, `pattern` and `title` attributes of the input fields to verify that the information the user entered is legitimate.
+
+Personal Info
+- Username (at least 6 characters)
+- Password (at least 6 characters)
+- Name (First and Last) (two words, at lease 3 characters each)
+- Email Address (one or more numbers/letters, @, one or more numbers/letters, ., one or more numbers/letters)
+- Phone Number: (e.g. 293-213-5555)
+- Date of Birth: (e.g. 2/13/2627)
+- Social Security Number: (e.g. 415-25-2627)
+- Street (e.g. 123 Mulberry Ln)
+- City, State, Zip (e.g. Portland, OR, 97201)
+
+Once you have your page together, use [webhook.site](https://webhook.site) to create a temporary endpoint. Add the attributes `action="your-webhook.site-url-goes-here"` and `method="post"` to your form. Then fill out your form and submit the data. You should see an "ok" response. You can then check your bin and look at the request's body. Make sure all the relevant data is present to ensure your form is working. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo Page</title>
+    </head>
+    <body>
+        <p>Hello world!</p>
+    </body>
+    <form action=" https://webhook.site/e508d9c9-e183-427a-8d15-d3bfc05e644d " method="post">
+        <fieldset>
+            <legend>Tortilla</legend>
+            <input type="radio" name="tortilla" value="white"> White Flour<br>
+            <input type="radio" name="tortilla" value="whole_wheat"> Whole Wheat Flour<br>
+            <input type="radio" name="tortilla" value="spinach"> Spinach
+            <input type="radio" name="tortilla" value="corn"> Corn
+        </fieldset>
+        <fieldset>
+            <legend>Rice</legend>
+            <input type="radio" name="rice" value="white"> White<br>
+            <input type="radio" name="rice" value="brown"> Brown<br>
+        </fieldset>
+        <fieldset>
+            <legend>Rice</legend>
+            <input type="radio" name="bean" value="black"> Black<br>
+            <input type="radio" name="bean" value="pinto"> Pinto<br>
+        </fieldset>
+        <fieldset>
+            <legend>Protein</legend>
+            <input type="radio" name="protein" value="carnitas"> Carnitas<br>
+            <input type="radio" name="protein" value="chicken"> Chicken<br>
+            <input type="radio" name="protein" value="sofritas"> Sofritas
+            <input type="radio" name="protein" value="none"> None
+        </fieldset>
+        <fieldset>
+            <legend>Additional Fillings</legend>
+            <input type="checkbox" name="add_fill" value="cheese"> Cheese<br>
+            <input type="checkbox" name="add_fill" value="sour_cream"> Sour Cream<br>
+        </fieldset>
+        <fieldset>
+            <legend>Personal Information</legend>
+            Username: <input type="text" name="name" required/><br>
+            Password: <input type="text" name="name" required/><br>
+            First Name: <input type="text" name="name" required/><br>
+            Last Name: <input type="text" name="name" required/><br>
+            Email Address: <input type="text" name="name" required/><br>
+            Phone Number: <input type="text" name="name" required/><br>
+            Date of Birth: <input type="text" name="name" required/><br>
+            Socail Security Number: <input type="text" name="name" required/><br>
+            Street: <input type="text" name="name" required/><br>            
+            City: <input type="text" name="name" required/><br>
+            State: <input type="text" name="name" required/><br>
+            Zip: <input type="text" name="name" required/><br>
+        </fieldset>
+        <button type="submit">submit</button>
+    </form>
+</html>
