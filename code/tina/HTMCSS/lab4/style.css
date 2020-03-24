@@ -70,12 +70,18 @@ img {
         display: flex;
         flex-wrap: wrap;
       } 
-    header {
-        align-items: center;
-        width: auto;
-        height: auto;
+    img {
+        height: 200px;
+        width: 2000px;
+        display: flex;
+        align-items: center; 
       }
-     
+    
+    fieldset {
+        width: 200px;
+    }
+    
+    
     
     
 
