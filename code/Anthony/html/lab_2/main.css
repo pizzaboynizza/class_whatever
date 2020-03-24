@@ -1,0 +1,87 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit; 
+}
+/* header a{
+    align-self: center; */
+}
+#top{
+    background-color:grey;
+    font-family: Helvetica, Arial, sans-serif; 
+}
+
+#top img{
+    display: block;
+    height: 400px;
+    width: 950px;
+    margin: 15px;
+}
+#top h1{
+    color:black;
+    font-size: 50px;
+    /* position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: (-50%, -70%); */
+    
+}
+
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin: 40px;
+    
+}
+.uav-item{
+    /* padding: 12px;
+    margin: 12px; */
+    font-family: Georgia, serif;
+    
+    text-align: justify;
+    padding: 12px 18px;
+} 
+
+.uav-item h5{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* text-align: center; */
+
+}
+img {
+    display: block;
+    height: 850px;
+    width: 850px;
+    margin: 35px;
+    /* max-width: 100%; */
+}
+footer {
+    text-align: center;
+    
+}
+
+footer a {
+    color: #FF6F61;
+}
+
+footer a:hover {
+    color: purple;
+}
+.navbar {
+    font-size: 1.2em;
+    color: yellow;
+}
+
+@media (min-width: 768px) { 
+    #uav-container{
+        width: 10%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap; 
+    }
+    header img{
+        justify-items: stretch;
+        
+    }
+    
+} 

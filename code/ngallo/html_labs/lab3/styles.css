@@ -1,0 +1,31 @@
+html {
+    box-sizing: border-box;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Alata', sans-serif;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,1)), radial-gradient( rgb(7, 51, 122), rgb(251, 227, 169), rgb(165, 95, 25));
+    background-repeat: 100% no-repeat;
+}
+  
+
+
+@media (min-width: 768px) {
+
+#main_design {
+    background-image: url('/IMG/sunrise.jpg');
+}
+
+}
+
+@media (min-width: 1024px) {
+
+
+}
+
+@media (min-width: 2500px) {
+
+}

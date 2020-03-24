@@ -1,20 +1,141 @@
-/* @media (min-width: 768px) {
-    .todo-container {
+body {
+    background-color: #5CDB95;
+    font-family: monospace;
+
+}
+
+h3 {
+    text-align: center;
+    color: #EDF5E1;
+    background-color:#05386b;
+    
+}
+
+h1 {
+    text-align: left;
+    color: #EDF5E1;
+    background-color:#05386b
+}
+
+
+p {
+    padding: 5px;
+    color: #EDF5E1;
+    padding: 5px;
+}
+
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+
+footer {
+    background-color: #05386b;
+    color: #EDF5E1;
+    text-align: center;
+    text-size-adjust: 10px;
+    padding: 10px;
+
+}
+
+a {
+    color: #EDF5E1;
+    text-align: center;
+    background-color: #05386b;
+}
+
+
+.v1 {
+    border: 3px solid #379683;
+    height: 5;
+
+}
+
+
+hr { 
+    border: 0;
+    background:url('paw.png') 50%;
+    height: 30px;
+    margin: 1em 0;
+    }
+
+
+header {
+    padding: 1px;
+    text-align: center;
+
+}
+
+.link {
+    position: absolute;
+    top: 10%;
+    left: 74%;
+    transform: translate(-50%, -50%);  
+}
+
+main {
+    margin-left: 53px;
+
+}
+
+.sidebar {
+    height: 100%;
+    width: 62px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #05386b;
+    overflow-x: hidden;
+    padding-top: 20px;
+    word-wrap: keep-word;
+    
+}
+
+
+
+
+@media (min-width: 800px) {
+    .dog-container {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
 
     }
 
-    .todo-items{
-        width: 50%;
+    .dog-items{
+        width: 100%;
+    }
+
+    
+
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      .link {
+        position: absolute;
+        top: 10%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        
     }
 
 }
 
-@media (mid-with: 1024px) {
+/* @media (mid-with: 1024px) {
     .todo-items {
         width: 33.3%;
-    }
+    } */
 
-} */
+}
+
+
+
