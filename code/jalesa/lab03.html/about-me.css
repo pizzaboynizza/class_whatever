@@ -1,0 +1,77 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    columns: #926239;
+    line-height: 1.6;
+}
+/* ----------------------------NAV-BAR----------------------------------------- */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* width: 200px; */
+    height: 100px;
+    background-color: #153052;
+}
+/* ----------------------------HEADER------------------------------------------ */
+#showcase{
+    background-image:url('../img/ball.jpeg');
+    background-size:cover;
+    background-position: center;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align:center;
+}
+#showcase h1{
+    font-size: 50px;
+    line-height: 1.2;
+}
+#showcase p{
+    font-size: 20px;
+}
+#showcase .button{
+    font-size: 18px;
+    text-decoration: none;
+    color:#926239;
+    border:#926239 1px solid;
+    padding:10px 20px;
+    border:radius 10px;
+    margin-top:20px;
+}
+#showcase .button:hover{
+    background:#926239;
+    color:white
+}
+/* ---------------------------ABOUT ME--------------------------------------- */
+/* .about-me{
+width:100%;
+padding-top: 70px;
+padding-bottom: 70px;
+} */
+.about-me h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+#container{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    /* gap isnt working */
+    grid-column-gap: 1px;
+    grid-auto-rows: minmax(100px, auto);
+    /* padding: 1em; */    
+}
+.col-right{
+    background-color: #926239;
+    padding:1em;
+}
+/* ----------------------------------FOOTER ------------------------------- */
+
