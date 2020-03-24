@@ -29,6 +29,9 @@ fieldset{
 h1 h2{
     text-align: center;
 }
+label{
+    font-weight: bold;
+}
 /* ----------------------     TABLET    ----------------------------- */
 @media (min-width: 768px) {
     h1,h2{
