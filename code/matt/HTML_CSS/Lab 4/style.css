@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F7F29B;
+}
+
+fieldset {
+    margin-top: 15px;
+}
+
+img {
+    max-width: 75px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.tortillas {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+        "item1 item2"
+        "pic1 pic2"
+        "item3 item4"
+        "pic3 pic4";
+}
+
+.tortilla1 {
+    grid-area: item1;
+}
+
+.img1 {
+    grid-area: pic1;
+}
+
+.tortilla3 {
+    grid-area: item3;
+}
+
+.img3 {
+    grid-area: pic3;
+}
