@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+}
+/* --------------------------------Nav-Bar------------------------------------------------ */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100px;
+    background: #153052;
+    /* color didnt work */
+    color: white;
+}
+/* ----------------------------HEADER------------------------------------------ */
+#showcase{
+    background-image:url('../img/ball.jpeg');
+    background-size:cover;
+    background-position: center;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align:center;
+}
+
+#showcase h1{
+    font-size: 50px;
+    line-height: 1.2;
+}
+#showcase p{
+    font-size: 20px;
+}
+#showcase .button{
+    font-size: 18px;
+    text-decoration: none;
+    color:#926239;
+    border:#926239 1px solid;
+    padding:10px 20px;
+    border:radius 10px;
+    margin-top:20px;
+}
+#showcase .button:hover{
+    background:#926239;
+    color:white;
+}
+
+/* ----------------------body------------------------------------------- */
+#paragraph-1{
+    color:#483C2F;
+}
+#paragraph-2{
+    background-color: #483C2F;
+    color:white;
+}
+#container img{
+    width: 320px;
+    height: 237px;
+}
+#beach-3{
+/* why isnt width taking up 100% of the parents container? */
+    /* width:100%; */
+}
+#container{
+    display:flex;
+    flex-direction: column;
+}
+#beach-1 p, #beach-3 p{
+    background-color:#483C2F;
+    color:white;}
+#beach-2 p{
+    color: #483C2F;
+}
+/* ----------------------------footer------------------------------------ */
+#footer{
+    background-color:#153052;
+    color: white;
+    height: 400px;
+    position: relative;
+}
+#footer .footer-content{
+    border:1px solid black;
+    height:350px;
+    display:flex;
+}
+#footer .footer-content .footer-section{
+    padding:25px;
+   flex:1;
+   border: 1px solid white;
+}
+.bottom-footer p{
+    background-color:#A68D7A;
+    text-align:center;
+    color:white;
+    position: absolute;
+    height: 50px;
+    width:100%;
+    padding-top: 180px;
+    bottom:0px;
+    left:0px;
+    padding-top:20px; 
+}
+html, #body{
+    /* get footer to stick to bottom of page
+    if there were no content in the body. */
+    min-height:100%
+}
+
+/* ----------------------------IPAD DISPLAY------------------------------- */
+@media (min-width: 768px) {
+    #container{
+        display:flex;
+        flex-direction: row;
+        /* not working */
+        justify-content: space-between;
+    }
+    #container #beach-1, #container #beach-2,#container #beach-3{
+    /* makes each box inside the container smaller(skinnier) */
+    /* width:33%;} */
+    }
+    #beach-1 p, #beach-3 p {
+        background-color:#483C2F;
+        color:white; 
+    }
+}
+/* -------------------------------------DESKTOP DISPLAY---------------------------------------------- */
+@media (min-width: 1024px) {
+
+}

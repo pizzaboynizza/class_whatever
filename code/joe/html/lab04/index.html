@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<!--
+    Lab 4
+    ☑ Input
+    ⍰ Prettify and Responsive design
+-->
+
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <title>Burrito Order Form</title>
+
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <h1>Burrito Order Form</h1>
+        <hr/>
+
+        <form action="https://webhook.site/7103293b-ccca-436f-8db7-fb33a182e799" method="post">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Carne-asada-burrito.jpg" alt="Picture of burrito" />
+            <fieldset>
+                <legend>Burrito</legend>
+                <h3>Tortilla</h3>
+                <div class="button-list">
+                    <label for="white-flour">White Flour</label>
+                    <input type="radio" name="tortilla" value="white-flour" id="white-flour" required/><br/>
+                    <label for="wheat-flour">Wheat Flour</label>
+                    <input type="radio" name="tortilla" value="wheat-flour" id="wheat-flour" /><br/>
+                    <label for="spinach">Spinach</label>
+                    <input type="radio" name="tortilla" value="spinach" id="spinach" /><br/>
+                    <label for="corn">Corn</label>
+                    <input type="radio" name="tortilla" value="corn" id="corn" />
+                </div>
+
+                <h3>Rice</h3>
+                <div class="button-list">
+                    <label for="white-rice">White Rice</label>
+                    <input type="radio" name="rice" value="white-rice" id="white-rice" /><br/>
+                    <label for="brown-rice">Brown Rice</label>
+                    <input type="radio" name="rice" value="brown-rice" id="brown-rice" /><br/>
+                    <label for="no-rice">None</label>
+                    <input type="radio" name="rice" value="no-rice" id="no-rice" />
+                </div>
+
+                <h3>Beans</h3>
+                <div class="button-list">
+                    <label for="black-beans">Black Beans</label>
+                    <input type="radio" name="beans" value="black-beans" id="black-beans" required/><br/>
+                    <label for="pinto-beans">Pinto Beans</label>
+                    <input type="radio" name="beans" value="pinto-beans" id="pinto-beans" />
+                </div>
+
+                <h3>Protein</h3>
+                <div class="button-list">
+                    <label for="carnitas">Carnitas</label>
+                    <input type="radio" name="protein" value="carnitas" id="carnitas" required/><br/>
+                    <label for="chicken">Chicken</label>
+                    <input type="radio" name="protein" value="chicken" id="chicken" /><br/>
+                    <label for="sofritas">Sofritas</label>
+                    <input type="radio" name="protein" value="sofritas" id="sofritas" /><br/>
+                    <label for="none">None</label>
+                    <input type="radio" name="protein" value="none" id="none" />
+                </div>
+
+                <h3>Additional Ingredients</h3>
+                <div class="button-list">
+                    <label for="cheese">Cheese</label>
+                    <input type="checkbox" name="additional" value="cheese" id="cheese" /><br/>
+                    <label for="sour-cream">Sour Cream</label>
+                    <input type="checkbox" name="additional" value="sour-cream" id="sour-cream" /><br/>
+                    <label for="lettuce">Lettuce</label>
+                    <input type="checkbox" name="additional" value="lettuce" id="lettuce" />
+                </div>
+            </fieldset>
+            <fieldset class="personal">
+                <legend>Personal Info</legend>
+                <div class="textin">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" pattern="\w{6,}" title="Username must be at least 6 characters" required/><br/>
+                </div>
+                <div class="textin">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" pattern="\w{6,}" title="Password must be at least 6 characters" required/><br/>
+                </div>
+                <div class="textin">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" id="name" pattern="([a-zA-Z]{3,} )+[a-zA-Z]{3,}" title="Must enter first and last name" required/><br/>
+                </div>
+                <div class="textin">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email" required/><br/>
+                </div>
+                <div class="textin">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" name="phone" id="phone" pattern="(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})" title="Must enter valid phone number" required/><br/>
+                </div>
+                <div class="textin">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" name="dob" id="dob" pattern="(0?[1-9]|11|12)\/([0-2]?[1-9]|30|31)\/[1-2][0-9]{3}" title="Must enter valid date in mm/dd/yyyy format" required/><br/>
+                </div>
+                <div class="textin">
+                    <label for="ssn">Social Security Number</label>
+                    <input type="text" name="ssn" id="ssn" pattern="\d{3}-?\d{2}-?\d{4}" title="Must enter a valid social security number" required/><br/>
+                </div>
+                <div class="textin">
+                    <label for="street">Address</label>
+                    <input type="text" name="street" id="street" pattern="\d+\w+\s\w+\s\w+" title="Must enter valid address" required/><br/>
+                </div>
+                <div class="textin">
+                    <label for="place">City, State, and Zip</label>
+                    <input type="text" name="place" id="place" pattern="(.+?),?\s(\w+)\s?([-\d]+)" title="Please enter the city, state, and zip code, in that order" required/><br/>
+                </div>
+            </fieldset>
+
+            <input type="submit" value="Place Order"/>
+
+        </form>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+/* Tablet Design */
+  body {
+    background-color: #d5e2e7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23bfdbdf' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    /* text-align: center; */
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #pickup {
+    width: 10%;
+    /* height:15%; */
+    margin-right: 12px;
+  }
+
+  #burrito {
+    width: 6%;
+    margin-left: 12px;
+    /* display: none; */
+  }
+
+  label {
+    font-size: 14pt;
+  }
+
+  legend {
+    font-size: 16pt;
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  button {
+    font-size: 14pt;
+  }
+
+  #btn {
+    text-align: center;
+  }
+
+  /* #fieldset1 {
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+  }
+
+  #fieldset2 {
+    width: 50%;
+    box-sizing: border-box;
+    float: right;
+  } */
+
+  fieldset {
+    margin: 20px auto;
+    /* width: 90%; */
+  }
+
+/* Mobile Design */
+@media (max-width: 414px) {
+  #burrito {
+    /* width: 6%;
+    margin-left: 12px; */
+    display: none;
+  }
+
+  #pickup {
+    width: 20%;
+    height: 20%;
+    margin-right: 6px;
+  }
+
+  fieldset {
+    font-size: 10pt;
+  }
+
+  button {
+    font-size: 12pt;
+  }
+}
+
+/* Desktop Design */
+@media (min-width: 1025px) {
+  form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  fieldset {
+      width: 350px;
+      margin: 10px;
+  }
+}
