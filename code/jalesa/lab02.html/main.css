@@ -1,4 +1,5 @@
 /* use border radius to make picture round */
+/* --------------------     NAVIGATION-BAR      ------------------------- */
 #navigation_bar {
     display: flex;
     flex-direction: row;
@@ -11,6 +12,7 @@
     color: white;
     font-size: 20px;
 }
+/* ----------------------------     BODY        --------------------- */
 p { 
     text-align: left;
     color: black;
@@ -19,20 +21,8 @@ body p {
     color: black;
     text-align: left;
 }
-#footer {
-    /* display:flex;
-    flex-direction: column;
-    align-items: flex-end; */
-    text-align: center;
-}
-
-#box {
-    /* display:flex; */
-    /* flex-wrap: wrap; */
-    text-align: center;
-    margin: 6px;
-    /* padding: 20px 15px;  */
-    line-height: 1.5;
+.date{
+    color:rgb(116, 112, 112);
 }
 .header {
     text-align: center;
@@ -41,9 +31,52 @@ body p {
     text-align: left;
     color: dark grey
 }
-
-
-
+#box {
+    /* display:flex; */
+    /* flex-wrap: wrap; */
+    text-align: center;
+    margin: 6px;
+    /* padding: 20px 15px;  */
+    line-height: 1.5;
+}
+/* ----------------------------     FOOTER      ------------------------ */
+#footer {
+    /* display:flex;
+    flex-direction: column;
+    align-items: flex-end; */
+    text-align: center;
+    color: white;
+    height: 200px;
+    position: relative;
+    background-color: darkblue;
+    width:100%;
+}
+.bottom-footer{
+    /* bottom footer does not go all the way over on 
+    tablet mode. */
+    width:100%;
+    background-color:rgb(23, 36, 206);
+    text-align:center;
+    color:white;
+    position: absolute;
+    height: 50px;
+    padding-top: 180px;
+    bottom:0px;
+    left:0px;
+    padding-top:20px; 
+}
+#footer p{
+    color:white;
+}
+#footer label{
+    color: white;
+}
+.bottom-footer p{
+    text-align: center;
+}
+#contact-information{
+    /* margin-top: 2em; */
+}
 
 
 
@@ -51,20 +84,16 @@ body p {
     #content_container {
         display: flex;
         flex-direction: row;
-        border: 2px solid red;
-        justify-content: space-evenly;
-        
+        justify-content: space-evenly;  
     }
    
     #about{
-        border:2px solid pink;
         margin: 6px;
     }
     #box{
-        border:2px solid purple;
+        /* border:2px solid purple; */
     }
     #home{
-        border: 2px solid skyblue;
         margin: 6px;
     }
  } 
