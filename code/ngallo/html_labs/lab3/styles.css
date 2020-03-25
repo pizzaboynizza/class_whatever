@@ -1,26 +1,98 @@
 html {
     box-sizing: border-box;
 }
-  *, *:before, *:after {
+
+*, *:before, *:after {
     box-sizing: inherit;
 }
 
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
 body {
+    color: whitesmoke;
+    text-shadow:rgb(56, 11, 6);
     font-family: 'Alata', sans-serif;
-    background: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,1)), radial-gradient( rgb(7, 51, 122), rgb(251, 227, 169), rgb(165, 95, 25));
-    background-repeat: 100% no-repeat;
+    padding: 30px;
+    margin: 10px;
 }
-  
 
-
-@media (min-width: 768px) {
+#header_design {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(64, 64, 124, 0.685);
+    height: 100px;
+}
 
 #main_design {
-    background-image: url('/IMG/sunrise.jpg');
+    display: block;
+    background-image: url("IMG/1280px-Mount_Rainier_from_west.jpg");
+    background-size: 100%;
 }
 
+p,#main_design {
+    padding: 10px;
+}
+h1, #main_design {
+    padding:20px;
+    font-weight: 100;
 }
 
+#div_one_design {
+    display: block;
+    background-image: url("IMG/Sunrise-Courtesy-Craig-Romano-e1533839403934.jpg");
+    background-size: 100%;
+}
+
+p,#div_one_design {
+    padding: 10px;
+}
+h1, #div_one_design {
+    padding:20px;
+    font-weight: 100;
+}
+
+#div_two_design {
+    display: block;
+    background-image: url("IMG/1280px-80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg");
+    background-size: 100%;
+}
+
+p,#div_two_design {
+    padding: 10px;
+}
+h1, #div_two_design {
+    padding:20px;
+    font-weight: 100;
+}
+
+#div_three_design {
+    display: block;
+    background-image: url("IMG/7U4A0867-Edit_yepzuu.jpg");
+    background-size: 100%;
+}
+
+p,#div_three_design {
+    padding: 10px;
+}
+h1, #div_three_design {
+    padding:20px;
+    font-weight: 100;
+}
+
+#footer_design {
+    background-color: rgba(64, 64, 124, 0.685);
+    height: 25px;
+}
+
+@media (min-width: 768px) {
+    
+
+}
 @media (min-width: 1024px) {
 
 
