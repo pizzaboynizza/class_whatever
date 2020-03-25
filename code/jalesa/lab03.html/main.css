@@ -86,7 +86,7 @@
     display:flex;
 }
 #footer .footer-content .footer-section{
-    padding:25px;
+padding:25px;
    flex:1;
    border: 1px solid white;
 }
