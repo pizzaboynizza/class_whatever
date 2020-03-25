@@ -13,7 +13,7 @@ html {
   }
 
 body {
-    color: whitesmoke;
+    color: black;
     text-shadow:rgb(56, 11, 6);
     font-family: 'Alata', sans-serif;
     padding-left: 60px;
@@ -22,46 +22,66 @@ body {
 }
 
 #header_design {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    color: whitesmoke;
+    background-image: url("IMG/sunrise.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 20%;
+    background-repeat: no-repeat;
+    text-align: center;
     background-color: rgba(64, 64, 124, 0.685);
-    height: 100px;
-    margin-top: 10px;
+    height: 170px;
+    margin-top: 1px;
 }
 
 #main_design {
+    margin-top: 10px;
     display: block;
     background-image: url("IMG/1280px-Mount_Rainier_from_west.jpg");
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20%;
+    background-repeat: no-repeat;
 }
 
 p,#main_design {
     padding: 10px;
 }
+
 h1, #main_design {
     padding:20px;
     font-weight: 100;
 }
 
+.news_text_div {
+   background-color: rgba(255, 253, 253, 0.6);
+    border-radius: 10px;
+}
+
 #div_one_design {
     display: block;
     background-image: url("IMG/Sunrise-Courtesy-Craig-Romano-e1533839403934.jpg");
-    background-size: 100%;
+    background-position: center;
+    background-size: top cover;
+    border-radius: 20%;
+    background-repeat: no-repeat;
 }
 
-p,#div_one_design {
-    padding: 10px;
-}
-h1, #div_one_design {
-    padding:20px;
-    font-weight: 100;
+
+#div_one_design h3, #div_one_design p {
+    color: white;
+    padding: 20px;
+
 }
 
 #div_two_design {
+    color: whitesmoke;
     display: block;
     background-image: url("IMG/1280px-80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: 100%;
+    border-radius: 20%;
 }
 
 p,#div_two_design {
@@ -73,14 +93,18 @@ h1, #div_two_design {
 }
 
 #div_three_design {
+    background-position: center;
     display: block;
     background-image: url("IMG/7U4A0867-Edit_yepzuu.jpg");
     background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 20%;
 }
 
 p,#div_three_design {
     padding: 10px;
 }
+
 h1, #div_three_design {
     padding:20px;
     font-weight: 100;
@@ -89,22 +113,23 @@ h1, #div_three_design {
 #footer_design {
     background-color: rgba(64, 64, 124, 0.685);
     height: 25px;
+    border-radius: 20%;
 }
 
 @media (min-width: 768px) {
     
     body {
-        color: whitesmoke;
-        text-shadow:rgb(56, 11, 6);
+        color: black;
+        text-shadow: whitesmoke;
         font-family: 'Alata', sans-serif;
         padding-left: 60px;
         margin: 10px;
     }
+
     #header_design {
-        display: flex;
         align-content: center;
         background-color: rgba(64, 64, 124, 0.685);
-        height: 100px;
+        height: 180px;
         margin-top: 10px;
     }
 
@@ -112,8 +137,14 @@ h1, #div_three_design {
         margin-top: 20px;
     }
 
+    
+    #div_one_design h3, #div_one_design p {
+        color: white;
+    }
+    
     #div_two_design {
         margin-top: 20px;
+        background-color: purple;
     }
 
     #div_three_design {
@@ -123,15 +154,28 @@ h1, #div_three_design {
     #footer_design {
         margin-top: 20px;
         height: 50px;
+        padding-left: 50px;
     }
 }
 @media (min-width: 1024px) {
+
+
     #header_design {
-        display: flex;
-        justify-content: inline;
-        background-color: rgba(64, 64, 124, 0.685);
-        height: 100px;
-        margin-top: 10px;
+    color: whitesmoke;
+    background-image: url("IMG/sunrise.jpg");
+    background-repeat: no-repeat;
+    background-position: ;
+    background-size: cover;
+    border-radius: 25px;
+    text-align: center;
+    background-color: rgba(64, 64, 124, 0.685);
+    height: 170px;
+    margin-top: 1px;
     }
 
+    #div_one_design h3, #div_one_design p {
+        color: black;
+        padding: 20px;
+    
+    }
 }
