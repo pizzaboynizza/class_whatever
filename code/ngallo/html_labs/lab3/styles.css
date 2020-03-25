@@ -16,7 +16,8 @@ body {
     color: whitesmoke;
     text-shadow:rgb(56, 11, 6);
     font-family: 'Alata', sans-serif;
-    padding: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
     margin: 10px;
 }
 
@@ -26,6 +27,7 @@ body {
     flex-wrap: wrap;
     background-color: rgba(64, 64, 124, 0.685);
     height: 100px;
+    margin-top: 10px;
 }
 
 #main_design {
@@ -91,13 +93,45 @@ h1, #div_three_design {
 
 @media (min-width: 768px) {
     
+    body {
+        color: whitesmoke;
+        text-shadow:rgb(56, 11, 6);
+        font-family: 'Alata', sans-serif;
+        padding-left: 60px;
+        margin: 10px;
+    }
+    #header_design {
+        display: flex;
+        align-content: center;
+        background-color: rgba(64, 64, 124, 0.685);
+        height: 100px;
+        margin-top: 10px;
+    }
 
+    #div_one_design {
+        margin-top: 20px;
+    }
+
+    #div_two_design {
+        margin-top: 20px;
+    }
+
+    #div_three_design {
+        margin-top: 20px;
+    }
+    
+    #footer_design {
+        margin-top: 20px;
+        height: 50px;
+    }
 }
 @media (min-width: 1024px) {
-
-
-}
-
-@media (min-width: 2500px) {
+    #header_design {
+        display: flex;
+        justify-content: inline;
+        background-color: rgba(64, 64, 124, 0.685);
+        height: 100px;
+        margin-top: 10px;
+    }
 
 }

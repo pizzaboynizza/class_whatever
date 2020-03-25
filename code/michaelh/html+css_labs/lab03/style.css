@@ -1,0 +1,226 @@
+html {box-sizing: border-box;}
+section{margin: 20px;}
+hr{
+    margin: 20px;
+    border: 1px solid #AFAFAF;
+}
+aside{margin: 20px;}
+body{
+    background-color: #EBEBEB;
+}
+.topnav{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.topnav a{
+    /* color: rgb(194, 199, 207);   */
+    color: #6DA3A8;
+    margin-bottom: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-decoration: none;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+}
+.topimg{
+    border-radius: 50%;
+}
+.img2{
+    border-radius: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.aside1{
+    text-align: center;
+    color:#6DA3A8
+}
+/* h2{color:blue} */
+.section1{
+    background-color: #669A9F;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+}
+#aside2_section2_container{color: #2E4854}
+.aside2 p, .section2 blockquote{color: #6DA3A8}
+.section1 h3{color: #234854;}
+.midnav{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-left:50px;
+    margin-right: 50px;
+}
+.midnav a{
+    background-color: #669A9F;
+    color: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: large;
+    text-decoration: none;
+}
+.img3{
+    border-radius: 20px;
+}
+.newsimg{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.newsimg img{
+    border-radius: 20px;
+    padding: 5px;
+}
+.section3{
+    color: #6DA3A8
+}
+.botnav{
+    text-align: center;
+    background-color: #669A9F;
+    color: #ffffff;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.botnav a{
+    font-size: larger;
+    padding: 10px;
+    white-space: nowrap;
+}
+.social_media_icons{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.social_media_icons a img{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+footer{
+    color: dimgray;
+    margin: 20px;
+}
+.botnav a{
+    text-decoration: none;
+    color: #ffffff
+}
+h1{
+    color: #222222
+}
+
+
+@media (min-width: 640px) {
+    .img2{
+        height: 400px;
+        width: auto
+    }
+
+    .topnav_header{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .topnav{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .topnav a{
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: smaller;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .topnav a:hover{
+        text-decoration: underline;
+    }
+    .midnav{
+       display: flex;
+       flex-direction: row; 
+       margin: auto;
+       justify-content: center;
+    }
+    .midnav a{
+       /* display: block; */
+       /* margin: auto; */
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    #aside2_section2_container{
+        display:flex;
+        flex-direction: row;
+    }
+    /* .img2{
+        width:200px;
+        height:auto;
+    } */
+}
+
+@media (min-width: 960px) {
+
+
+    body{
+        box-shadow: 3px 3px grey, -1em 0 .4em grey;
+        max-width: 1200px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .section1{
+        font-size: medium;
+    }
+    #img2_aside1_container{
+        padding:10px;
+        margin:10px
+    }
+
+    #section1_img2_aside1_container{
+        display: flex;
+        align-items: flex-start;
+    }
+
+
+    .img2{
+        width:35em;
+        height:auto;
+        /* padding: 20px; */
+    }
+
+    .topnav{
+        justify-content: center;
+    }
+
+    /* .topnav a{
+        text-align:center        
+        font-size: small
+        padding-left: 2px;
+        padding-right: 2px;
+    } */
+}

@@ -1,0 +1,71 @@
+/* use border radius to make picture round */
+#navigation_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* width: 200px; */
+    height: 100px;
+    background: darkblue
+} 
+#navigation_bar a {
+    color: white;
+    font-size: 20px;
+}
+p { 
+    text-align: left;
+    color: black;
+}
+body p {
+    color: black;
+    text-align: left;
+}
+#footer {
+    /* display:flex;
+    flex-direction: column;
+    align-items: flex-end; */
+    text-align: center;
+}
+
+#box {
+    /* display:flex; */
+    /* flex-wrap: wrap; */
+    text-align: center;
+    margin: 6px;
+    /* padding: 20px 15px;  */
+    line-height: 1.5;
+}
+.header {
+    text-align: center;
+}
+.date {
+    text-align: left;
+    color: dark grey
+}
+
+
+
+
+
+
+@media (min-width: 1024px) {
+    #content_container {
+        display: flex;
+        flex-direction: row;
+        border: 2px solid red;
+        justify-content: space-evenly;
+        
+    }
+   
+    #about{
+        border:2px solid pink;
+        margin: 6px;
+    }
+    #box{
+        border:2px solid purple;
+    }
+    #home{
+        border: 2px solid skyblue;
+        margin: 6px;
+    }
+ } 
+

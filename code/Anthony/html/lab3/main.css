@@ -1,0 +1,149 @@
+/*core styles*/
+body{
+     margin: 0;
+     background-color: lightgreen;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 1.1em;
+     line-height: 1.5;
+     text-align: center;
+}
+img{
+     display: block;
+     width: 100%;
+     height: auto;
+
+}
+hi, h2, h3{
+     margin: 0;
+     padding: 1em 0;
+}
+p{
+     margin: 0;
+     padding: 1em,0;
+}
+.buttonReadMore{
+     display: inline-block;
+     background: #333;
+     color:white;
+     text-decoration: none;
+     padding: 1em 2em;
+     border: 1px solid #666;
+     margin: 0.5em 0;
+}
+.buttonReadMore:hover {
+     background: #eaeaea;
+     color: #333;
+
+}
+#showcase{
+     min-height: 450px;
+     color: white;
+     text-align: center;
+}
+#showcase .background-image{
+     position: absolute;
+     background: #333 url('https://images.pexels.com/photos/1342460/pexels-photo-1342460.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 100%;
+     height: 450px; /* same size as parent showcase (450px)*/
+     z-index: -1; /*to make the text appear in the front since its covered by the image*/
+     opacity: 0.6; /* to fade the image a little so its not too prominent*/
+}
+#showcase hi {
+     padding-top: 100px;
+     padding-bottom: 0;
+}
+#showcase .contentWrapper,
+#sectionA .contentWrapper{
+     padding: 0 1.5em;
+}
+
+/* SectionA*/
+#sectionA{
+     background: #eaeaea;
+     padding-bottom: 2em;
+}
+
+/*sectionB*/
+#sectionB{
+     padding: 2em 1em 1em;
+}
+#sectionB ul{
+     list-style: none;
+     margin: 0;
+     padding: 0;
+}
+#sectionB li{
+     margin-bottom: 1em;
+     background-color: white;
+     color: #333;
+}
+.cardContent{
+     padding: 1.5em;
+}
+
+/*ectionC*/
+#sectionC{
+     background: white;
+     color: #333;
+     padding: 2em;
+}
+
+/*sectionD*/
+#sectionD .box{
+     padding: 2em;
+     color: white;
+}
+#sectionD .box:first-child{
+     background:grey;
+}
+
+/*footer*/
+#mainFooter{
+     padding: 2e,;
+     background:grey;
+     color: white;
+}
+#mainFooter a{
+     color: blue;
+     text-decoration: none;
+}
+
+/*Media Guerries*/
+@media(min-width: 700px){
+     .grid{
+          display: grid;
+          grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+
+     }
+
+     #sectionA .contentText{
+          columns: 2;
+          column-gap: 2em;
+     }
+     #sectionA .contentText p{
+          padding-top: 0;
+     }
+     .contentWrapper,
+     #sectionB ul{
+          grid-column: 2/4;
+     }
+
+
+     .box, #mainFooter div{
+          grid-column: span 2;
+     }
+     
+     #sectionB ul{
+          display: flex;
+          justify-content: space-around;
+     }
+
+     #sectionB li {
+          width: 31%;
+
+     }
+
+}

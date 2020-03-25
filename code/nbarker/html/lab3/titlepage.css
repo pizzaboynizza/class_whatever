@@ -1,0 +1,31 @@
+html { 
+    background: url(compasshand.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex
+    flex}
+.photo_container {
+    height: 220px;
+    width: 220px;
+    border-radius: 120px;
+    background: black;
+    opacity: 0;
+    position: fixed;
+    top: 43%;
+    left: 40%;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+header {
+    display: flex;
+    color: yellow;
+    align-content: top;
+    align-self: top;
+    opacity: .45;
+    width: 100%;
+    background-image: linear-gradient(to right, #29251c, #846760, #26251d);
+    
+}

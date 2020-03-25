@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+        <link rel="stylesheet" href="home.css" />
+        <meta charset="UTF-8">
+        <meta name="description" content="burrito order form">
+        <meta name="keywords" content="burrito, mexican food, tortillia">
+        <meta name="author" content="Jalesa Peterson">
+        <title>Grande Burrito</title>
+    </head>
+    <body>
+        <main>
+            <!-- -------------------------  NAVIGATION BAR--------------------------------------- -->
+            <nav>
+                <p id="home"></p><a href="#">Home</a></p>
+                <p id="about"><a href="#">About</a></p>
+                <p id="contact"><a href="#">Contact</a></p>
+                <p id="order"><a href="#">Order</a></p>
+            </nav>
+            
+            <!-- ---------------------------    FORM    --------------------------------------- -->
+                            <!---------------Radio & Check boxes  -->
+            <h1>GRANDE BURRITO</h1>
+            <header><img src="..\img\Burrito.jpg" alt="burrito"></header>
+            <form action="https://webhook.site/fed0f3b7-f087-4ce3-a768-dc5e7f09d36e" method="post">
+            <fieldset>
+                <h1>Customize Burrito</h1>
+                <hr>
+                    <label for="tortilla">Tortilla:</label>
+                <input id="tortilla" name="tortilla"value="white flour" type="radio">white flour
+                <input id="tortilla" name="tortilla"value="wheat flour" type="radio">wheat flour
+                <input id="tortilla" name="tortilla"value="spinach" type="radio">spinach
+                <br>
+                <input id="tortilla" name="tortilla"value="corn" type="radio">corn
+                <br>
+                <label for="rice">Rice:</label>
+                <input id="rice" name="rice" value="white rice" type="radio"> white rice
+                <input id="rice" name="rice" value="brown rice" type="radio"> brown rice
+                <br>
+                <label for="beans">Beans:</label>
+                <input id="beans" name="beans" value="black beans" type="radio"> black beans
+                <input id="beans" name="beans" value="pinto beans" type="radio"> pinto beans
+                <br>
+                <label for="protein">Protein:</label>
+                <input id="protein" name="protein" value="carnitas" type="radio"> carnitas
+                <input id="protein" name="protein" value="chicken" type="radio"> chicken
+                <input id="protein" name="protein" value="sofritas" type="radio"> sofritas
+                <input id="protein" name="protein" value="none" type="radio"> none
+                <br>
+                <label for="additional ingridients">Additional Ingridients:</label>
+                <input id="additional ingridients" name="additional ingridients" value="cheese" type="checkbox"> cheese
+                <input id="additional ingridients" name="additional ingridients" value="sour cream" type="checkbox"> sour cream
+                <br>
+                <br>
+            </fieldset>
+                     <!-- -----------    text-form   -------------- -->
+                <div class="text-form">
+                    <h2>LOGIN</h2>
+                    <label for="username">User Name</label>
+                    <input id="username" type="name" name="username" placeholder="username" pattern=".{6,}"required title="username must be six letters or more."> 
+                    <label for="password" for="password">Password</label>
+                    <input id="password" type="password" name="password" pattern=".{6,}" required title="password must be six letters or more.">
+                    <br>
+                    <h2>Billing Address</h2>
+                    <label for="first name" >First Name</label>
+                    <input id="first name" type="name" name="first name" placeholder="first name"  >
+                    <br>
+                    <label for="last name" >Last Name</label>
+                    <input id="last name" type="name" name="last name"placeholder="last name" pattern=".{3,}" required title="minimum of six letters" >
+                    <br>
+                    <label for="email" >Email</label>
+                    <input id="email" type="email" name="email">
+                    <br>
+                    <label for="phone number" >Phone Number</label> 
+                    <input id="phone number" type="number" name="number" pattern="\d{10}" required >
+                    <br>
+                    <label for="birthday" >Birthday</label> 
+                    <input id="birthday" type="text" name="birthday"  placeholder="02/13/2627" required>
+                    <br>
+                    <label for="social" >Social Security Number</label> 
+                    <input id="social" type="text" name="social"  placeholder="415-25-2627" required>
+                    <br>
+                    <label for="street" >Street</label> 
+                    <input id="street" type="text" name="street"  placeholder="123 Mulberry Ln" required>
+                    <br>
+                    <label for="city,state,zip" >City,State,Zip</label> 
+                    <input id="city,state,zip" type="text" name="city,state,zip" placeholder="Portland, OR, 97201" required >
+                    <br>
+                    <input type="submit" name="submit" value="Continue to Checkout">
+                </div>
+            </form>
+        </main>
+    </body>
+
+    <footer>
+        
+
+    </footer>
+
+
+
+
+
+</html>

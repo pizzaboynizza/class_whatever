@@ -1,0 +1,40 @@
+#burrito{
+    width:80px
+}
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+.formitem{
+    margin:5px
+}
+
+fieldset{
+    margin:20px auto;
+    width: 90%;
+    
+}
+
+#header{
+    text-align:center;
+    padding: 10px;
+    font-family: 'Shadows Into Light', cursive;
+    
+}
+    
+          
+@media (min-width: 1024px){
+    form{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    fieldset{
+        width:350px;
+        margin:10px
+    }
+}
