@@ -1,0 +1,112 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+  }
+
+body {
+    color: rgb(0, 0, 0);
+    text-shadow:rgb(56, 11, 6);
+    font-family: 'Alata', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 1px;
+}
+
+#header_design {
+    background-image: url('https://deltaco.com/files/menu/item/machocomboburrito.png?v=3.1');
+    background-image: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(255, 0, 0, 0.562);
+    height: 150px;
+}
+
+.welcome {
+    display: flex;
+}
+
+#menu {
+    background-color: rgb(255, 0, 0, 0.562);
+    margin-top: 20px;
+}
+
+#user_information {
+    background-color: rgb(0, 100, 0, 0.562);
+    margin-top: 20px;
+}
+
+p,#user_information {
+    padding: 10px;
+}
+
+h1, #user_information {
+    padding:20px;
+    font-weight: 100;
+}
+
+.tortilla_div {
+    background-color: (0, 100, 0, 0.562);
+    margin-top: 20px;
+    display:flex;
+    flex-direction: row;
+
+}
+
+#toppings {
+    background-color: darkgr(0, 100, 0, 0.562)een;
+    display: list-item;
+}
+
+#additional_comments {
+    background-color: darkgr(0, 100, 0, 0.562);
+}
+#footer_design {
+    color:black;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    background-image: url('https://deltaco.com/files/menu/item/machocomboburrito.png?v=3.1');
+    background-image: 100%;
+    height: 100px;
+}
+
+@media (min-width: 768px) {
+    body {
+    color: black;
+    text-shadow:rgb(56, 11, 6);
+    font-family: 'Alata', sans-serif;
+    padding-left: 90px;
+    padding-right: 90px;
+    margin: 1px;
+}
+
+}
+@media (min-width: 1024px) {
+    body {
+        color: black;
+        text-shadow:rgb(56, 11, 6);
+        font-family: 'Alata', sans-serif;
+        padding-left: 90px;
+        padding-right: 90px;
+        margin: 1px;
+    }
+    #header_design {
+        background-image: url('https://deltaco.com/files/menu/item/machocomboburrito.png?v=3.1');
+        background-image: 100%;
+        display:flex;
+        padding-left: 250px;
+        flex-direction: column;
+        justify-content: left;
+        background-color: rgba(255, 0, 0, 0.562);
+        height: 250px;
+    }
+}

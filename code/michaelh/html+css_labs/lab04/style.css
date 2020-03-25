@@ -22,7 +22,7 @@ html {box-sizing: border-box;}
 }
 
 #personal_info_fieldset{
-    width: 300px;
+    width: 200px;
     margin: 20px;
 }
 
@@ -33,6 +33,15 @@ html {box-sizing: border-box;}
 
 button{
     margin:20px
+}
+
+form{
+    font-size: large;
+}
+
+#personal_info_fieldset{
+    width: 300px;
+    margin: 20px;
 }
 
 #customize{
@@ -53,16 +62,26 @@ button{
     }
 
     #personal_info_fieldset{
-        width: 600px;
+        width: 640px;
         margin: 20px;
     }
 }
 
 @media (min-width: 960px){
     body{
-        max-width: 960px;
+        box-shadow: 3px 3px #E25041, -1em 0 .4em #FBA026;
+        max-width: 1080px;
         display: block;
         margin-right: auto;
         margin-left: auto;
+    }
+
+    #personal_info_fieldset{
+        width: 960px;
+        margin: 20px;
+    }
+
+    #ingredient_container{
+        width: 960px;
     }
 }

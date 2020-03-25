@@ -39,7 +39,7 @@ button {
   }
 
 fieldset {
-    width:318px;
+    width:200px;
     padding-top: 5px;
     background-color: #94618E;                             
 }
@@ -57,7 +57,7 @@ label {
 }
 
 img {
-    width: 355px;
+    width: 220px;
     max-width: 100%;
     height: 100px;
     align-items: center;
