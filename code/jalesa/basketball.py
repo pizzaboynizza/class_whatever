@@ -1,89 +1,92 @@
-import webbrowser
-import requests
 import random
-from notify_run import Notify
+import smtplib, ssl # built in module for sending emails
 
-url = "https://www.yelp.com/search?find_desc=Basketball%20Courts&find_loc=Pearl%20District%2C%20Portland%2C%20OR"
 
-# how do i make the user interact with the yelp page then return that information???
-# webbrowser.open_new_tab(url)
+port = 465  # For SSL (endpoint)
+smtp_server = "smtp.gmail.com" # (outgoing) Simple Mail Transfer Protocol
+sender_email = "notificationc593@gmail.com"  
+# password = input("Type your password and press enter: ")
+password = "Daphney1!"
 
-# user opens yelp and choose what basketball courts to get a notification from.
 
-ball_courts = [ "24 Hour Fitness The Pearl 228", "Overlook Park",  "North Park Blocks","Lloyd Athletic Club", "Wallace Park", "Couch Park", "Matt Dishman Community Center & Pool", "LA Fitness", "Dawson Park"]
+ball_courts = [ "24 Hour Fitness The Pearl 228", "Overlook Park", "Lloyd Athletic Club", "Wallace Park", "Couch Park", "Matt Dishman Community Center & Pool", "LA Fitness", "Dawson Park"]
 
+
+# I will choose three locations that I would like to get a notification from if one of my friends go there. I used split by a comma becuase if I just turned user_input into a set without turning it into a list it would have made each letter into a string.
 user_1_input = input("what locations would you like to get a notification from?: ").split(",")
-print("user_1_input", user_1_input)
 
-# people who have already chosen locations
 
-list_of_courts = []
-# user_2_input = list(random.choices(ball_courts, k=2))
-user_2_input = ["Wallace Park", "Dawson Park"]
-print(user_2_input)
-# user_3_input = list(random.choices(ball_courts, k=4))
-user_3_input = ["LA Fitness", "Dawson Park"]
 
-print(user_3_input)
-user_4_input = list(random.choices(ball_courts, k=2))
-user_5_input = list(random.choices(ball_courts))
+# random.choices(ballcourts) is acting as a replacement of my friends going to a basket ball court.
+Alex = list(random.choices(ball_courts))
+Skylar = list(random.choices(ball_courts))
+Doja = list(random.choices(ball_courts))
+Levi = list(random.choices(ball_courts))
 
- # loop through lists and figure out matches if matches is 0 then nothing if it is 1,2 or more pick highest ranking one.
+#  I saved each user input in a list and put them into a set. I saved the set into a variable so that I could use set intersection(). The intersection() method returns a new set with elements that are common to all sets.
 def location():
     s1 = set(user_1_input)
-    s2 = set(user_2_input)
-    s3 = set(user_3_input)
-    # s4 = set(user_4_input)
-    # set1 = s1.intersection(s2)
-    # print(list(set1))
-    results_sets = s1.intersection(s3)
-    final = list(results_sets)
-    print("final", final)
+    s2 = set(Alex)
+    s3 = set(Skylar)
+    s4 = set(Doja)
+    s5 = set(Levi)
+   
+  
+    if s1.intersection(s2):
+        results_s2 = s1.intersection(s2)
+        receiver_email = "capstonemini@gmail.com"  # Enter receiver address
+        message = f"""\
+        Subject: Notification from Alex
+
+        Your friend Alex is on their way to the {results_s2}."""
+        context = ssl.create_default_context () # reset to default sett as blank email
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            server.login(receiver_email, password)
+            server.sendmail(sender_email, receiver_email, message)
+            print("results_s2", list(results_s2))
+            
+    elif s1.intersection(s3):     
+        results_s3 = s1.intersection(s3)
+        receiver_email = "capstonemini@gmail.com"  # Enter receiver address
+        message = f"""
+        Subject: Notification from Skylar
+
+        Your friend Skylar is on their way to the { results_s3}."""
+        context = ssl.create_default_context ()
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            server.login(receiver_email, password)
+            server.sendmail(sender_email, receiver_email, message)
+            print("results_s3", list(results_s3))
+            
+        
+    elif s1.intersection(s4):
+        results_s4 = s1.intersection(s4)
+        receiver_email = "capstonemini@gmail.com"  # Enter receiver address
+        message = f"""\
+        Subject: Notification from Doja
+
+        Your friend Doja is on their way to the {results_s4}."""
+        context = ssl.create_default_context ()
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            server.login(receiver_email, password)
+            server.sendmail(sender_email, receiver_email, message)
+            print("results_s4", list(results_s4))
+    elif s1.intersection(s5):
+        results_s5 = s1.intersection(s5)
+        receiver_email = "capstonemini@gmail.com"  # Enter receiver address
+        message = f"""\
+        Subject: Notification from Levi
+
+        Your friend Levi is on their way to the {results_s5}."""
+        context = ssl.create_default_context ()
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            server.login(receiver_email, password)
+            server.sendmail(sender_email, receiver_email, message)
+            print("results_s5", list(results_s5))
+        
 location()
 
-s1.intersection(s2,s3, s4)
-    
-
-            
+        #   Overlook Park,Wallace Park,LA Fitness  
       
 
-#     for x in user_3_input:
-#         if x in user_1_input:
-#             list_of_courts.append(x)
-#             print(x)
-#             return
-#     for x in user_4_input:
-#         if x in user_1_input:
-#             list_of_courts.append(x)
-#             print(x)
-#             return
-#     for x in user_5_input:
-#         if x in user_1_input:
-#             list_of_courts.append(x)
-#             print(x)
-#             return
-# print(locations(x))
-    
-         
 
-    
-
-# I am filtering ppl who have already chosen a location with the locations I have chosen.
-
-
-
-
-
-
-
-
-
-# After you filter by location; filter by day and time the users have chosen.
-# put it into an if statement.
-
-
-
-                    # NOTES
-# if we have the same location that will be made into one list. 
-# from that list:
-#     filter the users by time.

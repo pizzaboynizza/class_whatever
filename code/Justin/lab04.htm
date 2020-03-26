@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bomb Diggity Burritos</title>
+
+    <style>
+      
+body {
+    background: rgb(19, 19, 19);
+    background-image: url("/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/mexican-food-background-11.jpg");
+    color: #fff;
+    font-family: 'Pistol Grip Pump', 'Bold';
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #353535;
+    font-size: 3rem;
+    color: #fff;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+  
+.card:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ }
+      
+.photo-grid {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
+}
+
+.rightcolumn {
+  float: right;
+  width: 50%;
+  padding-left: 20px;
+}
+
+.field {
+    width: 200;
+}
+
+/* Medium screens */
+@media screen and (min-width: 600px) {
+    .card-tall {
+    grid-row: span 2 / auto;
+  }
+  .card-wide {
+    grid-column: span 3 / auto;
+  }
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+    </style>
+  </head>
+  <body>
+    <center><h1>Bomb Diggity Burritos </h1></center>
+
+    <div class="photo-grid">
+
+      <div
+        class="card card-tall card-wide"
+        style="background-image:url('/Users/pizzaboynizza/PycharmProjects/bootcamp/class_whatever/code/Justin/71Aju2H09EL._AC_SY450_.jpg')"
+        >
+        
+        </div>
+
+    <div class="rightcolumn">
+      
+        <h1>Your Order:</h1>
+
+        <form action="https://webhook.site/87213fdb-34ca-4daf-8cd8-608033e6e350" method="post">
+                <fieldset>
+                  <legend>Tortilla</legend>
+                  <input type="radio" name="Tortilla" value="White Flour"> White Flour<br>
+                  <input type="radio" name="Tortilla" value="Wheat Flour"> Wheat Flour<br>
+                  <input type="radio" name="Tortilla" value="Spinach"> Spinach<br>
+                  <input type="radio" name="Tortilla" value="Corn"> Corn<br>
+                </fieldset>
+                <fieldset>
+                    <legend>Rice</legend>
+                    <input type="radio" name="Rice" value="White Rice"> White Rice<br>
+                    <input type="radio" name="Rice" value="Brown Rice"> Brown Rice<br>
+                </fieldset>
+                <fieldset>
+                    <legend>Beans</legend>
+                    <input type="radio" name="Beans" value="Black Beans"> Black Beans<br>
+                    <input type="radio" name="Beans" value="Pinto Beans"> Pinto Beans<br>
+                </fieldset>
+                <fieldset>
+                    <legend>Tortilla</legend>
+                    <input type="radio" name="Protein" value="Carnitas"> Carnitas<br>
+                    <input type="radio" name="Protein" value="Chicken"> Chicken<br>
+                    <input type="radio" name="Protein" value="Sofritas"> Sofritas<br>
+                    <input type="radio" name="Protein" value="None"> None<br>
+                </fieldset>
+                <fieldset>
+                        <legend>Beans</legend>
+                        <input type="checkbox" name="Additional Ingredients" value="Cheese"> Cheese<br>
+                        <input type="checkbox" name="Additional Ingredients" value="Sour Cream"> Sour Cream <br>
+                    </fieldset>
+                <fieldset style="field">
+                  <legend>Personal Info</legend>
+                  Username <input type="text" name="Username" placeholder="at least 6 characters" pattern="{1,6}" title="username must be between 1 and 6 characters" required/><br/>
+                  Password: <input type="password" name="Password" placeholder="at least 6 characters" pattern="{1,6}" title="password must be between 1 and 6 characters" required/><br/>
+                  First Name: <input type="text" name="First Name" placeholder="at least 3 characters" pattern="{1,3}" title="first name must be between 1 and 3 characters"required/><br/>
+                  Last Name: <input type="text" name="Last Name" placeholder="at least 3 characters" pattern="{1,3}" title="last name must be between 1 and 3 characters"required/><br/>
+                  Email Address <input type="text" name="Email Address" placeholder="Enter your e-mail" pattern="(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}" title="one or more numbers/letters, @, one or more numbers/letters, ., one or more numbers/letters"required/><br/>
+                  Phone Number: <input type="text" name="Phone Number" placeholder="e.g. 2932135555" title="e.g. 2932135555"required/><br/>
+                  Date of Birth: <input type="date" name="Date of Birth" placeholder="e.g. 2/13/2627" title="e.g. 2/13/2627"required/><br/>
+                  Social Security Number: <input type="text" name="Social Security Number" placeholder="e.g. 415-25-2627" pattern="{1,9}" title="SSN must be between 1 and 9 characters"required/><br/>
+                  Street: <input type="text" name="Street" placeholder="e.g. 123 Mulberry Ln" title="e.g. 123 Mulberry Ln"required/><br/>
+                  City, State, Zip: <input type="text" name="City, State, Zip" placeholder="e.g. Portland, OR, 97201" title="e.g. Portland, OR, 97201"required/><br/>
+                </fieldset>
+                <button type="submit">submit</button>
+              </form>
+    
+    </div>
+
+      </div>
+    </div>
+  </body>
+</html>

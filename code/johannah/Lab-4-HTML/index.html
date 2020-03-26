@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+  <title>Burrito Order Form</title>
+</head>
+<body>
+  <h1><img id="pickup" src="pickup.jpg" alt="Pick Up Order sign"> Portland Burrito Orders <img id="burrito" src="burrito.jpg" alt="Photo of a burrito"></h1>
+
+  <form class="flexbox-container" action="https://webhook.site/89fe0c4d-660b-45e4-811e-af679926284c" method="post">
+    <fieldset id="fieldset1" style="width:270px">
+      <div>
+        <legend>Your Order</legend><br>
+        <label for="tortilla">Tortilla:</label><br>
+        <input type="radio" name="tortilla" value="White Flour">White Flour <br>
+        <input type="radio" name="tortilla" value="Wheat Flour">Wheat Flour <br>
+        <input type="radio" name="tortilla" value="Spinach Tortilla">Spinach Tortilla <br>
+        <input type="radio" name="tortilla" value="Corn Flour">Corn Tortilla
+      </div>
+      <br>
+    
+      <div>
+        <label for="rice">Rice:</label><br>
+        <input type="radio" name="rice" value="White Rice">White Rice <br>
+        <input type="radio" name="rice" value="Brown Rice">Brown Rice <br>
+      </div>
+      <br>
+    
+      <div>
+        <label for="beans">Beans:</label><br>
+        <input type="radio" name="beans" value="Black Beans">Black Beans <br>
+        <input type="radio" name="beans" value="Pinto Beans">Pinto Beans <br>
+      </div>
+      <br>
+    
+      <div>
+        <label for="protein">Protein:</label><br>
+        <input type="radio" name="protein" value="Carnitas">Carnitas <br>
+        <input type="radio" name="protein" value="Chicken">Chicken <br>
+        <input type="radio" name="protein" value="Sofritas">Sofritas <br>
+        <input type="radio" name="protein" value="None">None
+      </div>
+      <br>
+    
+      <div>
+        <label for="additional">Additional Ingredients:</label><br>
+        <input type="checkbox" id="additional" class="form-control">Cheese <br>
+        <input type="checkbox" id="additional" class="form-control">Sour Cream <br>
+      </div>
+      <br>
+    </fieldset>
+    
+    <fieldset id="fieldset2" style="width:430px">
+      <div>
+        <legend>Personal Information</legend>
+        <!-- <label for="personal info">Personal Info:</label><br> -->
+        <p>Want to order faster? Login to your account or create an account.</p>
+        Username <input type="text" name="username" placeholder="at least 6 characters" pattern="[A-Za-z0-9]{6,}" title="Must be at least 6 characters" optional><br><br>
+        Password <input type="password" name="password" placeholder="at least 6 characters" pattern=".{6,}" title="Must be at least 6 characters" optional><br><br>
+        First Name <input type="text" name="name" pattern=".{3,}" title="Must be at least 3 characters each" required><br><br>
+        Last Name <input type="text" name="name" pattern=".{3,}" title="Must be at least 3 characters each" required><br><br>
+        Email Address <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="one or more numbers/letters, @, one or more numbers/letters, ., one or more numbers/letters" required><br><br>
+        Phone Number <input type="tel" name="phone" placeholder="e.g. 293-213-5555" required><br><br>
+        Date of Birth <input type="date" name="dob" placeholder="e.g. 2/13/2627"><br><br>
+        Social Security Number <input type="text" name="ssn" placeholder="e.g. 415-25-2627"><br><br>
+        Street Address <input type="text" name="street" placeholder="e.g. 123 Mulberry Ln"><br><br>
+        City, State, Zip <input type="text" name="city" placeholder="e.g. Portland, OR, 97201">
+      </div>
+      <br>
+    </fieldset>
+    <br>
+
+    <div id="btn">
+      <button type="submit" name="button">Submit Order</button>
+    </div>
+  </form>
+  
+</body>
+</html>
+
+
+<!-- For personal info, use the required, pattern and title attributes of the input fields to verify that the information the user entered is legitimate.
+
+Personal Info
+
+Username (at least 6 characters)
+Password (at least 6 characters)
+Name (First and Last) (two words, at lease 3 characters each)
+Email Address (one or more numbers/letters, @, one or more numbers/letters, ., one or more numbers/letters)
+-->
