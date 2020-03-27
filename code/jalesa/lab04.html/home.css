@@ -32,6 +32,9 @@ h1 h2{
 label{
     font-weight: bold;
 }
+#checkoutbutton{
+    background-color: darkgreen;
+}
 /* ----------------------     TABLET    ----------------------------- */
 @media (min-width: 768px) {
     h1,h2{
