@@ -26,8 +26,8 @@ p {
 body {background-color: blanchedalmond;
 }
 
-#bullet-point li{
-  /* bullet points arent moving */
-  /* Change the bullet points on the list of places to be a different character, like ☞. */
+#bullet-point {
+  list-style: upper-latin;
+  list-style-position: inside;
   text-align: center;
 }

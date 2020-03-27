@@ -8,13 +8,13 @@
     flex-direction: row;
     justify-content: space-around;
     height: 100px;
-    background: #153052;
+    background:#f2f2f2;
     /* color didnt work */
-    color: white;
+    color: black;
 }
 /* ----------------------------HEADER------------------------------------------ */
 #showcase{
-    background-image:url('../img/ball.jpeg');
+    background-image:url('../img/beaches.jpeg');
     background-size:cover;
     background-position: center;
     height:100vh;
@@ -33,7 +33,7 @@
 #showcase p{
     font-size: 20px;
 }
-#showcase .button{
+/* #showcase .button{
     font-size: 18px;
     text-decoration: none;
     color:#926239;
@@ -41,71 +41,91 @@
     padding:10px 20px;
     border:radius 10px;
     margin-top:20px;
-}
+} */
 #showcase .button:hover{
     background:#926239;
     color:white;
 }
 
 /* ----------------------body------------------------------------------- */
-#paragraph-1{
-    color:#483C2F;
+#paragraph-1 {
+    color:black;
+    background-color: white;
 }
-#paragraph-2{
-    background-color: #483C2F;
-    color:white;
+#paragraph-2 {
+    background-color:#f2f2f2;
+    color:black;
 }
 #container img{
-    width: 320px;
-    height: 237px;
+    /* my height is not working */
+    width:100%;
 }
 #beach-3{
-/* why isnt width taking up 100% of the parents container? */
-    /* width:100%; */
+    width:100%;
+}
+#beach-2, #beach-3{
+    width:100%;
 }
 #container{
     display:flex;
     flex-direction: column;
+    width:100%;
+    position: relative;
 }
 #beach-1 p, #beach-3 p{
-    background-color:#483C2F;
-    color:white;}
+    background-color:#f2f2f2;
+    color:black;
+    width:100%;
+}
 #beach-2 p{
-    color: #483C2F;
+    /* background-color: #f2f2f2; */
+    color: black;
+    width:100%;
 }
 /* ----------------------------footer------------------------------------ */
 #footer{
-    background-color:#153052;
+    background-color:rgb(45, 92, 167);
     color: white;
-    height: 400px;
-    position: relative;
+    position: absolute;
+    width:100%;
 }
 #footer .footer-content{
-    border:1px solid black;
-    height:350px;
-    display:flex;
+    /* border:1px solid black;
+    width:100%; */
+    /* display:flex; */
 }
-#footer .footer-content .footer-section{
-padding:25px;
-   flex:1;
-   border: 1px solid white;
+.footer-section-links{
+    border:1px solid white;
+    text-align: center;
+    padding-bottom: 1em;
 }
+.footer-section-links a{
+    color:white;
+}
+.contact{
+    /* width:50%; */
+    border:1px solid white;
+    text-align: center;
+    padding-bottom: 1em;
+} 
 .bottom-footer p{
-    background-color:#A68D7A;
+    background-color:rgb(27, 68, 134);
     text-align:center;
     color:white;
-    position: absolute;
     height: 50px;
     width:100%;
-    padding-top: 180px;
     bottom:0px;
     left:0px;
-    padding-top:20px; 
 }
+
 html, #body{
     /* get footer to stick to bottom of page
     if there were no content in the body. */
     min-height:100%
+}
+/* not doing anything */
+.contact span{
+    padding-bottom: 2em;
 }
 
 /* ----------------------------IPAD DISPLAY------------------------------- */
@@ -114,18 +134,35 @@ html, #body{
         display:flex;
         flex-direction: row;
         /* not working */
-        justify-content: space-between;
+        justify-content: space-around;
+        width:100%;
     }
-    #container #beach-1, #container #beach-2,#container #beach-3{
-    /* makes each box inside the container smaller(skinnier) */
-    /* width:33%;} */
+    #container #beach-1, #container #beach-2, #container #beach-3{
+        width:33%;
+        
     }
     #beach-1 p, #beach-3 p {
-        background-color:#483C2F;
-        color:white; 
+        background-color:#f2f2f2;
+        color:black; 
+    }
+    .footer-content{
+        width:100%;
+        display:flex;
+    }
+    .contact{
+        width:50%;
+    }
+    .footer-section-links{
+        width:50%;
     }
 }
 /* -------------------------------------DESKTOP DISPLAY---------------------------------------------- */
 @media (min-width: 1024px) {
+    #footer{
+        widows: 100%;
+    }
+    #footer .footer-content{
+        width:100%;
+    }
 
 }
