@@ -33,7 +33,7 @@
 #showcase p{
     font-size: 20px;
 }
-#showcase .button{
+/* #showcase .button{
     font-size: 18px;
     text-decoration: none;
     color:#926239;
@@ -41,7 +41,7 @@
     padding:10px 20px;
     border:radius 10px;
     margin-top:20px;
-}
+} */
 #showcase .button:hover{
     background:#926239;
     color:white;
@@ -87,17 +87,27 @@
     background-color:rgb(45, 92, 167);
     color: white;
     position: absolute;
+    width:100%;
 }
 #footer .footer-content{
-    border:1px solid black;
-    /* position: absolute; */
-    /* height:350px; */
-    
+    /* border:1px solid black;
+    width:100%; */
+    /* display:flex; */
 }
-/* #footer .footer-content .footer-section{
-    /* padding:25px; */
-   /* flex:1; */
-   /* border: 1px solid white; */
+.footer-section-links{
+    border:1px solid white;
+    text-align: center;
+    padding-bottom: 1em;
+}
+.footer-section-links a{
+    color:white;
+}
+.contact{
+    /* width:50%; */
+    border:1px solid white;
+    text-align: center;
+    padding-bottom: 1em;
+} 
 .bottom-footer p{
     background-color:rgb(27, 68, 134);
     text-align:center;
@@ -139,14 +149,11 @@ html, #body{
         width:100%;
         display:flex;
     }
-    .footer-section-about{
-        width:33%;
-    }
     .contact{
-        width:33%;
+        width:50%;
     }
     .footer-section-links{
-        width:33%;
+        width:50%;
     }
 }
 /* -------------------------------------DESKTOP DISPLAY---------------------------------------------- */
