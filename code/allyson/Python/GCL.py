@@ -1,4 +1,4 @@
-##  Gaming Companion List ##
+gx##  Gaming Companion List ##
 
 from pprint import pprint
 
