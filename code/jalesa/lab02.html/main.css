@@ -1,0 +1,100 @@
+/* use border radius to make picture round */
+/* --------------------     NAVIGATION-BAR      ------------------------- */
+#navigation_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* width: 200px; */
+    height: 100px;
+    background: darkblue
+} 
+#navigation_bar a {
+    color: white;
+    font-size: 20px;
+}
+/* ----------------------------     BODY        --------------------- */
+p { 
+    text-align: left;
+    color: black;
+}
+body p {
+    color: black;
+    text-align: left;
+}
+.date{
+    color:rgb(116, 112, 112);
+}
+.header {
+    text-align: center;
+}
+.date {
+    text-align: left;
+    color: dark grey
+}
+#box {
+    /* display:flex; */
+    /* flex-wrap: wrap; */
+    text-align: center;
+    margin: 6px;
+    /* padding: 20px 15px;  */
+    line-height: 1.5;
+}
+/* ----------------------------     FOOTER      ------------------------ */
+#footer {
+    /* display:flex;
+    flex-direction: column;
+    align-items: flex-end; */
+    text-align: center;
+    color: white;
+    height: 200px;
+    position: relative;
+    background-color: darkblue;
+    width:100%;
+}
+.bottom-footer{
+    /* bottom footer does not go all the way over on 
+    tablet mode. */
+    width:100%;
+    background-color:rgb(23, 36, 206);
+    text-align:center;
+    color:white;
+    position: absolute;
+    height: 50px;
+    padding-top: 180px;
+    bottom:0px;
+    left:0px;
+    padding-top:20px; 
+}
+#footer p{
+    color:white;
+}
+#footer label{
+    color: white;
+}
+.bottom-footer p{
+    text-align: center;
+}
+#contact-information{
+    /* margin-top: 2em; */
+}
+
+
+
+@media (min-width: 1024px) {
+    #content_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;  
+    }
+   
+    #about{
+        margin: 6px;
+    }
+    #box{
+        /* border:2px solid purple; */
+    }
+    #home{
+        margin: 6px;
+    }
+ } 
+

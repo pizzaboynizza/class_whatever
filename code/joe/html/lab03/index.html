@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--
     Snake Oil Pharmaceuticals
-    ☐ Mobile
+    ☐ Content
+    ☑ Mobile
     ☐ Tablet
     ☐ Desktop
 -->
@@ -10,7 +11,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
-        <title>Lab 3</title>
+        <title>Snake Oil Sales, LLC</title>
 
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
         <script src="https://kit.fontawesome.com/130ffd39f1.js" crossorigin="anonymous"></script>
@@ -26,31 +27,50 @@
         </header>
         
         <main>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Clark_Stanley%27s_Snake_Oil_Liniment.png" class="startimg"/>
-            <h2 class="slogan">Snake Oil Cure Alls Cure All!</h2>
+            <div class="maintop">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Clark_Stanley%27s_Snake_Oil_Liniment.png" class="startimg"/>
+                <h2 class="slogan">Snake Oil Cure Alls Cure All!</h2>
+            </div>
             <hr />
 
             <!--News-->
+            <div class="container">
             <div class="topnews">
-                <div class="topnews-item"> <!--Make some part of this box a link-->
+                <div class="topnews-item">
+                    <!--The images are causing the text underneath them to overflow out of the flexbox-->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Snake_oil_or_Memory_Elixer_anyone.jpg" alt="TODO"/>
-                    <h3>What is Snake Oil</h3>
-                    <p>Take an online tour of what Snake Oil is, and why it's the future!</p>
+                    <div class="topnews-text">
+                        <h3>What is Snake Oil</h3>
+                        <p>Take an online tour of what Snake Oil is, and why it's the future!</p>
+                        <a class="learn-more" href="index.html">Learn more</a>
+                    </div>
                 </div>
-                <div class="topnews-item"> <!--Make some part of this box a link-->
+                <div class="topnews-item">
                     <img src="https://www.nps.gov/aboutus/news/images/CDC-coronavirus-image-23311-for-web.jpg" alt="TODO"/>
-                    <h3>Can Snake Oil Help with Coronavirus?</h3>
-                    <p>The answer may surprise you!</p>
-                </div>
-                <div class="topnews-item"> <!--Make some part of this box a link-->
+                    <div class="topnews-text">
+                        <!--The problem with centering and box overflow seem to come from the shortness of the content in <p>-->
+                        <!--Fix by adding more words in <p>-->
+                        <h3>Can Snake Oil Help with Coronavirus?</h3>
+                        <p>The answer may surprise you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac augue commodo.</p>
+                        <a class="learn-more" href="index.html">Learn more</a>
+                    </div>
+                </div><!--<br class="DOINGITLIVE"/>-->
+                <div class="topnews-item">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Snake-oil_salesman_Professor_Thaddeus_Schmidlap_at_Enchanted_Springs_Ranch%2C_Boerne%2C_Texas%2C_USA_28650a.jpg/400px-Snake-oil_salesman_Professor_Thaddeus_Schmidlap_at_Enchanted_Springs_Ranch%2C_Boerne%2C_Texas%2C_USA_28650a.jpg" alt="TODO"/>
-                    <h3>Meet Our Salespeople</h3>
-                    <p>Get to know the wonderful people bringing Snake Oil to you!</p>
+                    <div class="topnews-text">
+                        <h3>Meet Our Salespeople</h3>
+                        <p>Get to know the wonderful people bringing Snake Oil to you!</p>
+                        <a class="learn-more" href="index.html">Learn more</a>
+                    </div>
                 </div>
             </div>
+            </div>
 
+            <div>
+            <!-- <br/> -->
             <hr />
 
+            <div class="container">
             <h2>News</h2>
             <div class="othernews">
                 <div class="othernews-item">
@@ -69,6 +89,8 @@
                     <h3>Title</h3>
                     <p>Description</p>
                 </div>
+            </div>
+            </div>
             </div>
         </main>
 
