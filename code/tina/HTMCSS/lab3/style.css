@@ -132,7 +132,6 @@ a {
     background-color: #747c74;
     padding: 5px;
     color: #FFFF;
-    /* text-align: left; */
     font-size: x-small;
     
     
@@ -141,9 +140,10 @@ a {
 .sidebar2 {
     background-color: #747c74;
     padding: 10px;
-    color: #FFFF;
+    font-size: 15px;
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 
 .sidebar3 {
@@ -225,16 +225,11 @@ img {
 
 
 .text {
-    color: white;
-    font-size: 10px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -268,7 +263,7 @@ img {
         justify-content: space-between;
     }
     
-    
+
     
     
 }

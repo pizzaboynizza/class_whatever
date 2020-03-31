@@ -46,55 +46,79 @@ Once you have your page together, use [webhook.site](https://webhook.site) to cr
 <html>
     <head>
         <title>Demo Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <p>Hello world!</p>
+        <h1 id="top_header">Corona</h1>
+        <h2 id="sub_top_header">Authentico Burrito</h2>
+        <img id="top_img" src="https://www.goodfreephotos.com/albums/vector-images/burrito-vector.png" alt="Burrito Cartoon" width="325" height="auto"/>
+        <h3 id="customize">Customize Your Burrito:</h2>
+
+        <form action="https://webhook.site/e508d9c9-e183-427a-8d15-d3bfc05e644d" method="post">
+            <div id="ingredient_container">
+                <fieldset id="ingredient_fieldset">
+                    <legend>Tortilla</legend>
+                    <input type="radio" name="tortilla" value="white" id="white">
+                    <label for="white">White Flour</label><br>
+                    <input type="radio" name="tortilla" value="whole_wheat" id="whole_wheat">
+                    <label for="whole_wheat">Whole Wheat Flour</label><br>
+                    <input type="radio" name="tortilla" value="spinach" id="spinach">
+                    <label for="spinach">Spinach</label><br>
+                    <input type="radio" name="tortilla" value="corn" id="corn">
+                    <label for="corn">Corn</label>
+                </fieldset>
+                <fieldset id="ingredient_fieldset">
+                    <legend>Rice</legend>
+                    <input type="radio" name="rice" value="white" id="white">
+                    <label for="white">White</label><br>
+                    <input type="radio" name="rice" value="brown" id="brown">
+                    <label for="brown">Brown</label><br>
+                </fieldset>
+                <fieldset id="ingredient_fieldset">
+                    <legend>Beans</legend>
+                    <input type="radio" name="bean" value="black" id="black">
+                    <label for="black">Black</label><br>
+                    <input type="radio" name="bean" value="pinto" id="pinto">
+                    <label for="pinto">Pinto</label><br>
+                </fieldset>
+                <fieldset id="ingredient_fieldset">
+                    <legend>Protein</legend>
+                    <input type="radio" name="protein" value="carnitas" id="carnitas">
+                    <label for="carnitas">Carnitas</label><br>
+                    <input type="radio" name="protein" value="chicken" id="chicken">
+                    <label for="chicken">Chicken</label><br>
+                    <input type="radio" name="protein" value="sofritas" id="sofritas">
+                    <label for="sofritas">Sofritas</label><br>
+                    <input type="radio" name="protein" value="none" id="none">
+                    <label for="none">None</label><br>
+                </fieldset>
+                <fieldset id="ingredient_fieldset">
+                    <legend>Additional Fillings</legend>
+                    <input type="checkbox" name="add_fill" value="cheese" id="cheese">
+                    <label for="cheese">Cheese</label><br>
+                    <input type="checkbox" name="add_fill" value="sour_cream" id="sour_cream">
+                    <label for="sour_cream">Sour Cream</label><br>
+                </fieldset>
+            </div>
+            <fieldset id="personal_info_fieldset">
+                <legend>Personal Information</legend>
+                <div id="personal_info_container">
+                    <div id="personal_info">Username<br><input type="text" name="username" required pattern=".{6,}" title="Username must be at least 6 characters"/><br><br></div>
+                    <div id="personal_info">Password<br><input type="text" name="password" required pattern=".{6,}" title="Password must be at least 6 characters"/><br><br></div>
+                    <div id="personal_info">Name (First and Last)<br><input type="text" name="name" required pattern="([a-z]|[A-Z]){3,}[ ]([a-z]|[A-Z]){3,}" title="Name must be two words, at least 3 characters each"/><br><br></div>
+                    <div id="personal_info">Email Address<br><input type="text" name="email" required pattern="(\w|\d){1,}(@)(\w|\d){1,}(\.)(\w|\d){1,}" title="Must be a valid email address"/><br><br></div>
+                    <div id="personal_info">Phone Number<br><input type="text" name="phone_number" required pattern="\d{3}-\d{3}-\d{4}" title="Must be a valid phone number (e.g. 293-213-5555)"/><br><br></div>
+                    <div id="personal_info">Date of Birth<br><input type="text" name="DOB" required pattern="[0-1]?[\d][/][0-3]?[\d][/][\d]{4}" title="Must be a valid date (e.g. 2/13/2627)"/><br><br></div>
+                    <div id="personal_info">Social Security Number<br><input type="text" name="SSN" required pattern="[\d]{3}-[\d]{2}-[\d]{4}" title="Must be a valid SSN (e.g. 415-25-2627)"/><br><br></div>
+                    <div id="personal_info">Street<br><input type="text" name="street" required pattern="([a-z]|[A-Z]|[ ]|\d|[.])+" title="Must be a valid street (e.g. 123 Mulberry Ln)"/><br><br></div>
+                    <div id="personal_info">City<br><input type="text" name="city" required pattern="([a-z]|[A-Z]|[ ]|\d|[.])+" title="Must be a valid city (e.g. Portland)"/><br><br></div>
+                    <div id="personal_info">State<br><input type="text" name="state" required pattern="(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])" title="Must be a valid state (e.g. OR)"/><br><br></div>
+                    <div id="personal_info">Zip<br><input type="text" name="zip" required pattern="[\d]{5}" title="Must be a valid zip code (e.g. 97201)"/><br><br></div>
+                </div>
+            </fieldset>
+            <button type="submit">submit</button>
+        </form>
     </body>
-    <form action=" https://webhook.site/e508d9c9-e183-427a-8d15-d3bfc05e644d " method="post">
-        <fieldset>
-            <legend>Tortilla</legend>
-            <input type="radio" name="tortilla" value="white"> White Flour<br>
-            <input type="radio" name="tortilla" value="whole_wheat"> Whole Wheat Flour<br>
-            <input type="radio" name="tortilla" value="spinach"> Spinach
-            <input type="radio" name="tortilla" value="corn"> Corn
-        </fieldset>
-        <fieldset>
-            <legend>Rice</legend>
-            <input type="radio" name="rice" value="white"> White<br>
-            <input type="radio" name="rice" value="brown"> Brown<br>
-        </fieldset>
-        <fieldset>
-            <legend>Rice</legend>
-            <input type="radio" name="bean" value="black"> Black<br>
-            <input type="radio" name="bean" value="pinto"> Pinto<br>
-        </fieldset>
-        <fieldset>
-            <legend>Protein</legend>
-            <input type="radio" name="protein" value="carnitas"> Carnitas<br>
-            <input type="radio" name="protein" value="chicken"> Chicken<br>
-            <input type="radio" name="protein" value="sofritas"> Sofritas
-            <input type="radio" name="protein" value="none"> None
-        </fieldset>
-        <fieldset>
-            <legend>Additional Fillings</legend>
-            <input type="checkbox" name="add_fill" value="cheese"> Cheese<br>
-            <input type="checkbox" name="add_fill" value="sour_cream"> Sour Cream<br>
-        </fieldset>
-        <fieldset>
-            <legend>Personal Information</legend>
-            Username: <input type="text" name="name" required/><br>
-            Password: <input type="text" name="name" required/><br>
-            First Name: <input type="text" name="name" required/><br>
-            Last Name: <input type="text" name="name" required/><br>
-            Email Address: <input type="text" name="name" required/><br>
-            Phone Number: <input type="text" name="name" required/><br>
-            Date of Birth: <input type="text" name="name" required/><br>
-            Socail Security Number: <input type="text" name="name" required/><br>
-            Street: <input type="text" name="name" required/><br>            
-            City: <input type="text" name="name" required/><br>
-            State: <input type="text" name="name" required/><br>
-            Zip: <input type="text" name="name" required/><br>
-        </fieldset>
-        <button type="submit">submit</button>
-    </form>
 </html>

@@ -1,0 +1,165 @@
+html{
+    background-color:#eee ;
+}
+/* --------------------------------Nav-Bar------------------------------------------------ */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* width: 200px; */
+    height: 100px;
+    /* background: #463627 */
+    background: #493D3B
+}
+/* ----------------------------HEADER------------------------------------------ */
+#showcase{
+    background-image:url('../img/ball.jpeg');
+    background-size:cover;
+    background-position: center;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align:center;
+}
+
+#showcase h1{
+    font-size: 50px;
+    line-height: 1.2;
+}
+#showcase p{
+    font-size: 20px;
+}
+#showcase .button{
+    font-size: 18px;
+    text-decoration: none;
+    color:#926239;
+    border:#926239 1px solid;
+    padding:10px 20px;
+    border:radius 10px;
+    margin-top:20px;
+}
+#showcase .button:hover{
+    background:#926239;
+    color:white
+}
+#main-footer{
+    text-align: center;
+    background-color: #eeeeee;
+}
+
+#beaches{
+    display:flex;
+    flex-direction: column;
+    background-color: #eeeeee;
+    
+}
+#beaches p{
+    background-color: #9B857C;
+    color: white;
+}
+#beaches p{
+    border-bottom: 10px solid white;
+    padding: 10px;
+}
+#beaches img{
+    width: 320px;
+    height: 237px; 
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+    #beaches{
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "venice_beach zuma_beach"
+            "firstp secondp";
+        column-gap:3px;
+        row-gap:3px;
+        justify-content: start;
+        justify-items: center;
+    }
+    
+    .venice_beach{
+        grid-area: venice_beach;
+
+    }
+    .zuma_beach{
+        grid-area: zuma_beach;
+
+    }
+    .firstp{
+        grid-area: firstp;
+        width: 300px;
+        height: auto;   
+    }
+    .secondp{
+        grid-area: secondp;
+        width: 300px;
+        height: auto;   
+    }
+    .thirdp{
+        width:300px;
+    }
+
+    .text h1{
+        text-align: center;
+    }
+
+
+    }
+    /* html{
+        background-color:#eee ;
+    }
+    #main-footer{
+        text-align: center;
+        background-color: #eeeeee;
+    }
+    /* .navbar{
+        display: flex;
+        flex-direction: row;
+        background-color:#236599;
+        justify-content: space-around; */
+    /*}
+    #beaches{
+        display:flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        /* background-color: #eeeeee;
+        flex-basis: 2;
+    /* } */
+    #beaches p{
+       /* background-color: #3A4D5C;
+        color: white;
+    }
+    #beaches p{
+        border-bottom: 10px solid white;
+        padding: 10px;
+    }
+    #beaches img{
+        display:flex;
+        width: 355px;
+        height: 237px; 
+        flex-basis: 50%; */
+    }
+    */
+}
+
+
+
+
+@media (min-width: 1024px) {
+
+}
