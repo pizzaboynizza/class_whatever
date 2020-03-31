@@ -13,7 +13,7 @@ img{
      height: auto;
 
 }
-hi, h2, h3{
+h1, h2, h3{
      margin: 0;
      padding: 1em 0;
 }
@@ -51,7 +51,7 @@ p{
      z-index: -1; /*to make the text appear in the front since its covered by the image*/
      opacity: 0.6; /* to fade the image a little so its not too prominent*/
 }
-#showcase hi {
+#showcase h1 {
      padding-top: 100px;
      padding-bottom: 0;
 }
