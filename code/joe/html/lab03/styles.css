@@ -87,7 +87,7 @@ img.logo {
 
 .startimg {
     width: 100%;
-    max-width: 480px;
+    max-width: 400px;
 }
 
 main {
@@ -184,7 +184,7 @@ main {
         flex-direction: row;
         align-items: flex-start;
     }
-    
+
     .topnews-text {
         padding-left: 4px;
     }
