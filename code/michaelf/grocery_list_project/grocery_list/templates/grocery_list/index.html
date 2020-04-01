@@ -1,0 +1,20 @@
+<h1>shopping list</h1>
+
+<form action= '{% url "grocery_list:add"%}'method='post'>
+    {% csrf_token %}
+    <input type="text" id="item" name="item" required minlength='1' maxlength="30">
+    <input type="submit" value="add item">
+</form>
+{% if current_list %}
+    <ul>
+    {% for item in current_list %}
+        <input type="checkbox" name="completed" id="completed{{ forloop.counter }}"><label for "completed{{forloop.counter}}">{{item}}</label><br>
+
+    {% endfor %}
+
+    </ul>
+
+{% else %}
+    <p>Nothing here yet!</p>
+
+{% endif %}
