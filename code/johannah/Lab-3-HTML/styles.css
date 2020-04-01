@@ -1,1 +1,104 @@
-/* Use CSS grid and/or flexbox, and make sure it's responsive. */
+/* Desktop Design */
+body {
+  font-family: sans-serif;
+}
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 200px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: lightyellow;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  text-align: center;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding-top: 16px;
+  text-decoration: none;
+  color: black;
+  font-size: 16pt;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: blue;
+}
+
+#side-head {
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+.body-div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-content: stretch; */
+  /* flex: 2; */
+  margin-left: 200px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#news {
+  width: 100%;
+}
+
+#pnw {
+  max-width: 85%;
+}
+
+.images {
+  max-width: 32%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+
+/* Mobile Design */
+/* @media (max-width: 414px) {
+  .body-div {
+      display: block;
+      margin-left: 200px; NONE
+  }
+
+  .images {
+    max-width:65%;
+    height:auto;
+  }
+
+  .sidenav {
+      display: none;
+  }
+} */
+
+/* Tablet Design */
+/* @media (min-width: 768px) and (max-width: 1024px) {
+  .body-div {
+    display: block;
+    margin-left: 200px; NONE
+  }
+
+  .images {
+    max-width:65%;
+    height:auto;
+  }
+
+  .sidenav {
+      display: none;
+  }
+} */
