@@ -58,16 +58,16 @@ def add_new():
         if user_input == 'done':
             break
         attributes.append(user_input)
-        
-#         # contact_dict.update(contact_dict: attributes)
-#     new_contacts = dict(zip(keys,attributes))
-#     contact_dict.append(new_contacts)
-#     return contact_dict
-# print(add_new())
+        # contact_dict.update(contact_dict:attributes)
+    new_contacts = dict(zip(keys,attributes))
+    contact_dict.append(new_contacts)
+    return contact_dict
+print("CREATE:" )
+print(add_new())
 #                  OR OR BELOW!!!!!!!!!!!!!!!!!!!
-new_values = [input('name: '), input('age: '),input('gender: '),input('race: '),input('nationality: ')]
-new_values2 = dict(zip(keys,new_values))
-contact_dict.append(new_values2)
+# new_values = [input('name: '), input('age: '),input('gender: '),input('race: '),input('nationality: ')]
+# new_values2 = dict(zip(keys,new_values))
+# contact_dict.append(new_values2)
 # print(contact_dict)
 
 
@@ -77,18 +77,18 @@ def retrieve_contact():
     for i in contact_dict:
         if i['name'] == user:
             return i
-# print(retrieve_contact())
+print("RERTRIEVE:")
+print(retrieve_contact())
 
 
 
-def record_update():  #VERSION ONE
+def update_record():  #VERSION ONE
     contact = retrieve_contact() #USES VALUES FROM RETRIEVE CONTACT and aks for user's name in retrieve
-    user_input = input("Enter key(attribute) to change") #then asks for what what key to change
+    user_input = input("Enter key(attribute) to change or done") #then asks for what what key to change
     new_value = input("Enter new value") #and then what value in that keey to change to
     contact[user_input] = new_value #puts the new value into the key for the list(contact)
-    # print(contact)
-record_update()
-
+print("UPDATE")
+print(update_record())
 
 
 #OR RUN  WITHOUT USING THE RECORD UPDATE VALUE 
@@ -104,40 +104,47 @@ record_update()
 # record_update()
 
         #THIS IS TO DELETE
-def record_delete():
+def delete_record():
     user = input("Enter name to delete: ")
     for i in range(len(contact_dict)):
         if contact_dict[i]['name'] == user:
             del contact_dict[i]
             
             return contact_dict
-    
-# print(record_delete())
+print(delete_record())
 
 # VERSION 3
+
 while True:
-    if user == 
-   # if user== c
-# creat_data(data, keys)
+    user_input = input("(c)reate, (r)ead, (u)pdate, (d)elete, (q)uit? ")
+    if user_input == 'q':
+        break
+    elif user_input == 'c':
+        add_new()
+    elif user_input == 'r':
+        retrieve_contact()
+    elif user_input == 'u':
+        update_record()
+    elif user_input == 'd':
+        delete_record()
 
-# while True:
-#     user_input = input("(c)reate, (r)ead, (u)pdate, (d)elete, (q)uit? ")
-#     if user_input == 'q':
-#         break
-#     elif user_input == 'c':
-#         create_contact(data, keys)
-#     elif user_input == 'r':
-#         read_contact(data, keys)
-#     elif user_input == 'u':
-#         update_contact(data, keys)
-#     elif user_input == 'd':
-#         delete_contact(data, keys)
 
-# data_csv_output = []
-# data_csv_output.append(list(data[0].keys()))
-# for contact in data:
-#     data_csv_output.append(list(contact.values()))
-# data_csv_output = [",".join(line) for line in data_csv_output]
-# data_csv_output = "\n".join(data_csv_output)
-# with open('contacts.csv', 'w') as f:
-#     f.write(data_csv_output)
+with open("contacts.csv", 'w') as file:
+    key_value_list = []
+    new_join = []
+    punctuation_join = []
+    new_contact_dict = []
+
+    key_value_list.append(list(contact_dict[0].keys()))
+
+    for x in contact_dict:
+        key_value_list.append(list(x.values()))
+
+    for puncts in key_value_list:
+        punctuation_join = ','.join(puncts)
+        new_join.append(punctuation_join)
+
+    new_contact_dict = '\n'.join(new_join)
+    print(new_contact_dict)
+
+    file.write(new_contact_dict)
