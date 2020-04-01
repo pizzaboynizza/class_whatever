@@ -54,6 +54,10 @@ h1 {
   width: 100%;
 }
 
+#heading {
+  padding-left: 200px;
+}
+
 #pnw {
   max-width: 85%;
 }
