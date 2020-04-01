@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Grocery List</title>
+    </head>
+
+    <body>
+        <h1>Grocery List</h1>
+        <p>
+            <!--Add links for adding and deleting items here-->
+        </p>
+
+        <!--Display Grocery list here-->
+        <ul>
+        {% for item in item_list %}
+        <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    <body>
+
+</html>
