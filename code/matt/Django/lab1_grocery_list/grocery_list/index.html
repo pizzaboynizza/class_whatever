@@ -1,0 +1,9 @@
+{% if grocery_list %}
+    <ul>
+    {% for item in grocery_list %}
+        <li><a href="{% url 'grocery_list:detail' item.id %}">{{ GroceryItem.description }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>nothing to see here</p>
+{% endif %}
