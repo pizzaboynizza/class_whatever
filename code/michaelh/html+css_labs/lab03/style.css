@@ -5,8 +5,12 @@ hr{
     border: 1px solid #AFAFAF;
 }
 aside{margin: 20px;}
+h1,h2,h3,h4,h5{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 body{
     background-color: #EBEBEB;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .topnav{
     text-align: center;
@@ -183,14 +187,12 @@ h1{
 }
 
 @media (min-width: 960px) {
-
-
     body{
         box-shadow: 3px 3px grey, -1em 0 .4em grey;
         max-width: 1200px;
         display: block;
-        margin-right: auto;
-        margin-left: auto;
+        margin: auto;
+        /* font-family: Arial, Helvetica, sans-serif; */
     }
 
     .section1{
