@@ -10,7 +10,7 @@ body {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: lightyellow;
+  background-color: #e6f2ff;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
   text-align: center;
@@ -34,17 +34,30 @@ body {
   font-weight: bold;
 }
 
-.body-div {
+.flexbox-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  /* flex-direction: column;
+  flex-wrap: wrap; */
+  /* flex-flow: column wrap; */
   /* align-items: center;
   justify-content: center;
   flex-flow: column wrap;
   align-content: stretch; */
   /* flex: 2; */
+  /* width: 30%; */
   margin-left: 200px;
 }
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen {
+  /* text-align: center; */
+  margin: 12px;
+  padding-bottom: 18px;
+}
+
+/* .col {
+  margin: 12px;
+  padding-bottom: 12px;
+} */
 
 h1 {
   text-align: center;
@@ -60,10 +73,11 @@ h1 {
 
 #pnw {
   max-width: 85%;
+  padding-bottom: 32px;
 }
 
 .images {
-  max-width: 32%;
+  max-width: 50%;
   height: auto;
   display: block;
   margin-left: auto;
@@ -73,6 +87,7 @@ h1 {
 }
 
 footer {
+  margin-left: 200px;
   margin-bottom: 15px;
   margin-top: 50px;
   text-align: center;
@@ -80,10 +95,10 @@ footer {
 
 
 /* Mobile Design */
-/* @media (max-width: 414px) {
-  .body-div {
+@media (max-width: 414px) {
+  .flexbox-container {
       display: block;
-      margin-left: 200px; NONE
+      margin-left: 0px;
   }
 
   .images {
@@ -94,21 +109,25 @@ footer {
   .sidenav {
       display: none;
   }
-} */
+
+  footer {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  #heading {
+    padding-left: 0px;
+  }
+}
 
 /* Tablet Design */
-/* @media (min-width: 768px) and (max-width: 1024px) {
-  .body-div {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .flexbox-container {
     display: block;
-    margin-left: 200px; NONE
   }
 
   .images {
-    max-width:65%;
+    max-width:45%;
     height:auto;
   }
-
-  .sidenav {
-      display: none;
-  }
-} */
+}
