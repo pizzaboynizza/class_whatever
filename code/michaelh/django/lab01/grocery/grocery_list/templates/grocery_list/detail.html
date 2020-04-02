@@ -1,0 +1,18 @@
+<h1>{{ grocery_item.item_text }}</h1>
+
+<h2>Options</h2>
+{% if  grocery_item.was_completed == False%}
+    <form action = "{% url 'complete' grocery_item.id %}" method = "post">
+        {% csrf_token %}
+        <button type="submit" value={{grocery_item.id}}>Make complete</button>
+    </form> 
+{% else %}
+    <form action = "{% url 'incomplete' grocery_item.id %}" method = "post">
+        {% csrf_token %}
+        <button type="submit" value={{grocery_item.id}}>Make incomplete</button>
+    </form> 
+{% endif %}
+<form action = "{% url 'delete' grocery_item.id %}" method = "post">
+    {% csrf_token %}
+    <button type="submit" value={{grocery_item.id}}>Delete</button>
+</form> 
