@@ -11,7 +11,7 @@ def index(request):
 
     return render(request, 'grocery_list/index.html', context={'current_list':current_list})
 
-def add(request, item_id):
-    item=get_object_or_404(GroceryItem, pk=item_id)
-    item.save()
+def add(request, item_text):
+    add_item=GroceryItem(text=item_text)
+    add_item.save()
     return HttpResponseRedirect(reverse('grocery_list:index'))
