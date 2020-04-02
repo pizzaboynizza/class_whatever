@@ -5,16 +5,29 @@
     <input type="text" id="item" name="item" required minlength='1' maxlength="30">
     <input type="submit" value="add item">
 </form>
-{% if current_list %}
-    <ul>
-    {% for item in current_list %}
-        <input type="checkbox" name="completed" id="completed{{ forloop.counter }}"><label for "completed{{forloop.counter}}">{{item}}</label><br>
+<form action='{% url "grocery_list:update"%}' method='post'>
+    {% csrf_token %}
+    {% if current_list %}
+        <ul>
+        {% for item in current_list %}
+            {% if  item.is_completed %}
+                <text style= text-decoration:line-through>{{item}}</text><br>
+            {% else %}
+                <input type="checkbox" name="{{item.pk}}" value= {{item}}><label for "completed{{forloop.counter}}">{{item}}</label><br>
+            {% endif %}
+        {% endfor %}
 
-    {% endfor %}
+        </ul>
 
-    </ul>
+    {% else %}
+        <p>Nothing here yet!</p>
 
-{% else %}
-    <p>Nothing here yet!</p>
+    {% endif %}
 
-{% endif %}
+<input type="submit" value="mark as completed">
+</form>
+
+<form action= '{% url "grocery_list:delete" %}' method='post'>
+    {% csrf_token %}
+    <input type="submit" value="remove completed items">
+</form>
