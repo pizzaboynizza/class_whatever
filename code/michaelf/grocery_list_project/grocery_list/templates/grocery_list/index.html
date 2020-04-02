@@ -2,7 +2,7 @@
 
 <form action= '{% url "grocery_list:add"%}' method='post'>
     {% csrf_token %}
-    <input formaction='{% url "grocery_list:add"%}' type="text" id="item" name="item" required minlength='1' maxlength="30">
+    <input type="text" id="item" name="item" required minlength='1' maxlength="30">
     <input type="submit" value="add item">
 </form>
 {% if current_list %}

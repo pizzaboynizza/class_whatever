@@ -11,7 +11,7 @@ def index(request):
 
     return render(request, 'grocery_list/index.html', context={'current_list':current_list})
 
-def add(request, item_text):
-    add_item=GroceryItem(text=item_text)
+def add(request):
+    add_item=GroceryItem(text=request.POST.get('item'))
     add_item.save()
     return HttpResponseRedirect(reverse('grocery_list:index'))
