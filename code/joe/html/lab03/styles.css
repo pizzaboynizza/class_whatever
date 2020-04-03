@@ -193,4 +193,26 @@ main {
     } */
 }
 
-/* @media (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .topnews {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .topnews-item {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .topnews-item img {
+        align-self: center;
+        max-width: 400px;
+    }
+
+    .about {
+        flex-direction: row;
+    }
+
+    .more-about {
+        margin-right: 128px;
+    }
+}
