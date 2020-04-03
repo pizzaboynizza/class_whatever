@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'grocery_list_app.apps.GroceryListConfig',
+    'grocery_list_app',
 ]
 
 MIDDLEWARE = [
@@ -49,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'grocery_list_lab_1.urls'
+ROOT_URLCONF = 'grocery_list_project.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'grocery_list_lab_1.wsgi.application'
+WSGI_APPLICATION = 'grocery_list_project.wsgi.application'
 
 
 # Database

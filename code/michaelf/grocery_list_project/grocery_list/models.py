@@ -7,7 +7,7 @@ class GroceryItem(models.Model):
     date_completed = models.DateTimeField(null=True, blank=True)
     
     def is_completed(self):
-        return self.date_completed > self.date_created
+        return self.date_completed != None
         
     def __str__(self):
         return self.text
