@@ -1,6 +1,6 @@
 <h2>Add URLs</h2>
 <form method="post" action="{% url 'add' %}"> 
     {%csrf_token%}
-    <input type="text" name="text" id="url">
+    <input type="text" name="url" id="url">
     <input type="submit" value="add">
 </form>

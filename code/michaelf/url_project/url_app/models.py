@@ -6,3 +6,12 @@ class Url(models.Model):
 
     def __str__(self):
         return self.long_url
+
+class Click(models.Model):
+    click_url= models.ForeignKey(Url, on_delete=models.CASCADE)
+    ip= models.TextField()
+    referral= models.TextField()
+
+    def __str__(self):
+        return self.url
+    
