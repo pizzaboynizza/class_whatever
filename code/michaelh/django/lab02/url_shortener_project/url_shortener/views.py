@@ -1,5 +1,6 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
 
 import string
 import random
@@ -10,16 +11,30 @@ def index(request):
 
 def add(request):
     url_code_url = request.POST['url']
-    url_code_code = ""
-    for i in range(6):
-        url_code_code += random.choice(string.ascii_lowercase+string.digits)
+    while True:  
+        url_code_code = ''
+        for i in range(6):
+            url_code_code += random.choice(string.ascii_lowercase+string.digits)
+        url_code = URL_Code.objects.filter(code__exact = url_code_code)
+        if not url_code:  
+            break  
     url_code = URL_Code.objects.create(url = url_code_url, code = url_code_code)
-    return HttpResponseRedirect(reverse('results', args = (url_code.id,)))
+    return HttpResponseRedirect(reverse('results', args = (url_code.code,)))
 
-def redirect(request, url_code_id):
-    url_code = get_object_or_404(URL_Code, pk = url_code_id)
-    return HttpResponseRedirect(reverse(url_code.url))
+def show(request, url_code_code):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    print(ip)
+    referer = request.META.get('HTTP_REFERER')
+    print(referer)
 
-def results(request, url_code_id):
-    url_code = get_object_or_404(URL_Code, pk = url_code_id)
-    return render(request, 'polls/results.html', {'url_code': url_code})    
+    url_code = URL_Code.objects.get(code__exact = url_code_code)
+    return redirect(url_code.url)
+
+def results(request, url_code_code):
+    url_code = URL_Code.objects.get(code__exact = url_code_code)
+    url_code_code = url_code.code
+    return render(request, 'url_shortener/results.html', {'url_code': url_code, 'url_code_code': url_code_code})    
