@@ -1,1 +1,6 @@
-<a href="/{{code}}/">localhost:8000/{{code}}</a>
+{% extends "url_app/base.html" %}
+{% block content %}
+<p>click, copy, and share your new link below:</p>
+<a class="redirect-link" href="/{{code}}/">localhost:8000/{{code}}</a><br><br>
+<a class="home-link"href="/">home</a>
+{% endblock content %}

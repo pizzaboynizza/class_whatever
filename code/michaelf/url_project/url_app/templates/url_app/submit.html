@@ -1,5 +1,9 @@
+
+{%extends 'url_app/base.html'%}
+{%block content%}
 <form action= '{% url "url_app:generate"%}' method='post'>
     {% csrf_token %}
     <input type="text" name="url" required>
-    <input type="submit" value="submit url">
+    <input class="btn btn-primary btn-sm" type="submit" value="submit url">
 </form>
+{%endblock%}
