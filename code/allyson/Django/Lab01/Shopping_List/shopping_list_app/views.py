@@ -6,11 +6,9 @@ from django.utils import timezone
 
 
 def shopping_list_app(request):
-    latest_add = Items_List.objects.order_by("-add_date".filter(completed=False))
-    pur_item = Item_List.objects.filter(completed=True).order_by("-com_date")
-    context - {
-        "shop_list": latest_add,
-        "purchased": pur_item,
+    context = {
+        "shop_list": Items_List.objects.filter(completed=False).order_by("add_date"),
+        "purchased": Items_List.objects.filter(completed=True).order_by("-com_date"),
     }
     return render(request, "shopping_list_app/index.html", context)
 
