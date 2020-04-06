@@ -1,0 +1,7 @@
+
+
+<form action="{% url 'list:Itemlist' %}" method="post">
+    {% csrf_token %}
+    <input type="text" id="itemsg" name="itemsg">
+    <input type="submit" value="sumbit">
+</form>
