@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>URL Shortener</title>
+        <link rel="stylesheet" href="{% static 'url_shortener/normalize.css' %}" />
+        <link rel="stylesheet" href="{% static 'url_shortener/skeleton.css' %}" />
+        <link rel="stylesheet" href="{% static 'url_shortener/main.css' %}" />
+    </head>
+    <body>
+        <h2>Stats for <a href="{% url 'url_shortener:redirect' link.short_code %}">{{ link }}</a></h2>
+        {% for user in all_users %}
+            <p><strong>{{ user.user_str }}</strong> - Clicked {{ user.times_clicked }} time(s)</p>
+        {% empty %}
+            <h3>Nobody has clicked on this link yet!</h3>
+        {% endfor %}
+    </body>
+</html>
