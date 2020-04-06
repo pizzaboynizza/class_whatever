@@ -1,0 +1,6 @@
+<h1> The URL: </h1>
+<a href="{{ url_code.url }}">{{ url_code.url }}</a> 
+{% comment %} <h2>{{ url_code.url }}</h2> {% endcomment %}
+<h1> Has been shortened to: </h1>
+<a href="http://127.0.0.1:8000/url_shortener/{{ url_code.code }}">http://127.0.0.1:8000/url_shortener/{{ url_code.code }}</a> 
+{% comment %} <h2>http://127.0.0.1:8000/url_shortener/{{ url_code.code }}</h2> {% endcomment %}
