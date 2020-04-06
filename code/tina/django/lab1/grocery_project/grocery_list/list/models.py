@@ -6,7 +6,7 @@ from django.utils import timezone
 class GroceryItem(models.Model):
     items = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
-    complted = models.DateTimeField('completed date')
+    complted = models.DateTimeField(null=True,blank=True)
     done = models.BooleanField(default=False)
 
     def __str__(self):
