@@ -1,6 +1,22 @@
-<h2>Add URLs</h2>
-<form method="post" action="{% url 'add' %}"> 
-    {%csrf_token%}
-    <input type="text" name="url" id="url">
-    <input type="submit" value="add">
-</form>
+{% load static %}
+<html>
+    <head>
+        <title>URL Shortener</title>
+        <link rel="stylesheet" href="{% static 'url_shortener/normalize.css'%}">
+        <link rel="stylesheet" href="{% static 'url_shortener/skeleton.css'%}">
+        <link rel="stylesheet" href="{% static 'url_shortener/main.css' %}">
+    </head>
+    <body>
+        <h1>URL Shortener</h1>
+        <div>
+            <h2>Paste the URL to be shortened</h2>
+            <form method="post" action="{% url 'add' %}"> 
+                {%csrf_token%}
+                <input type="text" name="url" id="url">
+                <input type="submit" value="Shorten URL">
+            </form>
+            <p>URL Shortener is a free tool to shorten a URL or reduce a link. <br>
+            Use the URL Shortener to create a shortened link making it easy to remember.</p>
+        </div>
+    </body>
+</html>
