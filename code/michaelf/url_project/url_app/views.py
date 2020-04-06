@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from .models import Url
+from .models import Url, Click
 from django.urls import reverse
 import random, string
 
@@ -16,6 +16,14 @@ def generate(request):
 
 def redirect(request, code):
     fetched_url = get_object_or_404(Url, code=code)
+    try:
+        click= Click(ip=request.META['REMOTE_ADDR'], click_url=fetched_url, referral=request.META['HTTP_REFERER'])
+        click.save()
+    except:
+        click= Click(ip=request.META['REMOTE_ADDR'], click_url=fetched_url, referral='none')
+        click.save()
+    print(fetched_url.click_set.count())
+
     return HttpResponseRedirect(f"{fetched_url}")
     
 
