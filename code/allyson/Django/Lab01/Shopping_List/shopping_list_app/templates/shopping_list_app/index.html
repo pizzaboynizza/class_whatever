@@ -4,21 +4,25 @@
         <title>Shopping List</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='shopping_list_app/main.css') }}">
     </head>
     <body>
         <div class="container">
             <div class="user-size">
                 <fieldset class="form-size"/>
-                <legend> Shopping List </legend>
-                <div class="list">
-                    <
+                <legend><strong> Shopping List </strong></legend>
+                <div class="form">
+                    <label for="item">Add to List: </label><input type="text" id="item"><br>
+                    <label for="amount">Quantity:</label><input type="interger" id="amount"><br>
+                    <button id="submit">Submit item</button>
+                    <button id="clear">Clear items</button>
                 </div>
-                <legend> Add to List </legend>
-                    <input type="text" name="item" placeholder="Item to add" required/>
-                    <input type="text" name="amount" placeholder="How many?" required/>
-                <legend> Past Purchases </legend>
+                <fieldset class="form-size"/>
+                <legend> To Purchase </legend>
                 <div class="list">
-                </div>      
+                    
+                </div>
+                </fieldset>
+            </div>
         </body>
 </html>
