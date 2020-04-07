@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+    <head>
+        <title>Shortened URL</title>
+        <link rel="stylesheet" href="{% static 'url_shortener/normalize.css'%}">
+        <link rel="stylesheet" href="{% static 'url_shortener/skeleton.css'%}">
+        <link rel="stylesheet" href="{% static 'url_shortener/main.css' %}">
+    </head>
+    <body>
+        <h1>URL Shortener</h1>
+        <h2>Your shortened URL</h2>
+        <p>Copy the shortened link and share it in messages, texts, posts, websites and other locations.</p>
+        <br>
+        <div>
+            {% comment %} <h2> Has been shortened to: </h2> {% endcomment %}
+            <h3><a href="http://127.0.0.1:8000/url_shortener/{{ url_code.code }}">http://127.0.0.1:8000/url_shortener/{{ url_code.code }}</a></h3>
+            <p>Long URL: <a href="{{ url_code.url }}">{{ url_code.url }}</a></p>
+        </div>
+    </body>
+</html>

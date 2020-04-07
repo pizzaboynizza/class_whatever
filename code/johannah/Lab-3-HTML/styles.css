@@ -1,1 +1,133 @@
-/* Use CSS grid and/or flexbox, and make sure it's responsive. */
+/* Desktop Design */
+body {
+  font-family: sans-serif;
+}
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 200px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #e6f2ff;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  text-align: center;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding-top: 16px;
+  text-decoration: none;
+  color: black;
+  font-size: 16pt;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: blue;
+}
+
+#side-head {
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+.flexbox-container {
+  display: flex;
+  /* flex-direction: column;
+  flex-wrap: wrap; */
+  /* flex-flow: column wrap; */
+  /* align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-content: stretch; */
+  /* flex: 2; */
+  /* width: 30%; */
+  margin-left: 200px;
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #fifteen, #sixteen {
+  /* text-align: center; */
+  margin: 12px;
+  padding-bottom: 18px;
+}
+
+/* .col {
+  margin: 12px;
+  padding-bottom: 12px;
+} */
+
+h1 {
+  text-align: center;
+}
+
+#news {
+  width: 100%;
+}
+
+#heading {
+  padding-left: 200px;
+}
+
+#pnw {
+  max-width: 85%;
+  padding-bottom: 32px;
+}
+
+.images {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+footer {
+  margin-left: 200px;
+  margin-bottom: 15px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+/* Mobile Design */
+@media (max-width: 414px) {
+  .flexbox-container {
+      display: block;
+      margin-left: 0px;
+  }
+
+  .images {
+    max-width:65%;
+    height:auto;
+  }
+
+  .sidenav {
+      display: none;
+  }
+
+  footer {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  #heading {
+    padding-left: 0px;
+  }
+}
+
+/* Tablet Design */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .flexbox-container {
+    display: block;
+  }
+
+  .images {
+    max-width:45%;
+    height:auto;
+  }
+}

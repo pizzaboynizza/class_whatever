@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Grocery List</title>
+
+        <link rel="stylesheet" href="{% static '/grocery_list/main.css' %}"/>
+    </head>
+
+    <body>
+        <h1>Grocery List</h1>
+        <div class="main">
+            <ul>
+            {% for item in item_list %}
+            <li><span class="libox">
+                <span>{{ item }}</span><span class="lx">
+                {% if item.is_completed %}
+                    ✔ {{ item.date_completed }}
+                {% else %}
+                    {{ item.date_created }}
+                {% endif %}
+                </span>
+            </span></li>
+            {% endfor %}
+            </ul>
+
+            <div class="box">
+                <h2>Add an item to the list</h2>
+                <form action="{% url 'grocery_list:actual_add' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="item" id="item" required/>
+                    <label for="item">Add an Item</label><br/>
+                    <input type="submit" value="Add to List"/>
+                    {% if error %}
+                        <p class="error">{{ error }}</p>
+                    {% endif %}
+                </form>
+                <br/>
+                <p><a href="{% url 'grocery_list:complete' %}">Mark completed</a></p>
+                <p><a href="{% url 'grocery_list:delete' %}">Remove from list</a></p>
+            </div>
+        </div>
+    <body>
+
+</html>

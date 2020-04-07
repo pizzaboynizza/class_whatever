@@ -1,0 +1,17 @@
+div{
+    text-align: center;
+    box-shadow: 10px 10px 10px 10px #aaaaaa;
+    margin: 0 150px;
+    padding: 20px;
+}
+h2, p{
+    margin: 0 150px; 
+    text-align: left;
+}
+h1{
+    text-align: center;
+    color: #0f4c81;
+}
+a{
+    text-decoration: none;
+}

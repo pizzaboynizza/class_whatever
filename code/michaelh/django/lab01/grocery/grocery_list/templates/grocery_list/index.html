@@ -1,0 +1,26 @@
+<h1>Grocery list</h1>
+
+<h3>Completed items:</h3>
+<ul>
+{%for grocery_item in grocery_list%}
+    {% if grocery_item.was_completed == True%}
+        <li><a href="{%url 'detail' grocery_item.id%}">{{ grocery_item.item_text }}</a> </li>
+    {% endif %}
+{%endfor%}
+</ul>
+
+<h3>Incompleted items:</h3>
+<ul>
+{%for grocery_item in grocery_list%}
+    {% if grocery_item.was_completed == False %}
+        <li><a href="{%url 'detail' grocery_item.id%}">{{ grocery_item.item_text }}</a> </li>
+    {% endif %}
+{%endfor%}
+</ul>
+
+<h2>Add items</h2>
+<form method="post" action="{% url 'create' %}"> 
+    {%csrf_token%}
+    <input type="text" name="text" id="text">
+    <input type="submit" value="Add">
+</form>

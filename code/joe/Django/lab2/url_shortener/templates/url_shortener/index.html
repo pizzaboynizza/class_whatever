@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>URL Shortener</title>
+        <link rel="stylesheet" href="{% static 'url_shortener/normalize.css' %}" />
+        <link rel="stylesheet" href="{% static 'url_shortener/skeleton.css' %}" />
+        <link rel="stylesheet" href="{% static 'url_shortener/main.css' %}" />
+    </head>
+    <body>
+        <h1>URL Shortener</h1>
+        <form action="{% url 'url_shortener:add' %}" method="post">
+            {% csrf_token %}
+            <label for="link">Enter link</label>
+            <input type="text" name="link" id="link" required/>
+            <input type="submit" value="Shorten"/>
+        </form>
+        {% if msg %}
+            <h3>{{ msg }}</h3>
+        {% endif %}
+        {% if success %}
+            <h3><a href="{% url 'url_shortener:redirect' success.short_code %}">{{ success.short_code }}</a></h3><br/>
+            <h4><a href="{% url 'url_shortener:stats' success.short_code %}">Check this link's stats</a></h4>
+        {% endif %}
+    </body>
+</html>
