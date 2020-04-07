@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+        <link rel="stylesheet" href="home.css" />
+        <meta charset="UTF-8">
+        <meta name="author" content="Jalesa Peterson">
+        <title> Home - Grocey List </title>
+    </head>
+
+    <body>
+    {% comment %} # The user should be presented with an input field and a button (in a form). 
+# When the clicks the button, it should save the data to the server and show the newly-added item in the list.
+#  The user should be presented with a list of incomplete items and a list of complete items. 
+{% comment %} # THe user should be able to mark an item complete/incomplete and be able to delete an item. {% endcomment %}
+
+        <!-- ---------------------------    FORM    --------------------------------------- -->
+                 <!--------------    INPUT FIELD & SAVE BUTTON -------->
+        <h1>GROCERY LIST DATABASE<h1>
+        <p> incomplete items </p>
+        {%for item in incomplete_items%}
+            <ul>
+                <li>{{item}}</li>
+                <input type="radio" id="complete" value="complete" name="items"> </input>
+                <label for="complete">complete</label>
+                <input type="radio" id="incomplete" value="incomplete" name="items"></input>
+                <label for="incomplete">incomplete</label>
+                <input id="delete" type="radio"  name="items"> </input>
+                <label for="delete"> Delete</label>
+            </ul>
+        {% endfor %}
+        
+
+        <p> complete items </p>
+        {%for item in complete_items%}
+            <ul>
+                <li>{{item}}</li>
+                <input type="radio" id="complete" value="complete" name="items"> </input>
+                <label for="complete">complete</label>
+                <input type="radio" id="incomplete" value="incomplete" name="items"></input>
+                <label for="incomplete">incomplete</label>
+                <input action="{% url 'grocery_app:delete' %}" method="post" id="delete" type="radio"  name="items"> </input>
+                <label for="delete"> Delete</label>
+            </ul>
+        {% endfor %}
+        <form action="{% url 'grocery_app:add' %}" method="post">
+            {% comment %} csrf_token is encripting all of my data in the url {% endcomment %}
+            {% csrf_token %} 
+            <label for="text_field">New Item:</label>
+            <input id="text_field" name="text_field" type="text">
+            <br>
+            {% comment %} how is save button saving data to the database {% endcomment %}
+            <input type="submit" class="save_button" value="Save"></input>
+         </form>
+    </body>
+</html>

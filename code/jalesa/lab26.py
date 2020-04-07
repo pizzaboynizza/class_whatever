@@ -205,7 +205,7 @@ def main():
 main()
 
 # while True:
-#     user_input = input('Play again?: ')
-#     if user_input == "yes":
+#     user_input = input('Play again? (Y/N?): ')
+#     if user_input == "Y":
 #         main()
        

@@ -83,24 +83,49 @@ else:
 # > what are the output units? mi
 # 100 ft is 0.0189394 mi
 
+# ---------------------------START HERE ----------------------------------------------------
 
-user_units = input("what are the starting units? ")
-output_units =input("what units do you want to convert to? ")
+valid_units = {"m", "ft", "mi", "km", "yd", "in"}
+starter_units = input("what are the starting units? ")
 user_distance = int(input("what is the distance? ")) 
-converted_meters = {
-    "ft": 0.3048,
-    "mi": 1609.34,
-    "m": 1,
-    "km": 1000,
-    "yd": 0.9144,
-    "in": 0.0254,
-}
+end_units =input("what units do you want to convert to? ")
 
-if user_units == 'mi' and output_units == 'km':
-    meters = print(f'{user_distance * 1609.34}')
-    print(f"{user_distance / 1000} kilometers")
+while starter_units not in valid_units:
+    print("Enter valid units: ")
+    starter_units = input("what are the starting units? ")
+     
     
+end_units =input("what units do you want to convert to? ")
+while starter_units not in valid_units and starter_units != end_units: #make sure they enter a valid unit:
+     print("Enter valid units: ")
+     end_units =input("what units do you want to convert to? ")
+
+starter_user_distance = (f"What is the distance in {starter_units}")
+# used michaelh lab left off at line 91.
 
 
 
-# convert_to_meters = f"{user_units *  } meters "
+distance = int(starter_user_distance)
+if starter_units == 'ft': # this converts starter_units to meters
+    distance *= 0.3048
+elif starter_units == 'km':
+    distance *= 1000
+elif starter_units == 'mi':
+    distance *= 1609.34
+elif starter_units == 'yd':
+    distance *= 0.9144
+elif starter_units == 'in':
+    distance *= 0.0254
+
+final_distance = distance
+if end_units == 'ft':#this converts from meters to final_units
+    final_distance /= 0.3048
+elif end_units == 'km':
+    final_distance /= 1000
+elif end_units == 'mi':
+    final_distance /= 1609.34
+elif end_units == 'yd':
+    final_distance /= 0.9144
+elif end_units == 'in':
+    final_distance /= 0.0254
+    
